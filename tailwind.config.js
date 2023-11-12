@@ -56,7 +56,6 @@ module.exports = {
       margin: {
         88: "88px",
       },
-      
     },
   },
   plugins: [],

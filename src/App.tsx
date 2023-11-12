@@ -5,6 +5,7 @@ import Temp from "./Pages/Temp/Temp";
 import RegionSelectCard from "./Components/RegionSelectCard/RegionSelectCard";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
+import Herosection from "./Components/Herosection/Herosection";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           {/* <Route path='/' element={<Login />} /> */}
           <Route path="/h" element={<Header />} />
+          <Route path="/hs" element={<Herosection />} />
           <Route path="/t" element={<Signup />} />
           {/* <Route path="/footer" element={<Footer />} /> */}
           <Route path="/" element={<Temp />} />
