@@ -6,15 +6,16 @@ import RegionSelectCard from "./Components/RegionSelectCard/RegionSelectCard";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Herosection from "./Components/Herosection/Herosection";
+import Homepage from "./Pages/Homepage/Homepage";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        {/* <Navbar /> */}
+        <Header />
         <Routes>
-          {/* <Route path='/' element={<Login />} /> */}
-          <Route path="/h" element={<Header />} />
+          <Route path='/' element={<Homepage />} />
+          {/* <Route path="/h" element={<Header />} /> */}
           <Route path="/hs" element={<Herosection />} />
           <Route path="/t" element={<Signup />} />
           {/* <Route path="/footer" element={<Footer />} /> */}

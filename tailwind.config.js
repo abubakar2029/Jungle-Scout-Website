@@ -7,6 +7,7 @@ module.exports = {
       mont: ["Montserrat", "sans-serif"],
     },
     fontSize: {
+      14: '0.75rem',
       "2.5xl": [
         "2.5rem",
         {
@@ -43,6 +44,9 @@ module.exports = {
       width: {
         250: "250px",
         60: "60px",
+        282: "282px",
+        442: "442px",
+        570: "570px",
         120: "120px",
         135: "135px",
         136: "136px",
