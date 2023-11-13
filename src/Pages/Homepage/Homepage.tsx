@@ -2,6 +2,7 @@ import React from "react";
 import Herosection from "../../Components/Herosection/Herosection";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
+import JSolutions from "../../Components/JSolutions/JSolutions";
 
 function Homepage() {
   let secondDiv = [
@@ -47,6 +48,7 @@ function Homepage() {
         </div>
       </section>
       <Advertisement1/>
+      <JSolutions/>
     </div>
   );
 }

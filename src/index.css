@@ -2,20 +2,18 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 /* Montserrat-font */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../public/Montserrat-VariableFont_wght.ttf') format('truetype');
+  /* Add more src declarations for different font formats if available */
+}
 /* Removing icon on inputs */
-/* input[type="search"]::-webkit-search-cancel-button {
+input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
-} */
+}
 body {
   /* margin: 0; */
   font-family: "Montserrat", sans-serif;
-  /* -webkit-font-smoothing: antialiased; */
-  /* -moz-osx-font-smoothing: grayscale; */
   box-sizing: border-box;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
