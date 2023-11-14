@@ -11,7 +11,7 @@ import Testimonials from "./Components/Testimonials/Testimonials";
 
 function App() {
   return (
-    <div>
+    // <div>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -19,7 +19,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </div>
+    // </div>
   );
 }
 
