@@ -4,6 +4,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
 import JSolutions from "../../Components/JSolutions/JSolutions";
 import GetStarted from "../../Components/GetStarted/GetStarted";
+import Testimonials from "../../Components/Testimonials/Testimonials";
 
 function Homepage() {
   let secondDiv = [
@@ -59,6 +60,7 @@ function Homepage() {
           for building & managing your Amazon business
         </h1>
       </div>
+      <Testimonials />
     </div>
   );
 }

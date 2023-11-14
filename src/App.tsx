@@ -15,12 +15,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path="/hs" element={<Herosection />} />
-          <Route path="/t" element={<Testimonials />} />
-          <Route path="/" element={<Temp />} />
+          <Route path="/" element={<Homepage />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );
