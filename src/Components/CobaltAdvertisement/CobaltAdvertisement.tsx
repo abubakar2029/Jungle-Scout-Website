@@ -13,14 +13,16 @@ function CobaltAdvertisement() {
     "https://www.junglescout.com/wp-content/uploads/2023/07/nuby-logo.svg",
   ];
   return (
-    <div>
-      <section>
+    <div className="mb-12">
+      <section className="w-full max-w-[1200px] mx-auto px-4.5 relative">
         {/* div for gradient */}
-        <div></div>
+        <div className="absolute top-[100%] bg-gradient-to-r from-violet-500 from-5% via-blue-700 via-45% to-teal-400 to-0% bg-slate-600 z-10 h-36 w-full">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, eaque nihil sint suscipit ipsa fugiat velit cum deleniti natus quo quaerat maiores necessitatibus magnam, sequi dolor perferendis odit voluptate rerum.
+        </div>
         {/* div for content */}
-        <div>
+        <div className="flex">
           {/* left-container */}
-          <div>
+          <div className="">
             <figure>
               <img
                 src="https://www.junglescout.com/wp-content/uploads/2023/07/Enterprise-CTA-Homepage.png"
@@ -30,8 +32,8 @@ function CobaltAdvertisement() {
           </div>
           {/* right-container */}
           <div>
-            <h2>Jungle Scout Cobalt</h2>
-            <h2>Enterprise-level Amazon tools</h2>
+            <h2 className="font-black text-32">Jungle Scout Cobalt</h2>
+            <h2 className="text-32">Enterprise-level Amazon tools</h2>
             <p>
               Explore the advanced insights and advertising tool that helps
               brands and retailers turn industry-leading data into profitable

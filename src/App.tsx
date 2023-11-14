@@ -12,13 +12,15 @@ import Testimonials from "./Components/Testimonials/Testimonials";
 function App() {
   return (
     // <div>
-      <BrowserRouter>
-        <Header />
+    <BrowserRouter>
+      <Header />
+      <div className="top-[60px]">
         <Routes>
           <Route path="/" element={<Homepage />} />
         </Routes>
-        <Footer />
-      </BrowserRouter>
+      </div>
+      <Footer />
+    </BrowserRouter>
     // </div>
   );
 }

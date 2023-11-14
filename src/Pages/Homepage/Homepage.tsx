@@ -2,9 +2,10 @@ import React from "react";
 import Herosection from "../../Components/Herosection/Herosection";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
-import JSolutions from "../../Components/JSolutions/JSolutions";
+import JSolutions from "../../Components/ExploreJSolutions/ExploreJSolutions";
 import GetStarted from "../../Components/GetStarted/GetStarted";
 import Testimonials from "../../Components/Testimonials/Testimonials";
+import CobaltAdvertisement from "../../Components/CobaltAdvertisement/CobaltAdvertisement";
 
 function Homepage() {
   let secondDiv = [
@@ -61,6 +62,7 @@ function Homepage() {
         </h1>
       </div>
       <Testimonials />
+      <CobaltAdvertisement/>
     </div>
   );
 }
