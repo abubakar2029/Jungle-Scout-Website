@@ -3,6 +3,7 @@ import Herosection from "../../Components/Herosection/Herosection";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
 import JSolutions from "../../Components/JSolutions/JSolutions";
+import GetStarted from "../../Components/GetStarted/GetStarted";
 
 function Homepage() {
   let secondDiv = [
@@ -47,8 +48,17 @@ function Homepage() {
           </div>
         </div>
       </section>
-      <Advertisement1/>
-      <JSolutions/>
+      <Advertisement1 />
+      <JSolutions />
+      <GetStarted />
+      {/*  */}
+      <div className="flex justify-center px-4.5">
+        <h1 className="font-normal text-center leading-10 lg:max-w-[66%] mb-14 text-32">
+          Jungle Scout is the #1 trusted solution
+          <br />
+          for building & managing your Amazon business
+        </h1>
+      </div>
     </div>
   );
 }

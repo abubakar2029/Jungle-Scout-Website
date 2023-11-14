@@ -7,6 +7,7 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Herosection from "./Components/Herosection/Herosection";
 import Homepage from "./Pages/Homepage/Homepage";
+import Testimonials from "./Components/Testimonials/Testimonials";
 
 function App() {
   return (
@@ -15,12 +16,9 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Homepage />} />
-          {/* <Route path="/h" element={<Header />} /> */}
           <Route path="/hs" element={<Herosection />} />
-          <Route path="/t" element={<Signup />} />
-          {/* <Route path="/footer" element={<Footer />} /> */}
+          <Route path="/t" element={<Testimonials />} />
           <Route path="/" element={<Temp />} />
-          {/* <Route path='/quiz-page' element={<QuizPage />} /> */}
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -6,7 +6,7 @@ function JSolutions() {
     <div className="block box-border">
       <div className="px-4.5 mx-auto w-full max-w-[1200px]"> 
         <h1 className="font-bold w-full text-center mb-12">Explore Jungle Scout’s powerful solutions</h1>
-        <div>
+        <div className="flex">
           {/* left div */}
           <div className="w-full md:w-1/3">
             {/* top-card */}
@@ -39,7 +39,7 @@ function JSolutions() {
               <div className="px-6 py-8 hover:font-extrabold">
                 <Link to="" >
                   <span></span>
-                  <span>Save time and money with AI automations</span>
+                  <span>Save time and money with AI <br /> automations</span>
                 </Link>
               </div>
             </div>
