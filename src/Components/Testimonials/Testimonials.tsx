@@ -73,7 +73,7 @@ function Testimonials() {
       {
         breakpoint: 700,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 2,
         },
@@ -93,14 +93,22 @@ function Testimonials() {
         <Slider {...settings}>
           {testimonials.map((testimonial) => {
             return (
-              <div>
-                <div className="border-2 w-4/5 border-orange-500 cursor-pointer">
-                  <p>{testimonial.comment}</p>
-                  <div>
-                    <div>
-                      <img src={testimonial.img} alt="" />
+              <div className="xl:w-570 lg:w-442 md:w-[690px] w-[510px]">
+                <div className="border-2 border-orange-500 cursor-pointer  p-8">
+                  <p className="leading-6 text-[20px]">{testimonial.comment}</p>
+
+                  {/* below-div */}
+                  <div className="flex mt-6">
+                    {/* Image */}
+                    <div className="border-r-2 pr-6 border-orange-500">
+                      <img
+                        src={testimonial.img}
+                        alt=""
+                        width={60}
+                        height={60}
+                      />
                     </div>
-                    <div>{testimonial.name}</div>
+                    <h3 className="pl-6 flex items-center font-bold">{testimonial.name}</h3>
                   </div>
                 </div>
               </div>

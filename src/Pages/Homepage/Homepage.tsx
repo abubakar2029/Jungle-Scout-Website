@@ -3,7 +3,7 @@ import Herosection from "../../Components/Herosection/Herosection";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
 import JSolutions from "../../Components/ExploreJSolutions/ExploreJSolutions";
-import GetStarted from "../../Components/GetStarted/GetStarted";
+import Sellersrecommendation from "../../Components/Sellersrecommendation/Sellersrecommendation";
 import Testimonials from "../../Components/Testimonials/Testimonials";
 import CobaltAdvertisement from "../../Components/CobaltAdvertisement/CobaltAdvertisement";
 
@@ -52,17 +52,17 @@ function Homepage() {
       </section>
       <Advertisement1 />
       <JSolutions />
-      <GetStarted />
+      <Sellersrecommendation />
       {/*  */}
       <div className="flex justify-center px-4.5">
         <h1 className="font-normal text-center leading-10 lg:max-w-[66%] mb-14 text-32">
-          Jungle Scout is the #1 trusted solution
+          Jungle Scout is the #1 trusted solution for
           <br />
-          for building & managing your Amazon business
+          building & managing your Amazon business
         </h1>
       </div>
       <Testimonials />
-      <CobaltAdvertisement/>
+      <CobaltAdvertisement />
     </div>
   );
 }

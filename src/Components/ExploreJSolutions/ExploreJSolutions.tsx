@@ -22,7 +22,7 @@ function JSolutions() {
 
   return (
     <div className="block box-border">
-      <div className="px-4.5 mx-auto w-full max-w-[1200px]">
+      <div className="px-4.5 mx-auto w-full max-w-[1200px] ">
         <h1 className=" w-full text-center mb-12 text-32">
           Explore Jungle Scout’s powerful solutions
         </h1>
@@ -30,7 +30,6 @@ function JSolutions() {
           {/* left div */}
           <section className="flex max-sm:flex-col-reverse">
             <div className="w-full xl:w-1/3 sm:w-5/12 max-sm:w-full px-4.5">
-
               {/* top-card */}
               <div className="leading-6 shadow-lg py-8 px-6">
                 <h1 className="font-extrabold flex">
@@ -65,22 +64,6 @@ function JSolutions() {
                     </div>
                   );
                 })}
-                <div className="px-6 py-8 hover:font-extrabold">
-                  <Link to="">
-                    <span>
-                      <img src="" alt="" />
-                    </span>
-                    <span></span>
-                  </Link>
-                </div>
-                <div className="px-6 py-8 hover:font-extrabold">
-                  <Link to="">
-                    <span>
-                      <img src="" alt="" />
-                    </span>
-                    <span></span>
-                  </Link>
-                </div>
               </div>
             </div>
             {/* right div */}
