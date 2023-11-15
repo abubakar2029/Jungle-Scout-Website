@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function Testimonials() {
+  // later will be fetched by api
   let testimonials = [
     {
       comment:
@@ -49,22 +52,34 @@ function Testimonials() {
     },
   ];
 
-  // render() {
+  // previous-next-methods
+  const sliderRef = useRef<Slider | null>(null);
+  const next = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+  const previous = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
   var settings = {
     dots: false,
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 6000,
-
+    // autoplay: true,
+    // speed: 2000,
+    // autoplaySpeed: 6000,
+    // variableWidth: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
           dots: false,
@@ -88,13 +103,13 @@ function Testimonials() {
     ],
   };
   return (
-    <div className="mb-16  relative top-8 ">
+    <div className="mb-16 ">
       <section className="w-full max-w-[1200px] mx-auto px-4.5">
-        <Slider {...settings}>
-          {testimonials.map((testimonial) => {
+        <Slider ref={sliderRef} {...settings}>
+          {testimonials.map((testimonial, index) => {
             return (
-              <div className="xl:w-570 lg:w-442 md:w-[690px] w-[510px]">
-                <div className="border-2 border-orange-500 cursor-pointer  p-8">
+              <div style={{ width: "90%" }} className="px-4.5" key={index}>
+                <div className="border-2 border-orange-500 cursor-pointer p-8 mx-4.5">
                   <p className="leading-6 text-[20px]">{testimonial.comment}</p>
 
                   {/* below-div */}
@@ -108,13 +123,23 @@ function Testimonials() {
                         height={60}
                       />
                     </div>
-                    <h3 className="pl-6 flex items-center font-bold">{testimonial.name}</h3>
+                    <h3 className="pl-6 flex items-center font-bold">
+                      {testimonial.name}
+                    </h3>
                   </div>
                 </div>
               </div>
             );
           })}
         </Slider>
+        <div className="w-full flex justify-end max-w-[1200px] pr-[1%]">
+          <div onClick={previous}>
+            <ArrowBackIcon />
+          </div>
+          <div onClick={next}>
+            <ArrowForwardIcon />
+          </div>
+        </div>
       </section>
     </div>
   );
