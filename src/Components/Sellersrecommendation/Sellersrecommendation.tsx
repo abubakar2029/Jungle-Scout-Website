@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button/Button";
 
 function Sellersrecommendation() {
   return (
@@ -13,8 +14,8 @@ function Sellersrecommendation() {
             </h1>
             <p>Don’t wait! Make the leap with support from Jungle Scout.</p>
           </div>
-          <div className="flex items-center  justify-center lg:w-1/4 w-full md:w-1/3">
-            <button className="bg-white rounded">ljlklk</button>
+          <div className="flex items-center  justify-center lg:w-1/4 w-full md:w-1/3 ">
+            <Button label="Get started" height="4" width="140" bgColor="white" textColor="black" href="/"/>
           </div>
         </div>
       </div>

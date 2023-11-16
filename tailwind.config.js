@@ -45,6 +45,8 @@ module.exports = {
       width: {
         250: "250px",
         60: "60px",
+        106: "106px",
+        140: "140px",
         282: "282px",
         442: "442px",
         570: "570px",
@@ -57,6 +59,7 @@ module.exports = {
       padding: {
         4.5: "15px",
         7: "5px",
+        7.5: "30px",
       },
       margin: {
         88: "88px",

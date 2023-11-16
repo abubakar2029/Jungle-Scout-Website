@@ -28,7 +28,7 @@ function Herosection() {
               and expertise to help you succeed.
             </p>
             <div>
-              <Button />
+              <Button label="Sign up now" href="/" bgColor="black" textColor="white" width="106" height="4"/>
             </div>
           </div>
           {/* right-container */}

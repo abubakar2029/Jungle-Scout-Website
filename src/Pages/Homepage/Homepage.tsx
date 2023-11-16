@@ -6,6 +6,8 @@ import JSolutions from "../../Components/ExploreJSolutions/ExploreJSolutions";
 import Sellersrecommendation from "../../Components/Sellersrecommendation/Sellersrecommendation";
 import Testimonials from "../../Components/Testimonials/Testimonials";
 import CobaltAdvertisement from "../../Components/CobaltAdvertisement/CobaltAdvertisement";
+import GrowBusiness from "../../Components/GrowBusiness/GrowBusiness";
+import ResourcesSlider from "../../Components/ResourcesSlider/ResourcesSlider";
 
 function Homepage() {
   let secondDiv = [
@@ -63,6 +65,8 @@ function Homepage() {
       </div>
       <Testimonials />
       <CobaltAdvertisement />
+      <ResourcesSlider/>
+      <GrowBusiness />
     </div>
   );
 }
