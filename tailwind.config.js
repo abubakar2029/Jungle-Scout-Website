@@ -7,8 +7,8 @@ module.exports = {
       mont: ["Montserrat", "sans-serif"],
     },
     fontSize: {
-      14: '0.75rem',
-      32: '2rem',
+      14: "0.75rem",
+      32: "2rem",
       "2.5xl": [
         "2.5rem",
         {
@@ -39,12 +39,14 @@ module.exports = {
         31: "125px",
         26: "26px",
         60: "60px",
+        625: "625px",
         702: "702px",
         1500: "1500px",
       },
       width: {
         250: "250px",
         60: "60px",
+        200: "200px",
         106: "106px",
         140: "140px",
         282: "282px",
@@ -66,5 +68,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@headlessui/tailwindcss")({ prefix: "ui" })],
 };

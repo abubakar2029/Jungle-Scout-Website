@@ -10,7 +10,7 @@ function GrowBusiness() {
         backgroundImage: `url('https://www.junglescout.com/wp-content/uploads/2023/07/smb-cta-background_1440.jpg')`,
       }}
     >
-      <section className="lg:py-16 py-8 px-4.5 flex flex-col">
+      <section className="lg:py-16 py-8 px-4.5 flex flex-col justify-center items-center">
         <h1 className="lg:text-32 text-[24px] text-white ">
           Grow your Amazon business with Jungle Scout
         </h1>
