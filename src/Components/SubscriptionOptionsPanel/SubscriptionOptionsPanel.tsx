@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import CheckIcon from "@mui/icons-material/Check";
 import { Link } from "react-router-dom";
 
 function SubscriptionOptionsPanel() {
+  let [selectedButton, setSelectedButton] = useState("Pay monthly");
+  let [discountMsg, setDiscountMsg] = useState(false);
   interface pricingPlan {
     subcriptionType: string;
     popular?: string;
@@ -67,10 +69,58 @@ function SubscriptionOptionsPanel() {
     },
   ];
   return (
-    <div className="w-full mb-36 flex justify-center ">
+    <div className="w-full flex flex-col justify-center ">
+      {/* top-buttons */}
+      <div className="flex mt-8 w-full justify-center max-sm:-mb-4 mb-16">
+        <button
+          onClick={() => {
+            setSelectedButton("Pay monthly");
+            setDiscountMsg(true);
+          }}
+          className={`focus:ring-8 focus:ring-orange-300 focus:ring-offset-0 hover:text-orange-400 hover:border hover:border-orange-500 hover:bg-orange-100  px-4.5 py-2 text-[12px] font-bold  ${
+            selectedButton === "Pay monthly"
+              ? "text-white bg-orange-500 border  border-orange-400"
+              : "bg-neutral-100  text-gray-400 border border-neutral-300"
+          }`}
+        >
+          Pay monthly
+        </button>
+        <button
+          onClick={() => {
+            setSelectedButton("Pay yearly");
+            setDiscountMsg(false);
+          }}
+          className={`focus:ring-8 focus:ring-orange-300 focus:ring-offset-0  px-4.5 py-2 text-[12px] font-bold mr-1 hover:border hover:text-orange-400 hover:border-orange-500 hover:bg-orange-100 ${
+            selectedButton === "Pay yearly"
+              ? "text-white bg-orange-400 border border-orange-400"
+              : "bg-neutral-100  text-gray-400 border border-neutral-300"
+          }`}
+          // className={`focus:outline-8  px-4.5 py-2 text-[12px] font-bold mr-1 focus:outline-orange-500 hover:text-orange-400 hover:border-orange-500 hover:bg-orange-100 ${
+          //   selectedButton === "Pay yearly"
+          //     ? "text-white bg-orange-400"
+          //     : "bg-neutral-100  text-gray-400 border border-l-transparent border-neutral-300"
+          // }`}
+        >
+          Pay yearly
+        </button>
+        <p
+          className={`font-bold transition-opacity duration-75 text-blue-700 text-[14px] leading-6 text-left flex items-center ${
+            discountMsg ? "opacity-100" : "opacity-0"
+          } `}
+        >
+          <img
+            src="https://www.junglescout.com/wp-content/uploads/2020/07/mdi_arrow_forward@2x.png"
+            alt=""
+            width={12}
+            height={8}
+            className="m-2"
+          />
+          SAVE UP TO 55%
+        </p>
+      </div>
       <section className="flex w-full max-w-[995px] max-lg:flex-col ">
-      {/* <section className="flex items-center justify-center w-full max-w-[995px] max-lg:flex-col "> */}
-        <div className="py-6 h-625 px-4.5 hidden lg:block w-1/4 border border-neutral-300 mb-6 rounded-sm border-r-transparent">
+        {/* <section className="flex items-center justify-center w-full max-w-[995px] max-lg:flex-col "> */}
+        <div className="py-6 h-625 px-4.5 hidden lg:block w-1/4 border border-neutral-300 rounded-sm border-r-transparent">
           <p className="text-[24px]">
             The only platform you need to build and grow a successful business
             on Amazon.
@@ -105,13 +155,15 @@ function SubscriptionOptionsPanel() {
               </div>
               {/* 3rd div */}
               <div className="pb-4 font-bold text-[14px] text-center">
-                <h4 className={`font-extrabold ${plan.popular ? "text-orange-500" : ""}`}>
+                <h4
+                  className={`font-extrabold ${
+                    plan.popular ? "text-orange-500" : ""
+                  }`}
+                >
                   {plan.discountMessage}
                 </h4>
                 <div className="flex justify-center">
-                  <div className="pt-2 pr-1 text-[24px]">
-                    {plan.currency}
-                  </div>
+                  <div className="pt-2 pr-1 text-[24px]">{plan.currency}</div>
                   <div className="text-[4rem] ">{plan.monthlyPrice}</div>
                   <div className="pl-1 pb-4 text-[24px] self-end">/mo</div>
                 </div>

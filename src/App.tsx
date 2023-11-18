@@ -11,6 +11,8 @@ import Testimonials from "./Components/Testimonials/Testimonials";
 import Pricing from "./Pages/Pricing/Pricing";
 import PricingTable from "./Components/PricingTable/PricingTable";
 import SubscriptionOptionsPanel from "./Components/SubscriptionOptionsPanel/SubscriptionOptionsPanel";
+import PricingPlansHeader from "./Components/PricingPlansHeader/PricingPlansHeader";
+import PricingFAQ from "./Components/PricingFAQ/PricingFAQ";
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/plan" element={<SubscriptionOptionsPanel />} />
+          <Route path="/faq" element={<PricingFAQ />} />
         </Routes>
       </div>
       <Footer />
