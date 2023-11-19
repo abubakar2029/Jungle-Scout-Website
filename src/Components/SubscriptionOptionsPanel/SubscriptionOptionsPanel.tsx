@@ -118,7 +118,8 @@ function SubscriptionOptionsPanel() {
           SAVE UP TO 55%
         </p>
       </div>
-      <section className="flex w-full max-w-[995px] max-lg:flex-col ">
+      {/* pricing-cards-section */}
+      <section className="flex w-full max-w-[995px] max-lg:flex-col mx-auto ">
         {/* <section className="flex items-center justify-center w-full max-w-[995px] max-lg:flex-col "> */}
         <div className="py-6 h-625 px-4.5 hidden lg:block w-1/4 border border-neutral-300 rounded-sm border-r-transparent">
           <p className="text-[24px]">

@@ -3,7 +3,7 @@ import { Disclosure, Transition } from "@headlessui/react";
 import MinimizeIcon from "@mui/icons-material/Minimize";
 
 function PricingFAQ() {
-  let [selectedQuestions, setSelectedQuestion] = useState<string[]>([]);
+  let [selectedQuestions, setSelectedQuestion] = useState<number[]>([]);
 
   let pricingFAQ = [
     {
@@ -118,49 +118,84 @@ function PricingFAQ() {
   ];
   return (
     <div>
-      <h1 className="text-center">Frequently asked questions</h1>
-      <Disclosure>
-        {({ open }) => (
-          <div className="w-full">
-            <Disclosure.Button
-              className="bg-green-200 w-full flex justify-between py-[35px] px-7.5 border-[1px] hover:fill-pink-500"
-              onFocus={() => {
-                let index = selectedQuestions.findIndex(
-                  (question) => question === "sdwpoi"
-                );
-                if (index === -1) {
-                  setSelectedQuestion(() => [...selectedQuestions, "dss"]);
-                }
-                console.log("hover", selectedQuestions);
-              }}
-            >
-              Is team pricing available?
-              {/* <MinimizeIcon className={open ? "rotate-90 transform flex items-center justify-center h-6 w-6 ml-2" : "flex items-center justify-center h-6 w-6"} /> */}
-              <MinimizeIcon
-                className={
-                  selectedQuestions.indexOf("dss") !== -1
-                    ? "ui-open:rotate-90 ui-open:transform text-gray-400"
-                    : "ui-open:rotate-90 ui-open:transform fill-black"
-                }
-              />
-            </Disclosure.Button>
+      <section className="bg-neutral-100">
+        <h1 className="text-center mb-14 leading-4 text-32 font-bold px-4.5">
+          Frequently asked questions
+          
+        </h1>
+        <div>
+          {pricingFAQ.map((query, indexKey) => {
+            return (
+              <Disclosure key={indexKey} as={"div"}>
+                {({ open }) => (
+                  <div
+                    className={`w-full text-left  py-[35px] px-7.5 max-w-[1000px] ui-not-open:border-b ui-open:bg-white ui-not-open:bg-transparent ui-open:border mx-auto 
+                      // selectedQuestions.indexOf(indexKey) !== -1
+                      //   ? "!bg-white "
+                      //   : "bg-transparent"
+                    `}
+                  >
+                    <Disclosure.Button
+                      className=" w-full font-bold text-left gap-x-1 flex justify-between "
+                      onFocus={() => {
+                        let index = selectedQuestions.findIndex(
+                          (question) => question === indexKey
+                        );
 
-            <Transition
-              enter="transition duration-100 ease-out"
-              enterFrom="transform scale-95 opacity-0"
-              enterTo="transform scale-100 opacity-100"
-              leave="transition duration-75 ease-out"
-              leaveFrom="transform scale-100 opacity-100"
-              leaveTo="transform scale-95 opacity-0"
-            >
-              <Disclosure.Panel>
-                Yes! You can purchase a license that you can share with your
-                entire team.
-              </Disclosure.Panel>
-            </Transition>
-          </div>
-        )}
-      </Disclosure>
+                        if (index === -1) {
+                          setSelectedQuestion(() => [
+                            ...selectedQuestions,
+                            indexKey,
+                          ]);
+                        }
+                        console.log(indexKey, open);
+                        console.log("hover", indexKey);
+                      }}
+                    >
+                      {query.query}
+                      <span className="ml-1 relative">
+                        <MinimizeIcon
+                          className={`
+                          absolute z-10
+                            ${
+                              open
+                                ? "rotate-90 transform origin-center h-6 w-6"
+                                : "flex items-center justify-center h-6 w-6"
+                            }
+                          `}
+                        />
+                        <MinimizeIcon
+                          className={`${open ? "" : "text-gray-400 "}`}
+                        />
+                        {/* <MinimizeIcon
+                          className={
+                            selectedQuestions.indexOf(indexKey) !== -1
+                              ? "ui-open:rotate-90 ui-open:transform "
+                              : "ui-open:rotate-90 ui-open:transform fill-black"
+                          }
+                        /> */}
+                      </span>
+                    </Disclosure.Button>
+
+                    <Transition
+                      enter="transition duration-100 ease-out"
+                      enterFrom="transform scale-95 opacity-0"
+                      enterTo="transform scale-100 opacity-100"
+                      leave="transition duration-75 ease-out"
+                      leaveFrom="transform scale-100 opacity-100"
+                      leaveTo="transform scale-95 opacity-0"
+                    >
+                      <Disclosure.Panel className={`mt-4`}>
+                        {query.answer}
+                      </Disclosure.Panel>
+                    </Transition>
+                  </div>
+                )}
+              </Disclosure>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }
