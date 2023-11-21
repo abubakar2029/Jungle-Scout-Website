@@ -6,14 +6,42 @@ import ChooseYourPlan from "../../Components/ChooseYourPlan/ChooseYourPlan";
 import PricingTable from "../../Components/PricingTable/PricingTable";
 import EnterpriseDemo from "../../Components/EnterpriseDemo/EnterpriseDemo";
 import Heading from "../../Components/Heading/Heading";
+import SignupBanner from "../../Components/SignupBanner/SignupBanner";
+import SellerPackages from "../../Components/SellerPackages/SellerPackages";
+import PaymentOptions from "../../Components/PaymentOptions/PaymentOptions";
+import CustomerRating from "../../Components/CustomerRating/CustomerRating";
+import PricingFAQ from "../../Components/PricingFAQ/PricingFAQ";
 
 function Pricing() {
+  let [planSwitcher, setPlanSwitcher] = useState("");
+  function handlePlanSwitcher(prop: any) {
+    setPlanSwitcher(prop);
+    console.log("prop", prop);
+    console.log(planSwitcher);
+  }
   return (
     <div className="w-full">
-      <PricingPlansHeader />
-      <ChooseYourPlan />
-      <SubscriptionOptionsPanel />
-      <PricingTable />
+      <PricingPlansHeader on_Click={handlePlanSwitcher} />
+      <div className={`${planSwitcher === "Pakages" ? "block" : "hidden"}`}>
+        <Heading
+          text="Sign up for these packages to get savings and education tailored to first-time sellers"
+          fontWeight="font-bold"
+          fontSize="text-[32px]"
+          mb="mb-14"
+          pxl="72"
+          pxm="12"
+          pxs=""
+        />
+        <SellerPackages />
+        <PaymentOptions />
+      </div>
+      <div
+        className={`${planSwitcher === "Standard Plans" ? "block" : "hidden"}`}
+      >
+        <ChooseYourPlan />
+        <SubscriptionOptionsPanel />
+        <PricingTable />
+      </div>
       <EnterpriseDemo />
       <Heading
         text="600,000+ sellers trust Jungle Scout"
@@ -21,14 +49,14 @@ function Pricing() {
         fontSize="text-[32px]"
         mb="mb-[72px]"
       />
-      <Heading
-        text="Sign up for these packages to get savings and education tailored to first-time sellers"
-        fontWeight="font-bold"
-        fontSize="text-[32px]"
-        mb="mb-14"
-        pxl="72"
-        pxm="12"
-        pxs=""
+      <CustomerRating />
+      <PricingFAQ />
+      <SignupBanner
+        myProp={{
+          heading: "Get started with the leading platform for Amazon sellers",
+          text: "Build and grow a successful business with Jungle Scout.",
+          linkText: "Sign up today",
+        }}
       />
       <div>
         <div>

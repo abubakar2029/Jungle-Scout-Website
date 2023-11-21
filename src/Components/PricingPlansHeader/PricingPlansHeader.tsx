@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-// import { Transition } from "@headlessui/react";
 
-function PricingPlansHeader() {
-  // const [isShowing, setIsShowing] = useState(true);
-
+function PricingPlansHeader({ on_Click }: any) {
   const subcriptionOptions = [
     {
       name: "Standard Plans",
@@ -42,7 +39,10 @@ function PricingPlansHeader() {
                     : "mt-2 text-slate-500 py-10 bg-gray-50 hover:bg-white"
                 }  px-6 text-left  `}
                 key={index}
-                onClick={() => setCard(item.name)}
+                onClick={() => {
+                  setCard(item.name);
+                  on_Click(item.name);
+                }}
               >
                 {/* heading -div */}
                 <div className="flex relative items-center">

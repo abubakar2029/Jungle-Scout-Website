@@ -1,56 +1,31 @@
-import React, { useState } from "react";
+import { Transition } from '@headlessui/react';
+import { Fragment, useState, useEffect } from 'react';
 
-function Temp() {
-  const [first, setFirst] = useState("");
+export default function Temp() {
+  const [isShowing, setIsShowing] = useState(false);
 
-  const showDiv = (id: string) => {
-    setFirst(id);
-  };
-
-  const removeDiv = () => {
-    setFirst("");
-  };
+  // Use useEffect to trigger the translation after the component mounts
+  useEffect(() => {
+    setIsShowing(true);
+  }, []);
 
   return (
-    <div className="flex">
-      <button
-        className="mx-2 relative"
-        onMouseOver={() => showDiv("Temp1")}
-        onMouseOut={removeDiv}
+    <div className="flex flex-col items-center py-16">
+      <Transition
+        as={Fragment}
+        show={isShowing}
+        enter="transform transition duration-[400ms]"
+        enterFrom="translate-x-[-50%]"
+        enterTo="translate-x-0"
+        leave="transform duration-500 transition ease-in-out"
+        leaveFrom="translate-x-0"
+        leaveTo="translate-x-[-50%]"
       >
-        Temp1
-        <div className="flex justify-center">
-        <div className={`absolute bg-blue-500 h-1 transition-all duration-300 ${first === "Temp1" ? "w-full" : "w-0"}`}></div>
+        {/* Your content goes here */}
+        <div className="h-32 w-32 rounded-md bg-blue-300 shadow-lg">
+          {/* Content of the box */}
         </div>
-      </button>
-
-      <button
-        className="mx-2 relative"
-        onMouseOver={() => showDiv("Temp2")}
-        onMouseOut={removeDiv}
-      >
-        Temp2
-        <div
-          className={`absolute bg-blue-500 h-1 transition-all duration-300 ${
-            first === "Temp2" ? "w-full" : "w-0"
-          }`}
-        ></div>
-      </button>
-
-      <button
-        className="mx-2 relative"
-        onMouseOver={() => showDiv("Temp3")}
-        onMouseOut={removeDiv}
-      >
-        Temp3
-        <div
-          className={`absolute bg-blue-500 h-1 transition-all duration-300 ${
-            first === "Temp3" ? "w-full" : "w-0"
-          }`}
-        ></div>
-      </button>
+      </Transition>
     </div>
   );
 }
-
-export default Temp;

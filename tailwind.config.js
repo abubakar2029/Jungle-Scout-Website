@@ -13,7 +13,6 @@ module.exports = {
         "2.5rem",
         {
           lineHeight: "3rem",
-          // letterSpacing: "-0.01em",
           fontWeight: "400",
         },
       ],

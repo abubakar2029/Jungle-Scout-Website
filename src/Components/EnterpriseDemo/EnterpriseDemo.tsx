@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function EnterpriseDemo() {
   return (
-    <div className="mb-6 mx-auto xl:max-w-[1200px] min-[992px]:ma-w-[992px] md:max-w-[720px] sm:max-w-[540px] w-full">
+    <div className="mb-6 mx-auto xl:max-w-[1200px] min-[992px]:max-w-[992px] md:max-w-[720px] sm:max-w-[540px] w-full">
         {/*  */}
       <div className="max-w-[83%] mx-auto bg-violet-50 p-6 flex justify-between">
         <div className="flex flex-col pr-12">

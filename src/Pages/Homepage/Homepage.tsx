@@ -36,9 +36,10 @@ function Homepage() {
             What do you want to do?
           </p>
           <div className="flex justify-center max-lg:flex-col">
-            {secondDiv.map((element) => {
+            {secondDiv.map((element, index) => {
               return (
                 <a
+                  key={index}
                   href={element.href}
                   className="border-black border  rounded-full py-1.5 px-4 mx-2 flex justify-between mb-4"
                 >
@@ -65,7 +66,7 @@ function Homepage() {
       </div>
       <Testimonials />
       <CobaltAdvertisement />
-      <ResourcesSlider/>
+      <ResourcesSlider />
       <GrowBusiness />
     </div>
   );

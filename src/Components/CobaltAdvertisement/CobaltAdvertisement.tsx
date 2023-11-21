@@ -15,9 +15,9 @@ function CobaltAdvertisement() {
   return (
     // <div className="mb-12"> temp
     <div className="mb-96">
-      <section className="w-full max-w-[1200px] mx-auto px-4.5 relative">
+      <section className="w-full overflow-hidden max-w-[1200px] mx-auto px-4.5 relative">
         {/* div for gradient */}
-        <div className="absolute top-[100%] bg-gradient-to-r from-violet-500 from-100% via-blue-700 via-45% to-teal-400 to-0% h-36 w-full -z-10">
+        <div className="absolute top-[100%] bg-gradient-to-br blur-[137px] from-violet-500 from-0% via-blue-700 via-45% to-teal-400 to-100% h-36 -z-10">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
           eaque nihil sint suscipit ipsa fugiat velit cum deleniti natus quo qua
         </div>
@@ -26,14 +26,13 @@ function CobaltAdvertisement() {
           {/* left-container */}
           <div className="px4.5">
             <div className="pl-16 pr-4">
-
-            <figure>
-              <img
-                src="https://www.junglescout.com/wp-content/uploads/2023/07/Enterprise-CTA-Homepage.png"
-                alt=""
+              <figure>
+                <img
+                  src="https://www.junglescout.com/wp-content/uploads/2023/07/Enterprise-CTA-Homepage.png"
+                  alt=""
                 />
-            </figure>
-                </div>
+              </figure>
+            </div>
           </div>
           {/* right-container */}
           <div className="px-7.5">

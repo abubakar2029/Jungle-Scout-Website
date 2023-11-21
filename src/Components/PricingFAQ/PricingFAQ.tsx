@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Disclosure, Transition } from "@headlessui/react";
 import MinimizeIcon from "@mui/icons-material/Minimize";
+import Icon from "@mui/material/Icon";
+import RemoveIcon from "@mui/icons-material/Remove";
+import "material-icons/iconfont/material-icons.css";
 
 function PricingFAQ() {
   let [selectedQuestions, setSelectedQuestion] = useState<number[]>([]);
@@ -118,10 +121,9 @@ function PricingFAQ() {
   ];
   return (
     <div>
-      <section className="bg-neutral-100">
+      <section className="bg-neutral-100 py-5">
         <h1 className="text-center mb-14 leading-4 text-32 font-bold px-4.5">
           Frequently asked questions
-          
         </h1>
         <div>
           {pricingFAQ.map((query, indexKey) => {
@@ -153,8 +155,17 @@ function PricingFAQ() {
                       }}
                     >
                       {query.query}
-                      <span className="ml-1 relative">
-                        <MinimizeIcon
+                      <span className="ml-1 relative flex justify-center items-center">
+                        <i className="material-icons !leading-[0]">remove</i>
+                        <i
+                          className={`material-icons !leading-[0] absolute transition-transform duration-500 z-10 ${
+                            open ? "rotate-90 transform origin-center" : ""
+                          }`}
+                        >
+                          remove
+                        </i>
+
+                        {/* <MinimizeIcon
                           className={`
                           absolute z-10
                             ${
@@ -166,13 +177,6 @@ function PricingFAQ() {
                         />
                         <MinimizeIcon
                           className={`${open ? "" : "text-gray-400 "}`}
-                        />
-                        {/* <MinimizeIcon
-                          className={
-                            selectedQuestions.indexOf(indexKey) !== -1
-                              ? "ui-open:rotate-90 ui-open:transform "
-                              : "ui-open:rotate-90 ui-open:transform fill-black"
-                          }
                         /> */}
                       </span>
                     </Disclosure.Button>
