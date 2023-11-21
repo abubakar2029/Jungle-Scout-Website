@@ -26,7 +26,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/pkg" element={<PaymentOptions />} />
-          <Route path="/t" element={<Temp />} />
+          {/* <Route path="/t" element={<Temp />} /> */}
         </Routes>
       </div>
       <Footer />

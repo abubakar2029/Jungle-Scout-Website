@@ -12,7 +12,7 @@ function ChooseYourPlan() {
         with our money-back guarantee.
       </p>
     </div>
-  );
+);
 }
 
 export default ChooseYourPlan;

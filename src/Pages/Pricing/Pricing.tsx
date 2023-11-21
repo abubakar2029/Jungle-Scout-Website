@@ -11,9 +11,19 @@ import SellerPackages from "../../Components/SellerPackages/SellerPackages";
 import PaymentOptions from "../../Components/PaymentOptions/PaymentOptions";
 import CustomerRating from "../../Components/CustomerRating/CustomerRating";
 import PricingFAQ from "../../Components/PricingFAQ/PricingFAQ";
+import MiniSubcriptionCard from "../../Components/MiniSubcriptionCard/MiniSubcriptionCard";
+import PlanGuideVideo from "../../Components/PlanGuideVideo/PlanGuideVideo";
 
+// plan-selection
+export const planSelectionGuide = {
+  heading: "Find the right plan for you",
+  text: "Need help choosing your Jungle Scout plan? This video outlines everything you need to know to ensure you select the best plan for your ecommerce success on Amazon and beyond.",
+  videoSrc: "",
+  thumbnail:
+    "https://embed-ssl.wistia.com/deliveries/0ee6509464443f81fee8f30e227c8e27.webp?image_crop_resized=901x524",
+};
 function Pricing() {
-  let [planSwitcher, setPlanSwitcher] = useState("");
+  let [planSwitcher, setPlanSwitcher] = useState("Standard Plans");
   function handlePlanSwitcher(prop: any) {
     setPlanSwitcher(prop);
     console.log("prop", prop);
@@ -41,7 +51,10 @@ function Pricing() {
         <ChooseYourPlan />
         <SubscriptionOptionsPanel />
         <PricingTable />
+        <MiniSubcriptionCard />
       </div>
+      <PlanGuideVideo/>
+      <PaymentOptions/>
       <EnterpriseDemo />
       <Heading
         text="600,000+ sellers trust Jungle Scout"
