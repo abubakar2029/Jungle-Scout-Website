@@ -1,26 +1,29 @@
 import React from "react";
 
-function TextImageRight() {
+function TextImageRight(props: any) {
+  const props1 = props.data;
   return (
-    <section className="flex mx-auto justify-around xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full">
+    <section
+      className={`flex ${
+        props1.TextimageLeft ? "flex-row-reverse" : "flex-row"
+      } mb-12 py-12 mx-auto justify-around xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full`}
+    >
       {/* left-div-text */}
-      <div className="flex max-w-[50%] basis-1/2 flex-col px-4.5">
+      <div
+        className="lg:max-w-[41%] lg:basis-[41%] md:max-w-[50%]
+        md:basis-1/2 w-full my-auto px-4.5"
+      >
         <h1 className="block mb-2 text-[28px] font-extrabold">
-          Generate product ideas
+          {props1.heading}
         </h1>
-        <p className="mb-4">
-          Generate ideas in seconds and start discovering products that match
-          your specific search criteria. Sort by categories, estimated sales,
-          sales rank, revenue, and more to quickly reveal profitable
-          opportunities.
-        </p>
+        <p className="mb-4 block">{props1.text}</p>
       </div>
-      <div className="max-w-[41%] basis-[41%]">
+      <div
+        className="lg:max-w-[41%] lg:basis-[41%] md:max-w-[50%]
+        md:basis-1/2 w-full my-auto "
+      >
         {/* md-50 sm-100 */}
-        <img
-          src="https://www.junglescout.com/wp-content/uploads/2020/06/product-dtb-start-research.png"
-          alt=""
-        />
+        <img src={props1.img} alt="" />
       </div>
     </section>
   );

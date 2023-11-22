@@ -1,35 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function FeaturespageHeader() {
+function FeaturespageHeader(props: any) {
+  const props1 = props.heroSection;
   return (
     <div
       className="py-4.5 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage:
-          'url("https://www.junglescout.com/wp-content/uploads/2019/07/group-7.png")',
+        backgroundImage: `url(${props1.bgImg})`,
       }}
     >
       <section className="mx-auto mb-6 px-4.5 py-11 xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full flex justify-between">
         {/* first-div-content */}
         <div className="max-w-[50%] flex h-full my-auto items-start flex-col">
           <div className="py-1 px-3 rounded-sm inline-flex items-center bg-white">
-            <img
-              src="https://www.junglescout.com/wp-content/uploads/2020/07/product-database@2x.png"
-              alt=""
-              width={12}
-              height={12}
-            />
+            <img src={props1.iconImg} alt="" width={12} height={12} />
             <span className="uppercase ml-1 text-orange-500 text-[12px]  font-bold ">
-              product dtabase
+              {props1.name}
             </span>
           </div>
-          <h1 className="mt-6 mb-2 text-[40px] font-extrabold block leading-[44px]">
-            Product research starts here
+          <h1 className="mt-6 mb-2 text-[40px] font-extrabold block leading-[46px] pb-4">
+            {props1.heading}
           </h1>
-          <p className="mb-4 text-[18px] leading-6">
-            Whether you’re just starting out or a seasoned seller, quickly
-            reveal profitable opportunities on Amazon with our advanced filters.
-          </p>
+          <p className="mb-4 text-[18px] leading-6">{props1.text}</p>
           {/* two-btn-div */}
           <div className="mt-4">
             <Link

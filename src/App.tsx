@@ -17,6 +17,7 @@ import SellerPackages from "./Components/SellerPackages/SellerPackages";
 import PaymentOptions from "./Components/PaymentOptions/PaymentOptions";
 import FeaturespageHeader from "./Components/FeaturespageHeader/FeaturespageHeader";
 import TextImageRight from "./Components/TextImageRight/TextImageRight";
+import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/pkg" element={<PaymentOptions />} />
-          <Route path="/t" element={<TextImageRight />} />
+          <Route path="/t" element={<BrowserExtension />} />
         </Routes>
       </div>
       <Footer />
