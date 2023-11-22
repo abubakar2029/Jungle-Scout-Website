@@ -3,7 +3,7 @@ import React from "react";
 function Heading(props: any) {
   return (
     <section
-      className={`xl:max-w-[1200px] ${props.fontWeight} ${props.fontSize} ${
+      className={`xl:max-w-[1200px] pt-11 ${props.fontWeight} ${props.fontSize} ${
         props.mb
       } lg:max-w-[992px] md:max-w-[720px] mx-auto ${
         props.pxs ? "px-${props.pxS}" : "px-4.5"

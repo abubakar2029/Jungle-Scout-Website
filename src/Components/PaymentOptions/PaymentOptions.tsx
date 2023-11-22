@@ -24,7 +24,7 @@ function PaymentOptions() {
     },
   ];
   return (
-    <div>
+    <div className="py-11 w-full">
       <section className="flex justify-center flex-col items-center">
         <div className="mb-6 flex justify-center">
           {paymentCardImages.map((card, index) => {

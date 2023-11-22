@@ -114,7 +114,7 @@ function SubscriptionOptionsPanel() {
         </p>
       </div>
       {/* pricing-cards-section */}
-      <section className="max-lg:!border-none max-lg:mb-6 flex border border-collapse border-neutral-300  w-full max-w-[995px] max-md:flex-col max-md:justify-center items-center mx-auto ">
+      <section className="max-md:!border-none max-lg:mb-6 flex border border-collapse border-neutral-300  w-full max-w-[995px] max-md:flex-col max-md:justify-center items-center mx-auto ">
         {/* <section className="flex items-center justify-center w-full max-w-[995px] max-lg:flex-col "> */}
         <div className="py-6 h-[640px] px-4.5 hidden lg:block w-1/4 border-r border-neutral-300   ">
           <p className="text-[24px]">

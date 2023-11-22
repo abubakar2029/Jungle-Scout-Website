@@ -5,7 +5,7 @@ function SignupBanner(props: any) {
   // first used in pricing-page
   const data = props.myProp;
   return (
-    <section>
+    <section className="mb-16">
       <div className="flex flex-col mx-auto xl:max-w-[1200px] min-[992px]:ma-w-[992px] md:max-w-[720px] sm:max-w-[540px] w-full px-4.5 py-11 mb-6 bg-white">
         <h1 className="mb-5 text-center text-[32px]">
           <strong>{data.heading}</strong>

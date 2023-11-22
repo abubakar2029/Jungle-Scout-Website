@@ -18,7 +18,7 @@ import PlanGuideVideo from "../../Components/PlanGuideVideo/PlanGuideVideo";
 export const planSelectionGuide = {
   heading: "Find the right plan for you",
   text: "Need help choosing your Jungle Scout plan? This video outlines everything you need to know to ensure you select the best plan for your ecommerce success on Amazon and beyond.",
-  videoSrc: "",
+  videoSrc: "/videos/Pricing&PlansGuide.ts",
   thumbnail:
     "https://embed-ssl.wistia.com/deliveries/0ee6509464443f81fee8f30e227c8e27.webp?image_crop_resized=901x524",
 };
@@ -53,8 +53,10 @@ function Pricing() {
         <PricingTable />
         <MiniSubcriptionCard />
       </div>
-      <PlanGuideVideo/>
-      <PaymentOptions/>
+      <div className="h-20 w-full"></div>
+      {/* extra-div to give space b/w components */}
+      <PlanGuideVideo />
+      <PaymentOptions />
       <EnterpriseDemo />
       <Heading
         text="600,000+ sellers trust Jungle Scout"
@@ -71,24 +73,6 @@ function Pricing() {
           linkText: "Sign up today",
         }}
       />
-      <div>
-        <div>
-          <section>
-            <h1>Frequently asked questions</h1>
-            {
-              <div className="flex justify-between items-center px-7.5 py-9">
-                <div>
-                  <h3>{}</h3>
-                  <span className="flex justify-center items-center ">
-                    <MinimizeIcon className="" />
-                    <MinimizeIcon />
-                  </span>
-                </div>
-              </div>
-            }
-          </section>
-        </div>
-      </div>
     </div>
   );
 }
