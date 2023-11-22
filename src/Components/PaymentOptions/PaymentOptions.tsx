@@ -24,9 +24,9 @@ function PaymentOptions() {
     },
   ];
   return (
-    <div className="py-11 w-full">
+    <div className="pb-11 w-full">
       <section className="flex justify-center flex-col items-center">
-        <div className="mb-6 flex justify-center">
+        <div className="mb-6 flex justify-center items-center">
           {paymentCardImages.map((card, index) => {
             console.log("Comparison", card.name === "STRIPE");
 

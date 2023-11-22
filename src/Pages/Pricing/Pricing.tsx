@@ -35,7 +35,7 @@ function Pricing() {
       <div className={`${planSwitcher === "Pakages" ? "block" : "hidden"}`}>
         <Heading
           text="Sign up for these packages to get savings and education tailored to first-time sellers"
-          fontWeight="font-bold"
+          fontWeight="font-extrabold"
           fontSize="text-[32px]"
           mb="mb-14"
           pxl="72"
@@ -43,7 +43,6 @@ function Pricing() {
           pxs=""
         />
         <SellerPackages />
-        <PaymentOptions />
       </div>
       <div
         className={`${planSwitcher === "Standard Plans" ? "block" : "hidden"}`}
@@ -52,10 +51,10 @@ function Pricing() {
         <SubscriptionOptionsPanel />
         <PricingTable />
         <MiniSubcriptionCard />
+        <PlanGuideVideo />
+        <div className="h-20 w-full"></div>
+        {/* extra-div to give space b/w components */}
       </div>
-      <div className="h-20 w-full"></div>
-      {/* extra-div to give space b/w components */}
-      <PlanGuideVideo />
       <PaymentOptions />
       <EnterpriseDemo />
       <Heading
