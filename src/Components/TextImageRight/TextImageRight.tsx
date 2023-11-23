@@ -4,7 +4,7 @@ function TextImageRight(props: any) {
   const props1 = props.data;
   return (
     <section
-      className={`flex ${
+      className={`flex max-md:!flex-col-reverse ${
         props1.TextimageLeft ? "flex-row-reverse" : "flex-row"
       } mb-12 py-12 mx-auto justify-around xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full`}
     >
