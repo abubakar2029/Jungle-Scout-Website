@@ -2,6 +2,8 @@ import React from "react";
 import FeaturespageHeader from "../../Components/FeaturespageHeader/FeaturespageHeader";
 import FeaturesTopHeading from "../../Components/FeaturesTopHeading/FeaturesTopHeading";
 import TextImageRight from "../../Components/TextImageRight/TextImageRight";
+import SignupBanner from "../../Components/SignupBanner/SignupBanner";
+import SignupBannerFeaturesPage from "../../Components/SignupBannerFeaturesPage/SignupBannerFeaturesPage";
 
 function BrowserExtension() {
   interface heroSection {
@@ -82,6 +84,7 @@ function BrowserExtension() {
 
         return <TextImageRight data={section} key={index} />;
       })}
+      <SignupBannerFeaturesPage/>
     </main>
   );
 }

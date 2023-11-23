@@ -70,6 +70,7 @@ function Pricing() {
           heading: "Get started with the leading platform for Amazon sellers",
           text: "Build and grow a successful business with Jungle Scout.",
           linkText: "Sign up today",
+          linkURL: "/",
         }}
       />
     </div>

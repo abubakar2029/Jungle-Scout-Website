@@ -18,6 +18,7 @@ import PaymentOptions from "./Components/PaymentOptions/PaymentOptions";
 import FeaturespageHeader from "./Components/FeaturespageHeader/FeaturespageHeader";
 import TextImageRight from "./Components/TextImageRight/TextImageRight";
 import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
+import Features from "./Pages/Features/Features";
 
 function App() {
   return (
@@ -29,7 +30,9 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/pkg" element={<PaymentOptions />} />
-          <Route path="/t" element={<BrowserExtension />} />
+          <Route path="/t" element={<Temp />} />
+          <Route path="/features/:pID" element={<Features />} />
+          <Route path="/t2" element={<BrowserExtension />} />
         </Routes>
       </div>
       <Footer />
