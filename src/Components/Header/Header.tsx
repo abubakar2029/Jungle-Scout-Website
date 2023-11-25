@@ -304,10 +304,10 @@ function Header() {
   function SearchDialog() {}
   return (
     <header>
-      <nav className="flex items-center justify-between xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w[720px] sm:max-w-[540px] w-full mx-auto px-4.5  min-h-[60px] bg-orange-500">
+      <nav className="flex items-center justify-between xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w[720px] sm:max-w-[540px] w-full mx-auto px-4.5  min-h-[60px]">
         <div className="flex ">
           {/* company-logo */}
-          <div className="flex items-center h-full py-2 bg-red-500">
+          <div className="flex items-center h-full py-2">
             <Link to="/" className="">
               <img
                 src="https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/logo-js-full_4ffc995cb339488dc88e.svg"
@@ -318,7 +318,7 @@ function Header() {
             </Link>
           </div>
           {/* nav-links */}
-          <div className=" h-full bg-blue-500 flex">
+          <div className=" h-full">
             {/* childs-start */}
             <div className="">
               <div className=" ml-7 inline-block">
@@ -441,7 +441,7 @@ function Header() {
               </section>
             </div>
             {/* 2nd-child-features */}
-            <div className=" bg-green-400">
+            <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
@@ -564,7 +564,7 @@ function Header() {
               </section>
             </div>
             {/* 3rd-child */}
-            <div className=" bg-green-400">
+            <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
@@ -590,7 +590,7 @@ function Header() {
               </div>
             </div>
             {/* 4th-child-features */}
-            <div className=" bg-green-400">
+            <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
@@ -708,7 +708,7 @@ function Header() {
               </section>
             </div>
             {/* 5th-child */}
-            <div className=" bg-green-400">
+            <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
@@ -743,7 +743,7 @@ function Header() {
           <div className="relative flex items-center">
             <SearchIcon
               onClick={() => setIsActive(!isActive)}
-              className={`bg-red-600 cursor-pointer`}
+              className={` cursor-pointer`}
             >
               Search
             </SearchIcon>
