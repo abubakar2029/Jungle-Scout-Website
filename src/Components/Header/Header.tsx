@@ -318,13 +318,13 @@ function Header() {
             </Link>
           </div>
           {/* nav-links */}
-          <div className=" h-full">
+          <div className=" h-full flex">
             {/* childs-start */}
             <div className="">
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("solutions");
@@ -445,7 +445,7 @@ function Header() {
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("features");
@@ -568,7 +568,7 @@ function Header() {
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("pricing");
@@ -594,7 +594,7 @@ function Header() {
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
                   onMouseEnter={() => {
                     setIsOpen("resources");
                   }}
@@ -712,7 +712,7 @@ function Header() {
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("enterprise");
