@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
+import { Popover, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+// import { Fragment } from "react";
 
 function Header() {
   let navLinks = [
@@ -27,86 +30,745 @@ function Header() {
       path: "/enterprise",
     },
   ];
+  interface Solution {
+    name: string;
+    href: string;
+    description: string;
+    icon?: string;
+  }
+  const solutionsFor: Solution[] = [
+    {
+      name: "First-time Sellers",
+      href: "##",
+      description:
+        "Everything you need to find a product & start your Amazon business",
+    },
+    {
+      name: "Existing Amazon Sellers",
+      description:
+        "Tools to make managing your business easy, so you can focus on growing it",
+      href: "##",
+    },
+    {
+      href: "##",
+      description:
+        "Insights from the Amazon Marketplace tailored to the world's largest brands",
+      name: "Global Brands and Retailers",
+    },
+  ];
+  const solutionsRecomended: Solution[] = [
+    {
+      name: "Launch My Product",
+      description:
+        "Get your product up and running on Amazon with a successful launch",
+      href: "/",
+    },
+    {
+      href: "/",
+      description:
+        "Gain valuable business insights from your data to make key decisions faster",
+      name: "Leverage My Amazon Data",
+    },
+    {
+      href: "/",
+      name: "Optimize My Product Listing",
+      description:
+        "Make your Amazon listings more profitable and beat the competition",
+    },
+  ];
+  const solutionsRecomended2: Solution[] = [
+    {
+      href: "/",
+      name: "Get More Reviews",
+      description:
+        "Earn more product reviews — the key to driving traffic and sales",
+    },
+    {
+      href: "/",
+      name: "Streamline My Business",
+      description: "Simplify managing your Amazon business & save time",
+    },
+    {
+      name: "NEW! Get to know AI Assist",
+      description: "Explore the power of AI in even more Jungle Scout tools.",
+      href: "/",
+      icon: "https://www.junglescout.com/wp-content/uploads/2023/09/ai-Icon-small.svg",
+    },
+  ];
+  interface Features {
+    name: string;
+    href: string;
+    icon: string;
+  }
+  const features1: Features[] = [
+    {
+      name: "Browser Extension",
+      href: "/",
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-extension_0dd32e803e9c94596f44.svg",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-tracker_9f6be6df6fc0cc653f18.svg",
+      name: "Product Tracker",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-opp-finder_a8631af9f3c3a3acd637.svg",
+      name: "Opportuniy Finder",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-database_eb58ee142df1f4ae1c37.svg",
+      name: "Product Database",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-supplier-database_e0f441c8a709ce4e5e09.svg",
+      name: "Supplier Database",
+      href: "/start-selling",
+    },
+    {
+      icon: "",
+      name: "Supplier Database",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-academy_5cff49e0ae3c327c7203.svg",
+      name: "Academy",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-inventory-manager_6e79d2855d5402555766.svg",
+      name: "Inventory manager",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-promotions-campaigns_fc2f7c3ab58a91cb77a1.svg",
+      name: "Promotions",
+      href: "/start-selling",
+    },
+  ];
+  const features2: Features[] = [
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-keyword-scout_dc83440bbeb1383e7013.svg",
+      name: "Keyword Scout",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-rank-tracker_ab72d65078991dd848fb.svg",
+      name: "Rank Tracker",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-listing-builder_e113a044dc28eba5bc81.svg",
+      name: "Listing Builder",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-review-automation_20026c92995a0efc6c13.svg",
+      name: "Review Automation",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-sales-analytics_35f407913d472194395f.svg",
+      name: "Sales Analytics",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-ad-analytics_31b7088782ddf5402561.svg",
+      name: "Advertising Analytics",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-alerts_572c16c6faba96ee51b7.svg",
+      name: "Alerts",
+      href: "/start-selling",
+    },
+    {
+      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-category-trends_38bae27ddb837ec26531.svg",
+      name: "Category Trends",
+      href: "/start-selling",
+    },
+  ];
+  interface ResourcesNewSellers {
+    name: string;
+    href: string;
+    description: string;
+    updated?: boolean;
+  }
+  const resourcesNewSellers: ResourcesNewSellers[] = [
+    {
+      name: "How to Sell on Amazon",
+      href: "/start-selling",
+      updated: true,
+      description: "Get everything you need to know to start selling on Amazon",
+    },
+    {
+      name: "Million Dollar Case Study",
+      href: "/start-selling",
+      description:
+        "Follow along as we launch a product on Amazon, step-by-step",
+    },
+  ];
+  interface ResourcesTools {
+    name: string;
+    href: string;
+  }
+  const ResourcesTools: ResourcesTools[] = [
+    {
+      name: "Profit Calculator",
+      href: "/start-selling",
+    },
+    {
+      name: "Sales Estimator",
+      href: "/start-selling",
+    },
+  ];
 
+  interface ResourcesLearn {
+    name: string;
+    href: string;
+    description?: string;
+    updated?: boolean;
+  }
+  const ResourcesLearn: ResourcesLearn[] = [
+    {
+      name: "Amazon Advertising Report",
+      href: "/start-selling",
+      description: "Examines advertising campaign data from 2018-2023.",
+    },
+    {
+      name: "Consumer Trends Report",
+      href: "/start-selling",
+      description:
+        "A quarterly study that explores changes in consumer behavior",
+    },
+    {
+      name: "Halloween Shopping Trends",
+      href: "/start-selling",
+      description:
+        "Peek inside our data crypt to see Amazon's top-selling Halloween products",
+    },
+    {
+      name: "State of the Amazon Seller",
+      href: "/start-selling",
+      description: "Annual insights from real Amazon sellers",
+    },
+    {
+      name: "Amazon Prime Day Report",
+      href: "/start-selling",
+      description: "Sales insights & ad campaign data from Prime Day 2023",
+    },
+    {
+      name: "Blog & Amazon News",
+      href: "/start-selling",
+    },
+    {
+      name: "View All Resources",
+      href: "/start-selling",
+    },
+  ];
+  const companyResources: ResourcesLearn[] = [
+    {
+      name: "About Jungle Scout",
+      href: "/start-selling",
+    },
+    {
+      name: "Careers",
+      href: "/start-selling",
+      description: "Now hiring! View career opportunities",
+    },
+    {
+      name: "Affliate Program",
+      href: "/start-selling",
+      updated: true,
+      description: "Now hiring! View career opportunities",
+    },
+  ];
+  const communitySupportResources: ResourcesTools[] = [
+    {
+      name: "Help center",
+      href: "/start-selling",
+    },
+    {
+      name: "Contact Support",
+      href: "/start-selling",
+    },
+  ];
   // searchbar-dialog
-  let [isOpen, setIsOpen] = useState(false);
+  let [referenceElement, setReferenceElement] = useState();
+
+  let [isOpen, setIsOpen] = useState("");
   let [isTyping, setIsTyping] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [isSelected, setIsSelected] = useState("");
   function SearchDialog() {}
   return (
-    <header className="w-full z-10 fixed top-0 flex justify-around">
-      <div className="w-full max-w-[1200px] px-4.5 mx-auto">
-        <nav className="flex min-h-[60px] items-center">
+    <header>
+      <nav className="flex items-center justify-between xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w[720px] sm:max-w-[540px] w-full mx-auto px-4.5  min-h-[60px] bg-orange-500">
+        <div className="flex ">
           {/* company-logo */}
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="130"
-              height="30"
-              viewBox="0 0 200 30"
-              aria-labelledby="junglescout-header-logo"
-            >
-              <desc id="junglescout-header-logo">Jungle Scout logo</desc>
-              <g fill="none" fill-rule="nonzero">
-                <path
-                  fill="#000"
-                  d="M0 21.187l2.628-2.84c1.335 1.792 2.67 2.808 4.574 2.808 2.143 0 3.603-1.489 3.603-4.668V1h4.12v15.624c0 2.806-.81 4.902-2.14 6.289C11.455 24.3 9.539 25 7.269 25c-3.504.01-5.776-1.681-7.269-3.813zM19.9 18.227V7h4.057v10.024c0 2.75 1.379 4.276 3.788 4.276 2.344 0 3.987-1.604 3.987-4.354V7h4.089v17.643h-4.089v-2.75c-1.149 1.67-2.78 3.107-5.53 3.107-3.99.01-6.302-2.665-6.302-6.773zM39.801 6.369h4.065v2.704C45.017 7.436 46.652 6 49.406 6c3.996 0 6.315 2.673 6.315 6.747V24h-4.064V13.983c0-2.748-1.382-4.31-3.796-4.31-2.351 0-3.995 1.638-3.995 4.377V24H39.8V6.369zM60.554 27.936l1.478-2.985c1.87 1.15 3.804 1.838 6.166 1.838 3.543 0 5.477-1.838 5.477-5.316v-1.35c-1.442 1.871-3.246 3.183-6.1 3.183-4.067 0-7.874-3.02-7.874-8.099v-.07C59.701 10.02 63.54 7 67.575 7c2.924 0 4.724 1.35 6.073 2.954V7.367h3.964v13.78c0 2.924-.754 5.084-2.198 6.524-1.574 1.574-4.002 2.328-7.117 2.328a14.924 14.924 0 0 1-7.743-2.063zm13.155-12.763v-.065c0-2.821-2.328-4.756-5.084-4.756-2.755 0-4.922 1.903-4.922 4.756v.065c0 2.824 2.198 4.758 4.922 4.758 2.724 0 5.084-1.934 5.084-4.758zM82.587 0h3.98v24h-3.98zM90.547 16.037v-.056c0-4.926 3.541-8.981 8.54-8.981 5.561 0 8.376 4.31 8.376 9.274 0 .359-.034.719-.066 1.12H94.554c.429 2.808 2.449 4.375 5.03 4.375 1.954 0 3.343-.719 4.735-2.058l2.35 2.058c-1.656 1.96-3.94 3.231-7.151 3.231-5.064-.018-8.97-3.645-8.97-8.963zm12.939-1.274c-.261-2.546-1.782-4.539-4.431-4.539-2.45 0-4.172 1.861-4.54 4.539h8.97z"
-                ></path>
-                <path
-                  fill="#F57704"
-                  d="M110.448 21.275l2.445-2.933c2.214 1.934 4.462 3.03 7.303 3.03 2.51 0 4.097-1.201 4.097-2.936v-.067c0-1.666-.925-2.567-5.212-3.566-4.924-1.2-7.704-2.668-7.704-6.97v-.065c0-4.002 3.306-6.768 7.9-6.768 3.369 0 6.045 1.033 8.383 2.933l-2.177 3.105c-2.083-1.566-4.163-2.4-6.28-2.4-2.379 0-3.766 1.234-3.766 2.768v.067c0 1.799 1.059 2.6 5.518 3.658 4.892 1.2 7.403 2.972 7.403 6.834v.066c0 4.37-3.399 6.969-8.262 6.969a14.176 14.176 0 0 1-9.648-3.725zM130.348 16.082v-.065c0-4.9 3.777-9.017 8.955-9.017 3.225 0 5.244 1.21 6.872 2.973L143.7 12.62c-1.205-1.275-2.476-2.158-4.43-2.158-2.865 0-4.982 2.482-4.982 5.489v.065c0 3.071 2.117 5.522 5.136 5.522 1.856 0 3.225-.85 4.466-2.124l2.379 2.352c-1.695 1.896-3.68 3.233-7.035 3.233-5.11 0-8.886-4.017-8.886-8.918zM170.15 18.227V7h4.054v10.024c0 2.75 1.38 4.276 3.788 4.276 2.347 0 3.988-1.604 3.988-4.354V7h4.09v17.643h-4.087v-2.75c-1.15 1.67-2.782 3.107-5.53 3.107-3.991.01-6.304-2.665-6.304-6.773zM191.277 19.77v-9.374h-2.222V6.89h2.222V2h4.013v4.89H200v3.506h-4.71v8.733c0 1.586.796 2.226 2.156 2.226a5.322 5.322 0 0 0 2.486-.608v3.339c-1.1.633-2.35.948-3.614.911-2.952 0-5.041-1.316-5.041-5.228zM148.259 16.077v-.065c0-4.926 4.029-9.012 9.466-9.012 5.438 0 9.44 4.017 9.44 8.956v.065c0 4.9-4.03 8.979-9.502 8.979-5.41-.009-9.404-4.024-9.404-8.923zm14.84 0v-.065c0-3.036-2.25-5.55-5.44-5.55-3.265 0-5.337 2.48-5.337 5.485v.065c0 3.005 2.252 5.52 5.406 5.52 3.287 0 5.37-2.483 5.37-5.455z"
-                ></path>
-                <path
-                  fill="#F57704"
-                  d="M158.209 12c1.508.375 2.723 2.093 2.723 4.023 0 1.741-.975 3.358-2.237 3.977 2.105-.327 3.612-2.148 3.487-4.214-.126-2.065-1.843-3.702-3.973-3.786z"
-                ></path>
-              </g>
-            </svg>
+          <div className="flex items-center h-full py-2 bg-red-500">
+            <Link to="/" className="">
+              <img
+                src="https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/logo-js-full_4ffc995cb339488dc88e.svg"
+                alt=""
+                height={30}
+                width={130}
+              />
+            </Link>
           </div>
-          {/* <div className="flex justify-between"> */}
-          <div className=" flex justify-between ml-4 w-full">
-            {/* nav-links */}
-            <div className="flex font-bold ">
-              {navLinks.map((navLink: any) => {
-                return (
-                  <div className="mx-2.5">
-                    <Link to={navLink.path} className="py-2.5 px-0.5">
-                      {navLink.name}
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-            {/* right-container-starts */}
-            <div className="flex">
-              {/* search-icon */}
-              <div className="relative">
-                <SearchIcon onClick={() => setIsOpen(!isOpen)}>
-                  Search
-                </SearchIcon>
-                <div
-                  className={
-                    isOpen
-                      ? "inline-block absolute right-0 top-7 w-250 p-2.5 bg-white"
-                      : "hidden"
-                  }
+          {/* nav-links */}
+          <div className=" h-full bg-blue-500 flex">
+            {/* childs-start */}
+            <div className="">
+              <div className=" ml-7 inline-block">
+                <Link
+                  to=""
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  onMouseEnter={() => {
+                    console.log("I am hovered");
+                    setIsOpen("solutions");
+                  }}
+                  onMouseLeave={() => {
+                    console.log("Hover End");
+                    setIsOpen("");
+                  }}
                 >
-                  <form
-                    action=""
-                    className={
-                      isTyping
-                        ? "rounded-sm border-2 border-zinc-200 shadow"
-                        : "rounded-sm"
-                    }
-                  >
-                    <input
-                      type="search"
-                      placeholder="Search"
-                      className="p-1 leading-6 outline-none"
-                      onClick={() => setIsTyping(true)}
+                  Solutions
+                  <ChevronDownIcon
+                    className={`ml-2 h-5 w-5 transition-transform
+                     ${
+                       isOpen === "solutions" ? "-rotate-180" : "rotate-0"
+                     } duration-300`}
+                    aria-hidden="true"
+                  />
+                  <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                    {/*  */}
+                    <div
+                      className={`h-[3px] rounded-md bg-orange-500   transition-all ${
+                        isOpen === "solutions" ? "w-full" : "w-0"
+                      }  ui-open: !duration-300`}
                     />
-                  </form>
+                  </div>
+                </Link>
+              </div>
+              {/* on-hover-menu */}
+              <section
+                className={`absolute w-[960px] left-0 right-0 mx-auto z-20 bg-white ${
+                  isOpen === "solutions" ? "flex" : "hidden"
+                }`}
+                onMouseEnter={() => {
+                  console.log("I am hovered");
+                  setIsOpen("solutions");
+                }}
+                onMouseLeave={() => {
+                  console.log("Hover End");
+                  setIsOpen("");
+                }}
+              >
+                {/* bcz-it is going under hero-section therefore adding z-index */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                      Solutions for...
+                    </div>
+                    <div>
+                      {solutionsFor.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                {/* <Dialog
+                {/* second-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                      I want to...
+                    </div>
+                    <div>
+                      {solutionsFor.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* third-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-6">
+                      {/* Solutions for... */}
+                    </div>
+                    <div>
+                      {solutionsRecomended2.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            {/* 2nd-child-features */}
+            <div className=" bg-green-400">
+              <div className=" ml-7 inline-block">
+                <Link
+                  to=""
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  onMouseEnter={() => {
+                    console.log("I am hovered");
+                    setIsOpen("features");
+                    console.log("Matching soltuions");
+                    console.log(isOpen === "solutions");
+                    console.log("Matching features");
+                    console.log(isOpen === "features");
+                  }}
+                  onMouseLeave={() => {
+                    console.log("Hover End");
+                    setIsOpen("");
+                  }}
+                >
+                  Features
+                  <ChevronDownIcon
+                    className={`ui-open:text-black ange-300/70  text-black ml-2 h-5 w-5 transition-transform
+                     ${
+                       isOpen === "features" ? "-rotate-180" : "rotate-0"
+                     } duration-300`}
+                    aria-hidden="true"
+                  />
+                  <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                    {/*  */}
+                    <div
+                      className={`h-[3px] rounded-md bg-orange-500   transition-all ${
+                        isOpen === "features" ? "w-full" : "w-0"
+                      }  ui-open: !duration-300`}
+                    />
+                  </div>
+                </Link>
+              </div>
+              {/* on-hover-menu */}
+              <section
+                className={`absolute w-[960px] left-0 right-0 mx-auto z-20 bg-white ${
+                  isOpen === "features" ? "flex" : "hidden"
+                }`}
+                onMouseEnter={() => {
+                  console.log("I am hovered");
+                  setIsOpen("features");
+                }}
+                onMouseLeave={() => {
+                  console.log("Hover End");
+                  setIsOpen("");
+                }}
+              >
+                {/* bcz-it is going under hero-section therefore adding z-index */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                      Features
+                    </div>
+                    <div>
+                      {features1.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition my-0.5 duration-150 ease-in-out flex py-4 px-2 border border-transparent hover:shadow-[0_0_5px_0_rgba(0,0,0,0.1)]"
+                        >
+                          <img src={item.icon} alt="" />
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* second-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                      I want to...
+                    </div>
+                    <div>
+                      {solutionsFor.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* third-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-6">
+                      {/* Solutions for... */}
+                    </div>
+                    <div>
+                      {solutionsRecomended2.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            {/* 3rd-child */}
+            <div className=" bg-green-400">
+              <div className=" ml-7 inline-block">
+                <Link
+                  to=""
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  onMouseEnter={() => {
+                    console.log("I am hovered");
+                    setIsOpen("pricing");
+                  }}
+                  onMouseLeave={() => {
+                    console.log("Hover End");
+                    setIsOpen("");
+                  }}
+                >
+                  Pricing
+                  <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                    <div
+                      className={`h-[3px] rounded-md bg-orange-500   transition-all ${
+                        isOpen === "pricing" ? "w-full" : "w-0"
+                      }  ui-open: !duration-300`}
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+            {/* 4th-child-features */}
+            <div className=" bg-green-400">
+              <div className=" ml-7 inline-block">
+                <Link
+                  to=""
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  onMouseEnter={() => {
+                    setIsOpen("resources");
+                  }}
+                  onMouseLeave={() => {
+                    console.log("Hover End");
+                    setIsOpen("");
+                  }}
+                >
+                  Resources
+                  <ChevronDownIcon
+                    className={`ui-open:text-black ange-300/70  text-black ml-2 h-5 w-5 transition-transform
+                     ${
+                       isOpen === "resources" ? "-rotate-180" : "rotate-0"
+                     } duration-300`}
+                    aria-hidden="true"
+                  />
+                  <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                    {/*  */}
+                    <div
+                      className={`h-[3px] rounded-md bg-orange-500   transition-all ${
+                        isOpen === "resources" ? "w-full" : "w-0"
+                      }  ui-open: !duration-300`}
+                    />
+                  </div>
+                </Link>
+              </div>
+              {/* on-hover-menu */}
+              <section
+                className={`absolute w-[960px] left-0 right-0 mx-auto z-20 bg-white ${
+                  isOpen === "resources" ? "flex" : "hidden"
+                }`}
+                onMouseEnter={() => {
+                  console.log("I am hovered");
+                  setIsOpen("resources");
+                }}
+                onMouseLeave={() => {
+                  console.log("Hover End");
+                  setIsOpen("");
+                }}
+              >
+                {/* bcz-it is going under hero-section therefore adding z-index */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                      Features
+                    </div>
+                    <div>
+                      {features1.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition my-0.5 duration-150 ease-in-out flex py-4 px-2 border border-transparent hover:shadow-[0_0_5px_0_rgba(0,0,0,0.1)]"
+                        >
+                          <img src={item.icon} alt="" />
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* second-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                      I want to...
+                    </div>
+                    <div>
+                      {solutionsFor.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* third-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col">
+                  <div className="flex flex-col pr-9">
+                    <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-6">
+                      {/* Solutions for... */}
+                    </div>
+                    <div>
+                      {solutionsRecomended2.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            {/* 5th-child */}
+            <div className=" bg-green-400">
+              <div className=" ml-7 inline-block">
+                <Link
+                  to=""
+                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center bg-purple-400"
+                  onMouseEnter={() => {
+                    console.log("I am hovered");
+                    setIsOpen("enterprise");
+                  }}
+                  onMouseLeave={() => {
+                    console.log("Hover End");
+                    setIsOpen("");
+                  }}
+                >
+                  Enterprise
+                  <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                    <div
+                      className={`h-[3px] rounded-md bg-orange-500   transition-all ${
+                        isOpen === "enterprise" ? "w-full" : "w-0"
+                      }  ui-open: !duration-300`}
+                    />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* right-search */}
+        {/* right-container-starts */}
+        <div className="flex">
+          {/* search-icon */}
+          <div className="relative flex items-center">
+            <SearchIcon
+              onClick={() => setIsActive(!isActive)}
+              className={`bg-red-600 cursor-pointer`}
+            >
+              Search
+            </SearchIcon>
+            <div
+              className={
+                isActive
+                  ? "inline-block absolute right-0 top-7 w-250 p-2.5 bg-white"
+                  : "hidden"
+              }
+            >
+              <form
+                action=""
+                className={`rounded border-2 border-zinc-200
+                  ${isTyping ? " shadow" : ""}
+                `}
+              >
+                <input
+                  type="search"
+                  placeholder="Search"
+                  className="p-1 leading-6 outline-none"
+                  onClick={() => setIsTyping(true)}
+                />
+              </form>
+            </div>
+            {/* <Dialog
                   open={isOpen}
                   onClose={() => setIsOpen(false)}
                   className="absolute"
@@ -117,24 +779,22 @@ function Header() {
                     </form>
                   </Dialog.Panel>
                 </Dialog> */}
-              </div>
-              {/* login/signup */}
-              <div className="content-center">
-                <Link to="/login" className="font-bold mx-2.5">
-                  Log In
-                </Link>
-                <Link
-                  to="/login"
-                  className="font-bold mx-2.5 text-white bg-orange-400 shadow-2xl py-2 px-4.5 rounded-sm text-xs"
-                >
-                  Sign up
-                </Link>
-              </div>
-            </div>
           </div>
-          {/* </div> */}
-        </nav>
-      </div>
+          {/* login/signup */}
+          <div className="flex items-center font-extrabold text-[12px]">
+            <Link to="/login" className="text-[14px] !font-bold mx-2.5">
+              Log In
+            </Link>
+            <Link
+              to="/login"
+              className="mx-2.5 text-white bg-orange-400 shadow-2xl py-1.5 px-4.5 rounded-sm text-xs"
+            >
+              Sign up
+            </Link>
+          </div>
+        </div>
+        {/* </div> */}
+      </nav>
     </header>
   );
 }

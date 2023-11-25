@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { Disclosure, Transition } from "@headlessui/react";
-import MinimizeIcon from "@mui/icons-material/Minimize";
-import Icon from "@mui/material/Icon";
-import RemoveIcon from "@mui/icons-material/Remove";
 import "material-icons/iconfont/material-icons.css";
 
 function PricingFAQ() {
@@ -132,9 +129,6 @@ function PricingFAQ() {
                 {({ open }) => (
                   <div
                     className={`w-full text-left  py-[35px] px-7.5 max-w-[1000px] ui-not-open:border-b ui-open:bg-white ui-not-open:bg-transparent ui-open:border mx-auto 
-                      // selectedQuestions.indexOf(indexKey) !== -1
-                      //   ? "!bg-white "
-                      //   : "bg-transparent"
                     `}
                   >
                     <Disclosure.Button
@@ -164,20 +158,6 @@ function PricingFAQ() {
                         >
                           remove
                         </i>
-
-                        {/* <MinimizeIcon
-                          className={`
-                          absolute z-10
-                            ${
-                              open
-                                ? "rotate-90 transform origin-center h-6 w-6"
-                                : "flex items-center justify-center h-6 w-6"
-                            }
-                          `}
-                        />
-                        <MinimizeIcon
-                          className={`${open ? "" : "text-gray-400 "}`}
-                        /> */}
                       </span>
                     </Disclosure.Button>
 
