@@ -6,11 +6,16 @@ import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 function MobileHeader() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   let [isOpen, setIsOpen] = useState("");
   const [heading, setHeading] = useState("");
   const [headingRoute, setHeadingRoute] = useState("");
   return (
+    <>
+    <button onClick={()=>setOpen(true)}>
+    <i className="material-icons pr-3 pl-2">menu</i>
+
+    </button>
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" open={open} onClose={setOpen}>
         <Transition.Child
@@ -235,8 +240,8 @@ function MobileHeader() {
           </div>
         </div>
       </Dialog>
-      {/* </Transition.Root> */}
     </Transition.Root>
+</>
   );
 }
 
