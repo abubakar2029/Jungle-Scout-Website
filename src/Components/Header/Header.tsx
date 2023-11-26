@@ -6,6 +6,284 @@ import { Dialog } from "@headlessui/react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 // import { Fragment } from "react";
+import "material-icons/iconfont/material-icons.css";
+import MobileHeader from "../MobileHeader/MobileHeader";
+
+interface Solution {
+  name: string;
+  href: string;
+  description: string;
+  icon?: string;
+}
+
+
+interface Features {
+  name: string;
+  href: string;
+  icon: string;
+}
+
+
+interface ResourcesNewSellers {
+  name: string;
+  href: string;
+  description: string;
+  updated?: boolean;
+}
+
+interface ResourcesTools {
+  name: string;
+  href: string;
+}
+
+interface ResourcesLearn {
+  name: string;
+  href: string;
+  description?: string;
+  updated?: boolean;
+}
+
+export  const solutionsFor: Solution[] = [
+  {
+    name: "First-time Sellers",
+    href: "##",
+    description:
+      "Everything you need to find a product & start your Amazon business",
+  },
+  {
+    name: "Existing Amazon Sellers",
+    description:
+      "Tools to make managing your business easy, so you can focus on growing it",
+    href: "##",
+  },
+  {
+    href: "##",
+    description:
+      "Insights from the Amazon Marketplace tailored to the world's largest brands",
+    name: "Global Brands and Retailers",
+  },
+];
+
+export const solutionsRecomended: Solution[] = [
+  {
+    name: "Launch My Product",
+    description:
+      "Get your product up and running on Amazon with a successful launch",
+    href: "/",
+  },
+  {
+    href: "/",
+    description:
+      "Gain valuable business insights from your data to make key decisions faster",
+    name: "Leverage My Amazon Data",
+  },
+  {
+    href: "/",
+    name: "Optimize My Product Listing",
+    description:
+      "Make your Amazon listings more profitable and beat the competition",
+  },
+];
+export const solutionsRecomended2: Solution[] = [
+  {
+    href: "/",
+    name: "Get More Reviews",
+    description:
+      "Earn more product reviews — the key to driving traffic and sales",
+  },
+  {
+    href: "/",
+    name: "Streamline My Business",
+    description: "Simplify managing your Amazon business & save time",
+  },
+  {
+    name: "NEW! Get to know AI Assist",
+    description: "Explore the power of AI in even more Jungle Scout tools.",
+    href: "/",
+    icon: "https://www.junglescout.com/wp-content/uploads/2023/09/ai-Icon-small.svg",
+  },
+];
+
+export const ResourcesLearn: ResourcesLearn[] = [
+  {
+    name: "Amazon Advertising Report",
+    href: "/start-selling",
+    description: "Examines advertising campaign data from 2018-2023.",
+  },
+  {
+    name: "Consumer Trends Report",
+    href: "/start-selling",
+    description:
+      "A quarterly study that explores changes in consumer behavior",
+  },
+  {
+    name: "Halloween Shopping Trends",
+    href: "/start-selling",
+    description:
+      "Peek inside our data crypt to see Amazon's top-selling Halloween products",
+  },
+  {
+    name: "State of the Amazon Seller",
+    href: "/start-selling",
+    description: "Annual insights from real Amazon sellers",
+  },
+  {
+    name: "Amazon Prime Day Report",
+    href: "/start-selling",
+    description: "Sales insights & ad campaign data from Prime Day 2023",
+  },
+  {
+    name: "Blog & Amazon News",
+    href: "/start-selling",
+  },
+  {
+    name: "View All Resources",
+    href: "/start-selling",
+  },
+];
+export const companyResources: ResourcesLearn[] = [
+  {
+    name: "About Jungle Scout",
+    href: "/start-selling",
+  },
+  {
+    name: "Careers",
+    href: "/start-selling",
+    description: "Now hiring! View career opportunities",
+  },
+  {
+    name: "Affliate Program",
+    href: "/start-selling",
+    updated: true,
+    description: "Now hiring! View career opportunities",
+  },
+];
+export const communitySupportResources: ResourcesTools[] = [
+  {
+    name: "Help center",
+    href: "/start-selling",
+  },
+  {
+    name: "Contact Support",
+    href: "/start-selling",
+  },
+];
+export const features2: Features[] = [
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-keyword-scout_dc83440bbeb1383e7013.svg",
+    name: "Keyword Scout",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-rank-tracker_ab72d65078991dd848fb.svg",
+    name: "Rank Tracker",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-listing-builder_e113a044dc28eba5bc81.svg",
+    name: "Listing Builder",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-review-automation_20026c92995a0efc6c13.svg",
+    name: "Review Automation",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-sales-analytics_35f407913d472194395f.svg",
+    name: "Sales Analytics",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-ad-analytics_31b7088782ddf5402561.svg",
+    name: "Advertising Analytics",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-alerts_572c16c6faba96ee51b7.svg",
+    name: "Alerts",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-category-trends_38bae27ddb837ec26531.svg",
+    name: "Category Trends",
+    href: "/start-selling",
+  },
+];
+
+export const features1: Features[] = [
+  {
+    name: "Browser Extension",
+    href: "/",
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-extension_0dd32e803e9c94596f44.svg",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-tracker_9f6be6df6fc0cc653f18.svg",
+    name: "Product Tracker",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-opp-finder_a8631af9f3c3a3acd637.svg",
+    name: "Opportuniy Finder",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-database_eb58ee142df1f4ae1c37.svg",
+    name: "Product Database",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-supplier-database_e0f441c8a709ce4e5e09.svg",
+    name: "Supplier Database",
+    href: "/start-selling",
+  },
+  {
+    icon: "",
+    name: "Supplier Database",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-academy_5cff49e0ae3c327c7203.svg",
+    name: "Academy",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-inventory-manager_6e79d2855d5402555766.svg",
+    name: "Inventory manager",
+    href: "/start-selling",
+  },
+  {
+    icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-promotions-campaigns_fc2f7c3ab58a91cb77a1.svg",
+    name: "Promotions",
+    href: "/start-selling",
+  },
+];
+
+export   const resourcesNewSellers: ResourcesNewSellers[] = [
+  {
+    name: "How to Sell on Amazon",
+    href: "/start-selling",
+    updated: true,
+    description: "Get everything you need to know to start selling on Amazon",
+  },
+  {
+    name: "Million Dollar Case Study",
+    href: "/start-selling",
+    description:
+      "Follow along as we launch a product on Amazon, step-by-step",
+  },
+];
+
+export   const ResourcesTools: ResourcesTools[] = [
+  {
+    name: "Profit Calculator",
+    href: "/start-selling",
+  },
+  {
+    name: "Sales Estimator",
+    href: "/start-selling",
+  },
+];
 
 function Header() {
   let navLinks = [
@@ -30,270 +308,8 @@ function Header() {
       path: "/enterprise",
     },
   ];
-  interface Solution {
-    name: string;
-    href: string;
-    description: string;
-    icon?: string;
-  }
-  const solutionsFor: Solution[] = [
-    {
-      name: "First-time Sellers",
-      href: "##",
-      description:
-        "Everything you need to find a product & start your Amazon business",
-    },
-    {
-      name: "Existing Amazon Sellers",
-      description:
-        "Tools to make managing your business easy, so you can focus on growing it",
-      href: "##",
-    },
-    {
-      href: "##",
-      description:
-        "Insights from the Amazon Marketplace tailored to the world's largest brands",
-      name: "Global Brands and Retailers",
-    },
-  ];
-  const solutionsRecomended: Solution[] = [
-    {
-      name: "Launch My Product",
-      description:
-        "Get your product up and running on Amazon with a successful launch",
-      href: "/",
-    },
-    {
-      href: "/",
-      description:
-        "Gain valuable business insights from your data to make key decisions faster",
-      name: "Leverage My Amazon Data",
-    },
-    {
-      href: "/",
-      name: "Optimize My Product Listing",
-      description:
-        "Make your Amazon listings more profitable and beat the competition",
-    },
-  ];
-  const solutionsRecomended2: Solution[] = [
-    {
-      href: "/",
-      name: "Get More Reviews",
-      description:
-        "Earn more product reviews — the key to driving traffic and sales",
-    },
-    {
-      href: "/",
-      name: "Streamline My Business",
-      description: "Simplify managing your Amazon business & save time",
-    },
-    {
-      name: "NEW! Get to know AI Assist",
-      description: "Explore the power of AI in even more Jungle Scout tools.",
-      href: "/",
-      icon: "https://www.junglescout.com/wp-content/uploads/2023/09/ai-Icon-small.svg",
-    },
-  ];
-  interface Features {
-    name: string;
-    href: string;
-    icon: string;
-  }
-  const features1: Features[] = [
-    {
-      name: "Browser Extension",
-      href: "/",
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-extension_0dd32e803e9c94596f44.svg",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-tracker_9f6be6df6fc0cc653f18.svg",
-      name: "Product Tracker",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-opp-finder_a8631af9f3c3a3acd637.svg",
-      name: "Opportuniy Finder",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-database_eb58ee142df1f4ae1c37.svg",
-      name: "Product Database",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-supplier-database_e0f441c8a709ce4e5e09.svg",
-      name: "Supplier Database",
-      href: "/start-selling",
-    },
-    {
-      icon: "",
-      name: "Supplier Database",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-academy_5cff49e0ae3c327c7203.svg",
-      name: "Academy",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-inventory-manager_6e79d2855d5402555766.svg",
-      name: "Inventory manager",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-promotions-campaigns_fc2f7c3ab58a91cb77a1.svg",
-      name: "Promotions",
-      href: "/start-selling",
-    },
-  ];
-  const features2: Features[] = [
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-keyword-scout_dc83440bbeb1383e7013.svg",
-      name: "Keyword Scout",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-rank-tracker_ab72d65078991dd848fb.svg",
-      name: "Rank Tracker",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-listing-builder_e113a044dc28eba5bc81.svg",
-      name: "Listing Builder",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-review-automation_20026c92995a0efc6c13.svg",
-      name: "Review Automation",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-sales-analytics_35f407913d472194395f.svg",
-      name: "Sales Analytics",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-ad-analytics_31b7088782ddf5402561.svg",
-      name: "Advertising Analytics",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-alerts_572c16c6faba96ee51b7.svg",
-      name: "Alerts",
-      href: "/start-selling",
-    },
-    {
-      icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-category-trends_38bae27ddb837ec26531.svg",
-      name: "Category Trends",
-      href: "/start-selling",
-    },
-  ];
-  interface ResourcesNewSellers {
-    name: string;
-    href: string;
-    description: string;
-    updated?: boolean;
-  }
-  const resourcesNewSellers: ResourcesNewSellers[] = [
-    {
-      name: "How to Sell on Amazon",
-      href: "/start-selling",
-      updated: true,
-      description: "Get everything you need to know to start selling on Amazon",
-    },
-    {
-      name: "Million Dollar Case Study",
-      href: "/start-selling",
-      description:
-        "Follow along as we launch a product on Amazon, step-by-step",
-    },
-  ];
-  interface ResourcesTools {
-    name: string;
-    href: string;
-  }
-  const ResourcesTools: ResourcesTools[] = [
-    {
-      name: "Profit Calculator",
-      href: "/start-selling",
-    },
-    {
-      name: "Sales Estimator",
-      href: "/start-selling",
-    },
-  ];
 
-  interface ResourcesLearn {
-    name: string;
-    href: string;
-    description?: string;
-    updated?: boolean;
-  }
-  const ResourcesLearn: ResourcesLearn[] = [
-    {
-      name: "Amazon Advertising Report",
-      href: "/start-selling",
-      description: "Examines advertising campaign data from 2018-2023.",
-    },
-    {
-      name: "Consumer Trends Report",
-      href: "/start-selling",
-      description:
-        "A quarterly study that explores changes in consumer behavior",
-    },
-    {
-      name: "Halloween Shopping Trends",
-      href: "/start-selling",
-      description:
-        "Peek inside our data crypt to see Amazon's top-selling Halloween products",
-    },
-    {
-      name: "State of the Amazon Seller",
-      href: "/start-selling",
-      description: "Annual insights from real Amazon sellers",
-    },
-    {
-      name: "Amazon Prime Day Report",
-      href: "/start-selling",
-      description: "Sales insights & ad campaign data from Prime Day 2023",
-    },
-    {
-      name: "Blog & Amazon News",
-      href: "/start-selling",
-    },
-    {
-      name: "View All Resources",
-      href: "/start-selling",
-    },
-  ];
-  const companyResources: ResourcesLearn[] = [
-    {
-      name: "About Jungle Scout",
-      href: "/start-selling",
-    },
-    {
-      name: "Careers",
-      href: "/start-selling",
-      description: "Now hiring! View career opportunities",
-    },
-    {
-      name: "Affliate Program",
-      href: "/start-selling",
-      updated: true,
-      description: "Now hiring! View career opportunities",
-    },
-  ];
-  const communitySupportResources: ResourcesTools[] = [
-    {
-      name: "Help center",
-      href: "/start-selling",
-    },
-    {
-      name: "Contact Support",
-      href: "/start-selling",
-    },
-  ];
+
   // searchbar-dialog
   let [referenceElement, setReferenceElement] = useState();
 
@@ -304,7 +320,7 @@ function Header() {
   function SearchDialog() {}
   return (
     <header>
-      <nav className="flex items-center justify-between xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w[720px] sm:max-w-[540px] w-full mx-auto px-4.5  min-h-[60px]">
+      <nav className="flex items-center justify-between xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-4.5  min-h-[60px]">
         <div className="flex ">
           {/* company-logo */}
           <div className="flex items-center h-full py-2">
@@ -318,13 +334,13 @@ function Header() {
             </Link>
           </div>
           {/* nav-links */}
-          <div className=" h-full flex">
+          <div className=" h-full flex max-[992px]:hidden">
             {/* childs-start */}
             <div className="">
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0  inline-flex justify-center text-[14px] font-bold"
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("solutions");
@@ -445,7 +461,7 @@ function Header() {
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold  inline-flex justify-center "
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("features");
@@ -567,8 +583,8 @@ function Header() {
             <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
-                  to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
+                  to="/pricing"
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold  inline-flex justify-center "
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("pricing");
@@ -594,7 +610,7 @@ function Header() {
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold inline-flex justify-center "
                   onMouseEnter={() => {
                     setIsOpen("resources");
                   }}
@@ -712,7 +728,7 @@ function Header() {
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-2.5 min-[1200px]:ml-0  inline-flex justify-center "
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold inline-flex justify-center "
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("enterprise");
@@ -738,7 +754,7 @@ function Header() {
 
         {/* right-search */}
         {/* right-container-starts */}
-        <div className="flex">
+        <div className="flex max-[992px]:hidden">
           {/* search-icon */}
           <div className="relative flex items-center">
             <SearchIcon
@@ -787,13 +803,14 @@ function Header() {
             </Link>
             <Link
               to="/login"
-              className="mx-2.5 text-white bg-orange-400 shadow-2xl py-1.5 px-4.5 rounded-sm text-xs"
+              className="mx-2.5 text-white bg-orange-400 hover:shadow-[0_0_5px_3px_rgba(0,0,0,0.15)] transition-shadow duration-300 focus:ring focus:ring-orange-300 py-1.5 px-4.5 rounded-sm text-xs"
             >
               Sign up
             </Link>
           </div>
         </div>
-        {/* </div> */}
+        {/* mobile-menu */}
+       <MobileHeader/>
       </nav>
     </header>
   );

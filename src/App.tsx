@@ -19,18 +19,20 @@ import FeaturespageHeader from "./Components/FeaturespageHeader/FeaturespageHead
 import TextImageRight from "./Components/TextImageRight/TextImageRight";
 import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
 import Features from "./Pages/Features/Features";
+import Example from "./Pages/Temp2/Temp2";
 
 function App() {
   return (
     // <div>
     <BrowserRouter>
       <Header />
-      <div className="relative top-[60px]">
+      <div className="relative">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/pkg" element={<PaymentOptions />} />
           <Route path="/t" element={<Temp />} />
+          <Route path="/s" element={<Example/>} />
           <Route path="/features/:pID" element={<Features />} />
           <Route path="/t2" element={<BrowserExtension />} />
         </Routes>
