@@ -14,15 +14,14 @@ interface Solution {
   href: string;
   description: string;
   icon?: string;
+  new?: boolean;
 }
-
 
 interface Features {
   name: string;
   href: string;
   icon: string;
 }
-
 
 interface ResourcesNewSellers {
   name: string;
@@ -43,7 +42,7 @@ interface ResourcesLearn {
   updated?: boolean;
 }
 
-export  const solutionsFor: Solution[] = [
+export const solutionsFor: Solution[] = [
   {
     name: "First-time Sellers",
     href: "##",
@@ -100,6 +99,7 @@ export const solutionsRecomended2: Solution[] = [
     name: "NEW! Get to know AI Assist",
     description: "Explore the power of AI in even more Jungle Scout tools.",
     href: "/",
+    new: true,
     icon: "https://www.junglescout.com/wp-content/uploads/2023/09/ai-Icon-small.svg",
   },
 ];
@@ -113,8 +113,7 @@ export const ResourcesLearn: ResourcesLearn[] = [
   {
     name: "Consumer Trends Report",
     href: "/start-selling",
-    description:
-      "A quarterly study that explores changes in consumer behavior",
+    description: "A quarterly study that explores changes in consumer behavior",
   },
   {
     name: "Halloween Shopping Trends",
@@ -259,7 +258,7 @@ export const features1: Features[] = [
   },
 ];
 
-export   const resourcesNewSellers: ResourcesNewSellers[] = [
+export const resourcesNewSellers: ResourcesNewSellers[] = [
   {
     name: "How to Sell on Amazon",
     href: "/start-selling",
@@ -269,12 +268,11 @@ export   const resourcesNewSellers: ResourcesNewSellers[] = [
   {
     name: "Million Dollar Case Study",
     href: "/start-selling",
-    description:
-      "Follow along as we launch a product on Amazon, step-by-step",
+    description: "Follow along as we launch a product on Amazon, step-by-step",
   },
 ];
 
-export   const ResourcesTools: ResourcesTools[] = [
+export const ResourcesTools: ResourcesTools[] = [
   {
     name: "Profit Calculator",
     href: "/start-selling",
@@ -308,7 +306,6 @@ function Header() {
       path: "/enterprise",
     },
   ];
-
 
   // searchbar-dialog
   let [referenceElement, setReferenceElement] = useState();
@@ -810,7 +807,9 @@ function Header() {
           </div>
         </div>
         {/* mobile-menu */}
-       <MobileHeader/>
+        <div className="block min-[992px]:hidden">
+          <MobileHeader />
+        </div>
       </nav>
     </header>
   );

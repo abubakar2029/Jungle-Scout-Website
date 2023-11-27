@@ -23,7 +23,6 @@ import Example from "./Pages/Temp2/Temp2";
 
 function App() {
   return (
-    // <div>
     <BrowserRouter>
       <Header />
       <div className="relative">
@@ -39,7 +38,6 @@ function App() {
       </div>
       <Footer />
     </BrowserRouter>
-    // </div>
   );
 }
 
