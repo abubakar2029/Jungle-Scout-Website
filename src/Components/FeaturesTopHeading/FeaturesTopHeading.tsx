@@ -10,7 +10,7 @@ function FeaturesTopHeading(props: any) {
           className="font-extrabold text-center mb-2 block"
           style={{ fontSize: `calc(1.325rem + .9vw)` }}
         >
-          {props1.heading}
+          What is {props1.heading} ?
         </h1>
         <p className="mb-4 leading-6 px-3 text-center block">{props1.text}</p>
       </section>

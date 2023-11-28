@@ -8,6 +8,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 // import { Fragment } from "react";
 import "material-icons/iconfont/material-icons.css";
 import MobileHeader from "../MobileHeader/MobileHeader";
+import { FeatureActions } from "../../ActionTypes";
 
 interface Solution {
   name: string;
@@ -212,8 +213,8 @@ export const features2: Features[] = [
 
 export const features1: Features[] = [
   {
-    name: "Browser Extension",
-    href: "/",
+    name: FeatureActions.BROWSER_EXTENSION,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-extension_0dd32e803e9c94596f44.svg",
   },
   {
@@ -233,11 +234,6 @@ export const features1: Features[] = [
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-supplier-database_e0f441c8a709ce4e5e09.svg",
-    name: "Supplier Database",
-    href: "/start-selling",
-  },
-  {
-    icon: "",
     name: "Supplier Database",
     href: "/start-selling",
   },

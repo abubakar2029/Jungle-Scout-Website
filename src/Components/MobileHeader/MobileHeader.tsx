@@ -19,6 +19,7 @@ function MobileHeader() {
   let [isOpen, setIsOpen] = useState("");
   const [heading, setHeading] = useState("");
   const [headingRoute, setHeadingRoute] = useState("");
+  const [uiOpen, setUiOpen] = useState(false);
 
   return (
     <>
@@ -131,7 +132,7 @@ function MobileHeader() {
                         {/* 1st-nav-link */}
                         <Link
                           to=""
-                          className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between"
+                          className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between leading-[0]"
                           onMouseEnter={() => {
                             console.log("I am hovered");
                             setIsOpen("solutions");
@@ -402,12 +403,12 @@ function MobileHeader() {
                             <div>
                               <Disclosure>
                                 <div
-                                  className={`w-full text-left  py-[35px] max-w-[1000px] border-b border-y-gray-300
-                    `}
+                                  className={`w-full text-left  py-[35px] max-w-[1000px] border-b border-y-gray-300`}
                                 >
                                   <Disclosure.Button
-                                    className=" w-full text-left gap-x-1 flex justify-between "
-                                    onFocus={() => {
+                                    className="text-left flex justify-between "
+                                    onClick={() => {
+                                      setUiOpen(!uiOpen)
                                       // let index = selectedQuestions.findIndex(
                                       //   (question) => question === indexKey
                                       // );
@@ -417,43 +418,44 @@ function MobileHeader() {
                                       //     indexKey,
                                       //   ]);
                                       // }
-                                      // console.log(indexKey, open);
-                                      // console.log("hover", indexKey);
                                     }}
                                   >
-                                    <figure>
-                                      <img
-                                        src="https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-js_f3e3620a030548d09c1f.svg"
-                                        alt=""
-                                        className="!w-6 !h-6"
-                                      />
-                                    </figure>
-                                    <div className="pl-4">
-                                      <h1 className="font-extrabold">
-                                        Jungle Scout
-                                      </h1>
-                                      <p className="pt-1">
-                                        Web-based software suite to start & grow
-                                        your Amazon business
-                                      </p>
+                                    <div className="flex">
+                                      <figure className="basis-[20%]">
+                                        <img
+                                          src="https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-js_f3e3620a030548d09c1f.svg"
+                                          alt=""
+                                          className="!w-6 !h-6"
+                                        />
+                                      </figure>
+                                      <div className="pl-4">
+                                        <h1 className="font-extrabold leading-3">
+                                          Jungle Scout
+                                        </h1>
+                                        <p className="pt-2 leading-5">
+                                          Web-based software suite to start &
+                                          grow your Amazon business
+                                        </p>
+                                      </div>
                                     </div>
-                                    <div className="w-14 h-full flex items-center">
-                                      assa
-                                      <span className=" flex justify-center items-center">
-                                        <i className="material-icons !leading-[0]">
-                                          remove
-                                        </i>
-                                        <i
-                                          className={`material-icons !leading-[0] absolute transition-transform duration-500 z-10 ${
-                                            open
-                                              ? "rotate-90 transform origin-center"
-                                              : ""
-                                          }`}
-                                        >
-                                          remove
-                                        </i>
-                                      </span>
-                                    </div>
+                                    {/* <div className="w-14 bg-blue-500 flex items-center my-auto"> */}
+                                    <span className=" flex justify-center items-center my-auto">
+                                      <i className="material-icons !leading-[0]">
+                                        remove
+                                      </i>
+                                      <i
+                                        className={`material-icons !leading-[0] absolute transition-transform duration-500 z-10
+                                        ${
+                                          uiOpen
+                                            ? "rotate-90 transform origin-center"
+                                            : ""
+                                        }
+                                        `}
+                                      >
+                                        remove
+                                      </i>
+                                    </span>
+                                    {/* </div> */}
                                   </Disclosure.Button>
 
                                   <Transition
