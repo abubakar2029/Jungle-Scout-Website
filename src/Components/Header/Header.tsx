@@ -108,52 +108,52 @@ export const solutionsRecomended2: Solution[] = [
 export const ResourcesLearn: ResourcesLearn[] = [
   {
     name: "Amazon Advertising Report",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     description: "Examines advertising campaign data from 2018-2023.",
   },
   {
     name: "Consumer Trends Report",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     description: "A quarterly study that explores changes in consumer behavior",
   },
   {
     name: "Halloween Shopping Trends",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     description:
       "Peek inside our data crypt to see Amazon's top-selling Halloween products",
   },
   {
     name: "State of the Amazon Seller",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     description: "Annual insights from real Amazon sellers",
   },
   {
     name: "Amazon Prime Day Report",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     description: "Sales insights & ad campaign data from Prime Day 2023",
   },
   {
     name: "Blog & Amazon News",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
   },
   {
     name: "View All Resources",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
   },
 ];
 export const companyResources: ResourcesLearn[] = [
   {
     name: "About Jungle Scout",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
   },
   {
     name: "Careers",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     description: "Now hiring! View career opportunities",
   },
   {
     name: "Affliate Program",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     updated: true,
     description: "Now hiring! View career opportunities",
   },
@@ -161,53 +161,53 @@ export const companyResources: ResourcesLearn[] = [
 export const communitySupportResources: ResourcesTools[] = [
   {
     name: "Help center",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
   },
   {
     name: "Contact Support",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
   },
 ];
 export const features2: Features[] = [
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-keyword-scout_dc83440bbeb1383e7013.svg",
     name: "Keyword Scout",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.KEYWORD_SCOUT}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-rank-tracker_ab72d65078991dd848fb.svg",
     name: "Rank Tracker",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.RANK_TRACKER}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-listing-builder_e113a044dc28eba5bc81.svg",
     name: "Listing Builder",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.LISTING_BUILDER}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-review-automation_20026c92995a0efc6c13.svg",
     name: "Review Automation",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.REVIEW_AUTOMATION}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-sales-analytics_35f407913d472194395f.svg",
     name: "Sales Analytics",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.SALES_ANALYTICS}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-ad-analytics_31b7088782ddf5402561.svg",
     name: "Advertising Analytics",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.ADVERTISING_ANALYTICS}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-alerts_572c16c6faba96ee51b7.svg",
     name: "Alerts",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.ALERTS}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-category-trends_38bae27ddb837ec26531.svg",
     name: "Category Trends",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
   },
 ];
 
@@ -220,50 +220,50 @@ export const features1: Features[] = [
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-tracker_9f6be6df6fc0cc653f18.svg",
     name: "Product Tracker",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.PRODUCT_TRACKER}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-opp-finder_a8631af9f3c3a3acd637.svg",
     name: "Opportuniy Finder",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.OPPORTUNITY_FINDER}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-database_eb58ee142df1f4ae1c37.svg",
     name: "Product Database",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.PRODUCT_DATABASE}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-supplier-database_e0f441c8a709ce4e5e09.svg",
     name: "Supplier Database",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.SUPPLIER_DATABASE}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-academy_5cff49e0ae3c327c7203.svg",
     name: "Academy",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.ACADEMY}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-inventory-manager_6e79d2855d5402555766.svg",
     name: "Inventory manager",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.INVENTORY_MANGER}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-promotions-campaigns_fc2f7c3ab58a91cb77a1.svg",
     name: "Promotions",
-    href: "/start-selling",
+    href: `/features/${FeatureActions.PROMOTIONS}`,
   },
 ];
 
 export const resourcesNewSellers: ResourcesNewSellers[] = [
   {
     name: "How to Sell on Amazon",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     updated: true,
     description: "Get everything you need to know to start selling on Amazon",
   },
   {
     name: "Million Dollar Case Study",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
     description: "Follow along as we launch a product on Amazon, step-by-step",
   },
 ];
@@ -271,11 +271,11 @@ export const resourcesNewSellers: ResourcesNewSellers[] = [
 export const ResourcesTools: ResourcesTools[] = [
   {
     name: "Profit Calculator",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
   },
   {
     name: "Sales Estimator",
-    href: "/start-selling",
+    href: `/features/${featureactions.browser_extension}`,
   },
 ];
 
