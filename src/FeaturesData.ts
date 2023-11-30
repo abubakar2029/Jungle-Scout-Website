@@ -24,6 +24,7 @@ interface Features {
   Info: FeatureInfo[];
 }
 export const FeaturePages: Features[] = [
+  // Sales Analytics
   {
     name: FeatureActions.SALES_ANALYTICS,
     Header: {
@@ -60,6 +61,7 @@ export const FeaturePages: Features[] = [
       },
     ],
   },
+  // Listing builder
   {
     name: FeatureActions.LISTING_BUILDER,
     Header: {

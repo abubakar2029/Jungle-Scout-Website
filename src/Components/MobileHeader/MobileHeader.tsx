@@ -43,7 +43,7 @@ function MobileHeader() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-400/100 bg-opacity-75 transition-opacity" />
+            <div className="fixed inset-0 bg-zinc-400 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
           {/* main-container */}
@@ -51,10 +51,10 @@ function MobileHeader() {
             <div className="pointer-events-none flex fixed inset-y-0 right-0  max-w-full pl-10">
               <Transition.Child
                 as={Fragment}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
+                enter="transform transition ease-in-out duration-75 sm:duration-150"
                 enterFrom="translate-x-full"
                 enterTo="translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
+                leave="transform transition ease-in-out duration-75 sm:duration-150"
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
@@ -408,7 +408,7 @@ function MobileHeader() {
                                   <Disclosure.Button
                                     className="text-left flex justify-between "
                                     onClick={() => {
-                                      setUiOpen(!uiOpen)
+                                      setUiOpen(!uiOpen);
                                       // let index = selectedQuestions.findIndex(
                                       //   (question) => question === indexKey
                                       // );
@@ -467,12 +467,16 @@ function MobileHeader() {
                                     leaveTo="transform scale-95 opacity-0"
                                   >
                                     <Disclosure.Panel className={`mt-4`}>
-                                      {features1.map((item,index) => {
+                                      {features1.map((item, index) => {
                                         return (
                                           <Link
-                                          key={index}
+                                            key={index}
                                             to={item.href}
                                             className="flex items-center py-3 pl-4.5"
+                                            onClick={() => {
+                                              setOpen(false);
+                                              setSubMenuOpen(false);
+                                            }}
                                           >
                                             <img
                                               src={item.icon}

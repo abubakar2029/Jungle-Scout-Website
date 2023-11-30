@@ -5,9 +5,14 @@ function FeaturespageHeader(props: any) {
   return (
     <div
       className="py-4.5 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `url(${props1.bgImg})`,
-      }}
+      
+      style={
+        props1.bgImg
+          ? {
+              backgroundImage: `url(${props1.bgImg})`,
+            }
+          : {}
+      }
     >
       <section className="mx-auto mb-6 px-4.5 py-11 xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] max-md:flex-col w-full flex justify-between">
         {/* first-div-content */}
