@@ -108,52 +108,52 @@ export const solutionsRecomended2: Solution[] = [
 export const ResourcesLearn: ResourcesLearn[] = [
   {
     name: "Amazon Advertising Report",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     description: "Examines advertising campaign data from 2018-2023.",
   },
   {
     name: "Consumer Trends Report",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     description: "A quarterly study that explores changes in consumer behavior",
   },
   {
     name: "Halloween Shopping Trends",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     description:
       "Peek inside our data crypt to see Amazon's top-selling Halloween products",
   },
   {
     name: "State of the Amazon Seller",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     description: "Annual insights from real Amazon sellers",
   },
   {
     name: "Amazon Prime Day Report",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     description: "Sales insights & ad campaign data from Prime Day 2023",
   },
   {
     name: "Blog & Amazon News",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
   {
     name: "View All Resources",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
 ];
 export const companyResources: ResourcesLearn[] = [
   {
     name: "About Jungle Scout",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
   {
     name: "Careers",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     description: "Now hiring! View career opportunities",
   },
   {
     name: "Affliate Program",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
     updated: true,
     description: "Now hiring! View career opportunities",
   },
@@ -161,11 +161,11 @@ export const companyResources: ResourcesLearn[] = [
 export const communitySupportResources: ResourcesTools[] = [
   {
     name: "Help center",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
   {
     name: "Contact Support",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
 ];
 export const features2: Features[] = [
@@ -257,13 +257,13 @@ export const features1: Features[] = [
 export const resourcesNewSellers: ResourcesNewSellers[] = [
   {
     name: "How to Sell on Amazon",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
     updated: true,
     description: "Get everything you need to know to start selling on Amazon",
   },
   {
     name: "Million Dollar Case Study",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
     description: "Follow along as we launch a product on Amazon, step-by-step",
   },
 ];
@@ -271,11 +271,11 @@ export const resourcesNewSellers: ResourcesNewSellers[] = [
 export const ResourcesTools: ResourcesTools[] = [
   {
     name: "Profit Calculator",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
   },
   {
     name: "Sales Estimator",
-    href: `/features/${featureactions.browser_extension}`,
+    href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
   },
 ];
 

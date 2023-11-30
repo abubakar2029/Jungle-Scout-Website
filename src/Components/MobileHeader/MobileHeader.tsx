@@ -304,7 +304,7 @@ function MobileHeader() {
                         </Link>
                       </div>
 
-                      {/* sub-menu-div */}
+                      {/* sub-menu-divs */}
                       <Transition
                         as={`div`}
                         show={subMenuOpen}
@@ -467,9 +467,10 @@ function MobileHeader() {
                                     leaveTo="transform scale-95 opacity-0"
                                   >
                                     <Disclosure.Panel className={`mt-4`}>
-                                      {features1.map((item) => {
+                                      {features1.map((item,index) => {
                                         return (
                                           <Link
+                                          key={index}
                                             to={item.href}
                                             className="flex items-center py-3 pl-4.5"
                                           >

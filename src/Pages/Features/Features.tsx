@@ -7,7 +7,7 @@ import { FeaturePages } from "../../FeaturesData";
 
 function Features() {
   let param = useParams();
-  console.log(param.pID);
+  console.log("Param ID",param.pID);
   let overview = {
     heading:"",
     text:"",
