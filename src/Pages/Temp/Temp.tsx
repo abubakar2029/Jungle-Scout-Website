@@ -69,26 +69,27 @@ const CenterMode = () => {
       <h2>Center Mode</h2>
       <Slider {...settings}>
         {slidesData.map((obj, index) => (
-          <div className="bg-sky-500 px-2 py-3" key={index}>
-            <div className="bg-white !min-h-[295px] px-7.5 py-10">
-              {/* top-Image */}
-              <div className="">
+          <div className="bg-sky-500 px-2 h-[400px] sm:h-[350px] md:h-[300px] lg:h-[250px] py-3" key={index}>
+            <div className="bg-white px-7.5">
+              {/* top-Image-div */}
+              <div className="h-[20%] flex items-end bg-orange-300">
                 <img
                   src={obj.img}
                   alt=""
-                  height={obj.authorImgConfig.height}
-                  className={`max-h-${obj.authorImgConfig.height} !w-${obj.authorImgConfig.width}`}
-                  style={{
-                    maxHeight: `${obj.authorImgConfig.height}px !important`,
-                  }}
+                  // height={obj.authorImgConfig.height}
+                  className={`!max-h-[100%] !w-${obj.authorImgConfig.width}`}
+                  // className={`max-h-${obj.authorImgConfig.height} !max-h-[100%] !w-${obj.authorImgConfig.width}`}
+                  // style={{
+                  //   maxHeight: `${obj.authorImgConfig.height}px !important`,
+                  // }}
                 />
               </div>
               {/* 2nd-div content */}
-              <div className="!h-[144px]">
+              <div className="!h-[60%] bg-green-300">
                 <p className="text-center px-8 mb-6">{obj.text}</p>
               </div>
               {/* last-div-author */}
-              <div className="flex justify-center items-center block">
+              <div className="flex justify-center items-center h-[20%]">
                 <img src={obj.authorImg} alt="" width={62} height={62} />
                 <div className="font-bold text-left pl-2 mb-4">
                   <h3>{obj.name}</h3>
