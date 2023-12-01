@@ -21,6 +21,9 @@ import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
 import Features from "./Pages/Features/Features";
 import Example from "./Pages/Temp2/Temp2";
 import Temp3 from "./Pages/tEMP3/Temp3";
+import TempAnime from "./Pages/TempAnime/TempAnime";
+import MobileHeader from "./Components/MobileHeader/PreviousMobileHeader";
+
 function App() {
   return (
     <BrowserRouter>
@@ -31,8 +34,10 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/pkg" element={<PaymentOptions />} />
           <Route path="/t" element={<Temp />} />
+          <Route path="/tA" element={<MobileHeader />} />
+          <Route path="/tAn" element={<TempAnime />} />
           <Route path="/t3" element={<Temp3 />} />
-          <Route path="/s" element={<Example/>} />
+          <Route path="/s" element={<Example />} />
           <Route path="/features/:pID" element={<Features />} />
           <Route path="/t2" element={<BrowserExtension />} />
         </Routes>

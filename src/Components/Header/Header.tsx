@@ -9,7 +9,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import "material-icons/iconfont/material-icons.css";
 import MobileHeader from "../MobileHeader/MobileHeader";
 import { FeatureActions } from "../../ActionTypes";
-
+import TempAnime from "../../Pages/TempAnime/TempAnime"
 interface Solution {
   name: string;
   href: string;
