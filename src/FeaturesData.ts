@@ -1,5 +1,6 @@
 import { FeatureActions } from "./ActionTypes";
 
+import * as Types from "./Types";
 interface heroSection {
   bgImg: string;
   heroImg: string;
@@ -23,10 +24,11 @@ interface Features {
   Overview: string;
   Info: FeatureInfo[];
 }
-export const FeaturePages: Features[] = [
+export const FeaturePages: Types.FeaturesPage[] = [
   // Sales Analytics
   {
-    name: FeatureActions.SALES_ANALYTICS,
+    name: "Sales Analytics",
+    pageName: FeatureActions.SALES_ANALYTICS,
     Header: {
       bgImg:
         "https://www.junglescout.com/wp-content/uploads/2019/10/header-bg-stripes-orange.jpg",
@@ -63,7 +65,8 @@ export const FeaturePages: Features[] = [
   },
   // Listing builder
   {
-    name: FeatureActions.LISTING_BUILDER,
+    name: "Listing Builder",
+    pageName: FeatureActions.LISTING_BUILDER,
     Header: {
       bgImg:
         "https://www.junglescout.com/wp-content/uploads/2020/03/group-4@2x.png",
@@ -96,7 +99,8 @@ export const FeaturePages: Features[] = [
   },
   // PRODUCT TRACKER
   {
-    name: FeatureActions.PRODUCT_TRACKER,
+    name: "Product Tracker",
+    pageName: FeatureActions.PRODUCT_TRACKER,
     Header: {
       bgImg:
         "https://www.junglescout.com/wp-content/uploads/2019/10/header-bg-stripes-orange.jpg",
@@ -133,7 +137,8 @@ export const FeaturePages: Features[] = [
   },
   // PRODUCT DATABASE
   {
-    name: FeatureActions.PRODUCT_DATABASE,
+    name:"Product Database",
+    pageName: FeatureActions.PRODUCT_DATABASE,
     Header: {
       bgImg:
         "https://www.junglescout.com/wp-content/uploads/2019/07/group-7.png",
@@ -170,7 +175,8 @@ export const FeaturePages: Features[] = [
   },
   // BROWSER EXTENSION
   {
-    name:FeatureActions.BROWSER_EXTENSION,
+    name:"Browser Extension",
+    pageName: FeatureActions.BROWSER_EXTENSION,
     Header: {
       bgImg:
         "https://www.junglescout.com/wp-content/uploads/2019/10/header-bg-stripes-orange.jpg",
@@ -228,5 +234,5 @@ export const FeaturePages: Features[] = [
         img: "https://www.junglescout.com/wp-content/uploads/2020/06/extension-feature-bulkreview-1024x679.png",
       },
     ],
-  }
+  },
 ];

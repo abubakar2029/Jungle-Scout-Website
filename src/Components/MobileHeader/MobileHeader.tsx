@@ -9,6 +9,7 @@ import {
   solutionsRecomended2,
   features1,
   features2,
+  resourcesNewSellers,
 } from "../../Components/Header/Header";
 import { NavbarActions } from "../../ActionTypes";
 
@@ -19,7 +20,6 @@ export default function Example() {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   let [isOpen, setIsOpen] = useState("");
   const [uiOpen, setUiOpen] = useState(false);
-
 
   return (
     <>
@@ -55,7 +55,6 @@ export default function Example() {
                   leaveTo="translate-x-full"
                 >
                   <Dialog.Panel className="pointer-events-auto relative w-screen max-w-md bg-white">
-
                     {/* Header */}
                     <div className="flex justify-between py-3 px-4 border-b border-neutral-300">
                       <Link
@@ -117,6 +116,7 @@ export default function Example() {
                           subMenuOpen ? "overflow-y-auto" : ""
                         } `}
                       >
+                        {/* Nav-Links */}
                         <div className="flex flex-col">
                           {/* 1st-nav-link */}
                           <Link
@@ -212,7 +212,7 @@ export default function Example() {
                               />
                             </div>
                           </Link>
-                          {/* 4th-nav-link */}
+                          {/* Resources */}
                           <Link
                             to=""
                             className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between"
@@ -225,6 +225,7 @@ export default function Example() {
                             }}
                             onClick={() => {
                               setHeading(NavbarActions.RESOURCES);
+                              setSubMenuOpen(true);
                             }}
                           >
                             Resources
@@ -388,7 +389,13 @@ export default function Example() {
                               </div>
                             </div>
                             {/* FEATURES-SECTION */}
-                            <div>
+                            <div
+                              className={`${
+                                heading === NavbarActions.FEATURES
+                                  ? "block"
+                                  : "hidden"
+                              }`}
+                            >
                               <div>
                                 <Disclosure>
                                   <div
@@ -506,6 +513,101 @@ export default function Example() {
                                   Learn more
                                 </Link>
                               </div>
+                            </div>
+                            {/* RESOURCES_SECTION */}
+                            <div
+                              className={`${
+                                heading === NavbarActions.RESOURCES
+                                  ? "block"
+                                  : "hidden"
+                              }`}
+                            >
+                              <Disclosure>
+                                <div
+                                  className={`w-full text-left  py-[35px] max-w-[1000px] border-b border-y-gray-300`}
+                                >
+                                  <Disclosure.Button
+                                    className="text-left flex justify-between "
+                                    onClick={() => {
+                                      setUiOpen(!uiOpen);
+                                      // let index = selectedQuestions.findIndex(
+                                      //   (question) => question === indexKey
+                                      // );
+                                      // if (index === -1) {
+                                      //   setSelectedQuestion(() => [
+                                      //     ...selectedQuestions,
+                                      //     indexKey,
+                                      //   ]);
+                                      // }
+                                    }}
+                                  >
+                                    <div className="flex">
+                                      <div className="pl-4">
+                                        <h1 className="font-extrabold leading-3">
+                                          Learn
+                                        </h1>
+                                        <p className="pt-2 leading-5">
+                                          Web-based software suite to start &
+                                          grow your Amazon business
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <span className=" flex justify-center items-center my-auto">
+                                      <i className="material-icons !leading-[0]">
+                                        remove
+                                      </i>
+                                      <i
+                                        className={`material-icons !leading-[0] absolute transition-transform duration-500 z-10
+                                        ${
+                                          uiOpen
+                                            ? "rotate-90 transform origin-center"
+                                            : ""
+                                        }
+                                        `}
+                                      >
+                                        remove
+                                      </i>
+                                    </span>
+                                  </Disclosure.Button>
+
+                                  <Transition
+                                    enter="transition duration-100 ease-out"
+                                    enterFrom="transform scale-95 opacity-0"
+                                    enterTo="transform scale-100 opacity-100"
+                                    leave="transition duration-75 ease-out"
+                                    leaveFrom="transform scale-100 opacity-100"
+                                    leaveTo="transform scale-95 opacity-0"
+                                  >
+                                    <Disclosure.Panel className={`mt-4`}>
+                                      {resourcesNewSellers.map(
+                                        (item, index) => {
+                                          return (
+                                            <Link
+                                              key={index}
+                                              to={item.href}
+                                              className="flex items-center py-3 pl-4.5"
+                                              onClick={() => {
+                                                setOpen(false);
+                                                setSubMenuOpen(false);
+                                              }}
+                                            >
+                                              {/* <img
+                                              src={item.icon}
+                                              alt=""
+                                              width={16}
+                                              className="!h-[16px]"
+                                            /> */}
+                                              <h3 className="text-[14px] pl-4 font-extrabold">
+                                                {item.name}
+                                              </h3>
+                                            </Link>
+                                          );
+                                        }
+                                      )}
+                                    </Disclosure.Panel>
+                                  </Transition>
+                                </div>
+                              </Disclosure>
                             </div>
                           </div>
                         </Transition>

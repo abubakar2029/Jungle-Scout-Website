@@ -25,3 +25,15 @@ export enum FeatureActions {
   ACADEMY = "Academy",
   CATEGORY_TRENDS = "CategoryTrends",
 }
+
+export enum SolutionsActions {
+  FIRST_TIME_SELLERS = "FirstTimeSellers",
+  EXISTING_AMAZON_SELLERS = "ExistingAmazonSellers",
+  GLOBAL_BRANDS_AND_RETAILERS = "GlobalBrandsAndRetailers",
+  LAUNCH_MY_PRODUCT = "LaunchMyProduct",
+  LEVERAGE_MY_AMAZON_DATA = "LeverageMyAmazonData",
+  OPTIMIZE_MY_PRODUCT_LISTING = "OptimizeMyProductListing",
+  GET_MORE_REVIEWS = "GetMoreReviews",
+  STREAMLINE_MY_BUSINESS = "StreamlineMyBusiness",
+  START_SELLING_ON_AMAZON="StartSellingOnAmazon"
+}

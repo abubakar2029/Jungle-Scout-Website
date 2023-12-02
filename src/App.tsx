@@ -23,6 +23,11 @@ import Example from "./Pages/Temp2/Temp2";
 import Temp3 from "./Pages/tEMP3/Temp3";
 import TempAnime from "./Pages/TempAnime/TempAnime";
 import MobileHeader from "./Components/MobileHeader/PreviousMobileHeader";
+import Solutions from "./Pages/Solutions/Solutions";
+import SolutionsPageHeader from "./Components/SolutionsPageHeader/SolutionsPageHeader";
+import TestimonialCardsStatic from "./Components/TestimonialCardsStatic/TestimonialCardsStatic";
+import { SolutionsActions } from "./ActionTypes";
+import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAmazon";
 
 function App() {
   return (
@@ -39,6 +44,7 @@ function App() {
           <Route path="/t3" element={<Temp3 />} />
           <Route path="/s" element={<Example />} />
           <Route path="/features/:pID" element={<Features />} />
+          <Route path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`} element={<StartSellingOnAmazon />} />
           <Route path="/t2" element={<BrowserExtension />} />
         </Routes>
       </div>

@@ -8,8 +8,13 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 // import { Fragment } from "react";
 import "material-icons/iconfont/material-icons.css";
 import MobileHeader from "../MobileHeader/MobileHeader";
-import { FeatureActions } from "../../ActionTypes";
-import TempAnime from "../../Pages/TempAnime/TempAnime"
+import {
+  FeatureActions,
+  NavbarActions,
+  SolutionsActions,
+} from "../../ActionTypes";
+import TempAnime from "../../Pages/TempAnime/TempAnime";
+import { SolutionPages } from "../../SolutionsData";
 interface Solution {
   name: string;
   href: string;
@@ -46,7 +51,7 @@ interface ResourcesLearn {
 export const solutionsFor: Solution[] = [
   {
     name: "First-time Sellers",
-    href: "##",
+    href: `/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`,
     description:
       "Everything you need to find a product & start your Amazon business",
   },
@@ -449,7 +454,7 @@ function Header() {
                 </div>
               </section>
             </div>
-            {/* 2nd-child-features */}
+            {/* FEATURES */}
             <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
@@ -523,7 +528,7 @@ function Header() {
                   </div>
                 </div>
                 {/* second-33% */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
+                {/* <div className="w-1/3 basis-1/3 flex flex-col">
                   <div className="flex flex-col pr-9">
                     <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
                       I want to...
@@ -545,14 +550,14 @@ function Header() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* third-33% */}
                 <div className="w-1/3 basis-1/3 flex flex-col">
                   <div className="flex flex-col pr-9">
                     <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-6">
                       {/* Solutions for... */}
                     </div>
-                    <div>
+                    {/* <div>
                       {solutionsRecomended2.map((item) => (
                         <a
                           key={item.name}
@@ -567,12 +572,12 @@ function Header() {
                           </p>
                         </a>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </section>
             </div>
-            {/* 3rd-child */}
+            {/* PRICING */}
             <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
@@ -598,14 +603,14 @@ function Header() {
                 </Link>
               </div>
             </div>
-            {/* 4th-child-features */}
+            {/* RESOURCES */}
             <div className=" ">
               <div className=" ml-7 inline-block">
                 <Link
                   to=""
                   className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold inline-flex justify-center "
                   onMouseEnter={() => {
-                    setIsOpen("resources");
+                    setIsOpen(NavbarActions.RESOURCES);
                   }}
                   onMouseLeave={() => {
                     console.log("Hover End");
@@ -616,7 +621,9 @@ function Header() {
                   <ChevronDownIcon
                     className={`ui-open:text-black ange-300/70  text-black ml-2 h-5 w-5 transition-transform
                      ${
-                       isOpen === "resources" ? "-rotate-180" : "rotate-0"
+                       isOpen === NavbarActions.RESOURCES
+                         ? "-rotate-180"
+                         : "rotate-0"
                      } duration-300`}
                     aria-hidden="true"
                   />
@@ -624,7 +631,7 @@ function Header() {
                     {/*  */}
                     <div
                       className={`h-[3px] rounded-md bg-orange-500   transition-all ${
-                        isOpen === "resources" ? "w-full" : "w-0"
+                        isOpen === NavbarActions.RESOURCES ? "w-full" : "w-0"
                       }  ui-open: !duration-300`}
                     />
                   </div>
@@ -633,7 +640,7 @@ function Header() {
               {/* on-hover-menu */}
               <section
                 className={`absolute w-[960px] left-0 right-0 mx-auto z-20 bg-white ${
-                  isOpen === "resources" ? "flex" : "hidden"
+                  isOpen === NavbarActions.RESOURCES ? "flex" : "hidden"
                 }`}
                 onMouseEnter={() => {
                   console.log("I am hovered");
