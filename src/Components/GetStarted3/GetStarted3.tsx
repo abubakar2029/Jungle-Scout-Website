@@ -9,7 +9,10 @@ function GetStarted3(props: any) {
       className="bg-cover bg-center bg-no-repeat"
     >
       <div className="text-white py-11 px-4.5">
-        <div className="mt-5 mb-4 text-32 font-extrabold text-center">
+        <div
+          className="mt-5 mb-4 font-extrabold text-center"
+          style={{ fontSize: "calc(1.325rem + 0.9vw)" }}
+        >
           <h1>{data.heading1}</h1>
           <h1>{data.heading2 || ""}</h1>
         </div>

@@ -21,7 +21,7 @@ function TextImageRight(props: any) {
 
         <Link
           to={props1.blogLink || "/"}
-          className="text-white font-extrabold py-4 px-7.5 mt-6 bg-black hover:bg-blue-700 hover:shadow-[3px_3px_5px_rgba(147,197,253,0.6)] border-1 border-x-transparent shadow-blue-400 cursor-pointer transition-all duration-300 block w-fit rounded-sm"
+          className="text-white font-extrabold whitespace-nowrap py-4 px-7.5 mt-6 bg-black hover:bg-blue-700 hover:shadow-[3px_3px_5px_rgba(147,197,253,0.6)] border-1 border-x-transparent shadow-blue-400 cursor-pointer transition-all duration-300 block w-fit rounded-sm"
         >
           {props1.buttonText}
         </Link>

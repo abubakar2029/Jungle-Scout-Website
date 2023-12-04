@@ -5,6 +5,10 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 // import { Fragment } from "react";
 import "material-icons/iconfont/material-icons.css";
 import MobileHeader from "../MobileHeader/MobileHeader";
@@ -14,6 +18,7 @@ import {
   SolutionsActions,
 } from "../../ActionTypes";
 import TempAnime from "../../Pages/TempAnime/TempAnime";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import { SolutionPages } from "../../SolutionsData";
 interface Solution {
   name: string;
@@ -110,7 +115,7 @@ export const solutionsRecomended2: Solution[] = [
   },
 ];
 
-export const ResourcesLearn: ResourcesLearn[] = [
+export const resourcesLearn: ResourcesLearn[] = [
   {
     name: "Amazon Advertising Report",
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
@@ -146,7 +151,7 @@ export const ResourcesLearn: ResourcesLearn[] = [
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
 ];
-export const companyResources: ResourcesLearn[] = [
+export const resourcesCompany: ResourcesLearn[] = [
   {
     name: "About Jungle Scout",
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
@@ -163,7 +168,7 @@ export const companyResources: ResourcesLearn[] = [
     description: "Now hiring! View career opportunities",
   },
 ];
-export const communitySupportResources: ResourcesTools[] = [
+export const resourcesCommunitySupport: ResourcesTools[] = [
   {
     name: "Help center",
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
@@ -273,7 +278,7 @@ export const resourcesNewSellers: ResourcesNewSellers[] = [
   },
 ];
 
-export const ResourcesTools: ResourcesTools[] = [
+export const resourcesTools: ResourcesTools[] = [
   {
     name: "Profit Calculator",
     href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
@@ -319,9 +324,9 @@ function Header() {
   return (
     <header>
       <nav className="flex items-center justify-between xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-4.5  min-h-[60px]">
-        <div className="flex ">
+        <div className="flex items-center">
           {/* company-logo */}
-          <div className="flex items-center h-full py-2">
+          <div className="flex items-center h-full py-2 mr-1">
             <Link to="/" className="">
               <img
                 src="https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/logo-js-full_4ffc995cb339488dc88e.svg"
@@ -333,12 +338,12 @@ function Header() {
           </div>
           {/* nav-links */}
           <div className=" h-full flex max-[992px]:hidden">
-            {/* childs-start */}
+            {/* SOLUTION*/}
             <div className="">
-              <div className=" ml-7 inline-block">
+              <div className=" mx-2.5 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-1 lg:ml-0  inline-flex justify-center text-[14px] font-bold"
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0  inline-flex justify-center items-center text-[14px] font-bold"
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("solutions");
@@ -350,7 +355,7 @@ function Header() {
                 >
                   Solutions
                   <ChevronDownIcon
-                    className={`ml-2 h-5 w-5 transition-transform
+                    className={`h-5 w-5 transition-transform
                      ${
                        isOpen === "solutions" ? "-rotate-180" : "rotate-0"
                      } duration-300`}
@@ -368,7 +373,7 @@ function Header() {
               </div>
               {/* on-hover-menu */}
               <section
-                className={`absolute w-[960px] left-0 right-0 mx-auto z-20 bg-white ${
+                className={`absolute w-[960px] left-0 right-0 mx-auto py-7.5 z-20 bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.2)] ${
                   isOpen === "solutions" ? "flex" : "hidden"
                 }`}
                 onMouseEnter={() => {
@@ -381,9 +386,9 @@ function Header() {
                 }}
               >
                 {/* bcz-it is going under hero-section therefore adding z-index */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
-                  <div className="flex flex-col pr-9">
-                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                <div className="w-1/3 basis-1/3 flex flex-col pl-7.5 pr-11">
+                  <div className="flex flex-col">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
                       Solutions for...
                     </div>
                     <div>
@@ -405,9 +410,9 @@ function Header() {
                   </div>
                 </div>
                 {/* second-33% */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
-                  <div className="flex flex-col pr-9">
-                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                <div className="w-1/3 basis-1/3 flex flex-col border-l border-zinc-300 pl-14 pr-7.5">
+                  <div className="flex flex-col">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
                       I want to...
                     </div>
                     <div>
@@ -429,9 +434,9 @@ function Header() {
                   </div>
                 </div>
                 {/* third-33% */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
-                  <div className="flex flex-col pr-9">
-                    <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-6">
+                <div className="w-1/3 basis-1/3 flex flex-col pl-6 pr-14">
+                  <div className="flex flex-col">
+                    <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-2">
                       {/* Solutions for... */}
                     </div>
                     <div>
@@ -456,10 +461,10 @@ function Header() {
             </div>
             {/* FEATURES */}
             <div className=" ">
-              <div className=" ml-7 inline-block">
+              <div className=" mx-2.5 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold  inline-flex justify-center "
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold  inline-flex justify-center items-center"
                   onMouseEnter={() => {
                     console.log("I am hovered");
                     setIsOpen("features");
@@ -475,7 +480,7 @@ function Header() {
                 >
                   Features
                   <ChevronDownIcon
-                    className={`ui-open:text-black ange-300/70  text-black ml-2 h-5 w-5 transition-transform
+                    className={`ui-open:text-black ange-300/70  text-black h-5 w-5 transition-transform
                      ${
                        isOpen === "features" ? "-rotate-180" : "rotate-0"
                      } duration-300`}
@@ -493,7 +498,7 @@ function Header() {
               </div>
               {/* on-hover-menu */}
               <section
-                className={`absolute w-[960px] left-0 right-0 mx-auto z-20 bg-white ${
+                className={`absolute w-[960px] left-0 right-0 mx-auto py-7.5 z-20 bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.2)] ${
                   isOpen === "features" ? "flex" : "hidden"
                 }`}
                 onMouseEnter={() => {
@@ -505,81 +510,86 @@ function Header() {
                   setIsOpen("");
                 }}
               >
+                {/* first-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col bg-neutral-100 pl-7.5 pt-7.5 -mt-7">
+                  <div className="flex flex-col ">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 pr-9 mb-6">
+                      PRODUCTS
+                    </div>
+                    <div>
+                      <Link
+                        to="/"
+                        className="pl-2 pr-11 py-4 flex flex-col bg-white shadow-[0_0_5px_0_rgba(0,0,0,0.1)] border border-r-transparent border-zinc-200 -mr-2"
+                      >
+                        <div className="flex items-center">
+                          <span>
+                            <img
+                              src="https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-js_f3e3620a030548d09c1f.svg"
+                              alt=""
+                              width={12}
+                              height={12}
+                            />
+                          </span>
+                          <p className="ml-2 font-bold text-[14px]">
+                            Jungle Scout Solutions
+                          </p>
+                        </div>
+                        <p className="text-[12px] mt-0.5">
+                          Web-based software suite to start & grow your Amazon
+                          business
+                        </p>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
                 {/* bcz-it is going under hero-section therefore adding z-index */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
+                <div className="w-1/3 basis-1/3 flex flex-col z-10 relative pl-7.5 bg-white">
                   <div className="flex flex-col pr-9">
-                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
                       Features
                     </div>
                     <div>
                       {features1.map((item) => (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
-                          className="transition my-0.5 duration-150 ease-in-out flex py-4 px-2 border border-transparent hover:shadow-[0_0_5px_0_rgba(0,0,0,0.1)]"
+                          to={item.href}
+                          className="transition-all my-0.5 duration-150 ease-in-out flex items-center py-4 px-2 border border-transparent hover:shadow-[0_0_5px_0_rgba(0,0,0,0.1)] hover:border-zinc-200 hover:border"
                         >
-                          <img src={item.icon} alt="" />
-                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                          <img src={item.icon} alt="" className="!w-3 !h-3" />
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap ml-2">
                             {item.name}
                           </p>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
                 </div>
-                {/* second-33% */}
-                {/* <div className="w-1/3 basis-1/3 flex flex-col">
-                  <div className="flex flex-col pr-9">
-                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
-                      I want to...
-                    </div>
-                    <div>
-                      {solutionsFor.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
-                        >
-                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
-                            {item.name}
-                          </p>
-                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
-                            {item.description}
-                          </p>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div> */}
+
                 {/* third-33% */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
+                <div className="w-1/3 basis-1/3 flex flex-col z-10 relative pl-7.5 bg-white">
                   <div className="flex flex-col pr-9">
-                    <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-6">
-                      {/* Solutions for... */}
-                    </div>
-                    {/* <div>
-                      {solutionsRecomended2.map((item) => (
-                        <a
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2 h-3"></div>
+                    <div>
+                      {features2.map((item) => (
+                        <Link
                           key={item.name}
-                          href={item.href}
-                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                          to={item.href}
+                          className="transition-all my-0.5 duration-150 ease-in-out flex items-center py-4 px-2 border border-transparent hover:shadow-[0_0_5px_0_rgba(0,0,0,0.1)] hover:border-zinc-200 hover:border"
                         >
-                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                          <img src={item.icon} alt="" className="!w-3 !h-3" />
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap ml-2">
                             {item.name}
                           </p>
-                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
-                            {item.description}
-                          </p>
-                        </a>
+                        </Link>
                       ))}
-                    </div> */}
+                    </div>
                   </div>
                 </div>
               </section>
             </div>
             {/* PRICING */}
             <div className=" ">
-              <div className=" ml-7 inline-block">
+              <div className=" mx-2.5 inline-block">
                 <Link
                   to="/pricing"
                   className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold  inline-flex justify-center "
@@ -605,10 +615,10 @@ function Header() {
             </div>
             {/* RESOURCES */}
             <div className=" ">
-              <div className=" ml-7 inline-block">
+              <div className=" mx-2.5 inline-block">
                 <Link
                   to=""
-                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold inline-flex justify-center "
+                  className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold inline-flex justify-center items-center "
                   onMouseEnter={() => {
                     setIsOpen(NavbarActions.RESOURCES);
                   }}
@@ -619,7 +629,7 @@ function Header() {
                 >
                   Resources
                   <ChevronDownIcon
-                    className={`ui-open:text-black ange-300/70  text-black ml-2 h-5 w-5 transition-transform
+                    className={`ui-open:text-black ange-300/70  text-black h-5 w-5 transition-transform
                      ${
                        isOpen === NavbarActions.RESOURCES
                          ? "-rotate-180"
@@ -639,48 +649,68 @@ function Header() {
               </div>
               {/* on-hover-menu */}
               <section
-                className={`absolute w-[960px] left-0 right-0 mx-auto z-20 bg-white ${
+                className={`absolute w-[960px] left-0 right-0 mx-auto py-7.5 z-20 bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.2)] ${
                   isOpen === NavbarActions.RESOURCES ? "flex" : "hidden"
                 }`}
                 onMouseEnter={() => {
                   console.log("I am hovered");
-                  setIsOpen("resources");
+                  setIsOpen(NavbarActions.RESOURCES);
                 }}
                 onMouseLeave={() => {
                   console.log("Hover End");
                   setIsOpen("");
                 }}
               >
-                {/* bcz-it is going under hero-section therefore adding z-index */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
-                  <div className="flex flex-col pr-9">
-                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
-                      Features
+                {/* first-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col px-7.5">
+                  <div className="flex flex-col">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
+                      RESOURCES FOR NEW SELLERS
                     </div>
                     <div>
-                      {features1.map((item) => (
+                      {resourcesNewSellers.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
-                          className="transition my-0.5 duration-150 ease-in-out flex py-4 px-2 border border-transparent hover:shadow-[0_0_5px_0_rgba(0,0,0,0.1)]"
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
                         >
-                          <img src={item.icon} alt="" />
                           <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
                             {item.name}
+                          </p>
+                          <p className="mb-2 leading-4 font-medium text-[12px] text-gray-500">
+                            {item.description}
                           </p>
                         </a>
                       ))}
                     </div>
                   </div>
-                </div>
-                {/* second-33% */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
-                  <div className="flex flex-col pr-9">
-                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-6">
-                      I want to...
+                  <div className="flex flex-col">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
+                      FREE TOOLS
                     </div>
                     <div>
-                      {solutionsFor.map((item) => (
+                      {resourcesTools.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* second-33% */}
+                <div className="w-1/3 basis-1/3 flex flex-col border-l border-zinc-300 px-7.5">
+                  <div className="flex flex-col">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
+                      Learn
+                    </div>
+                    <div>
+                      {resourcesLearn.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
@@ -698,13 +728,14 @@ function Header() {
                   </div>
                 </div>
                 {/* third-33% */}
-                <div className="w-1/3 basis-1/3 flex flex-col">
-                  <div className="flex flex-col pr-9">
-                    <div className="text-[8px] h-2 flex items-center font-bold uppercase text-gray-400 mb-6">
-                      {/* Solutions for... */}
+                <div className="w-1/3 basis-1/3 flex flex-col border-l border-zinc-300 px-7.5">
+                  {/* TOP_COMPANY */}
+                  <div className="flex flex-col">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
+                      Company
                     </div>
                     <div>
-                      {solutionsRecomended2.map((item) => (
+                      {resourcesCompany.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
@@ -720,12 +751,51 @@ function Header() {
                       ))}
                     </div>
                   </div>
+                  {/* SECOND-COMMUNITY SUPPORT */}
+                  <div className="flex flex-col">
+                    <div className="text-[8px] flex items-center font-bold uppercase text-gray-400 mb-2">
+                      Support and community
+                    </div>
+                    <div>
+                      {resourcesCommunitySupport.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className="transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none flex flex-col focus-visible:ring py-3 focus-visible:ring-orange-500/50"
+                        >
+                          <p className="font-bold text-[14px] text-gray-900 whitespace-nowrap">
+                            {item.name}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  {/* BOTTOM_SOCIAL-ICONS */}
+                  {/* <div className="flex flex-col"> */}
+                    <div className="flex items-center py-3">
+                      <Link to="/" className="mr-4">
+                        <FacebookIcon />
+                      </Link>
+                      <Link to="/" className="mr-4">
+                        <TwitterIcon />
+                      </Link>
+                      <Link to="/" className="mr-4">
+                        <InstagramIcon />
+                      </Link>
+                      <Link to="/" className="mr-4">
+                        <YouTubeIcon />
+                      </Link>
+                      <Link to="/" className="mr-4">
+                        <LinkedInIcon />
+                      </Link>
+                    </div>
+                  {/* </div> */}
                 </div>
               </section>
             </div>
-            {/* 5th-child */}
+            {/* ENTERPRISE */}
             <div className=" ">
-              <div className=" ml-7 inline-block">
+              <div className=" mx-2.5 inline-block">
                 <Link
                   to=""
                   className="py-2 relative px-0.5 mx-1 lg:ml-0 text-[14px] font-bold inline-flex justify-center "
@@ -798,7 +868,7 @@ function Header() {
           </div>
           {/* login/signup */}
           <div className="flex items-center font-extrabold text-[12px]">
-            <Link to="/login" className="text-[14px] !font-bold mx-2.5">
+            <Link to="/login" className="text-[14px] !font-bold mx-2.5 whitespace-nowrap">
               Log In
             </Link>
             <Link

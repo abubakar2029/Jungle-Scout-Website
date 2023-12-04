@@ -13,7 +13,7 @@ import GetStarted3 from "../../Components/GetStarted3/GetStarted3";
 function StartSellingOnAmazon() {
   const Header: Types.Header = {
     bgImg:
-      "https://www.junglescout.com/wp-content/uploads/2023/07/selling-on-amazon_hero-background-img_320@2x.jpg",
+      "https://www.junglescout.com/wp-content/uploads/2023/07/selling-on-amazon_hero-background-img_1440@2x-scaled.jpg",
     getStartedURL: "/",
     heading: "Start selling on Amazon",
     features: [
