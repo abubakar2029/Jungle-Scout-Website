@@ -130,10 +130,6 @@ let AnalysisTable: PricingCategory[] = [
       },
     ],
   },
-  // {
-  //   headings:,
-  //   Nodes:,
-  // },
 ];
 
 const PricingTable = () => {
@@ -141,7 +137,6 @@ const PricingTable = () => {
     <>
       <div className="w-full block max-md:hidden max-w-[995px] mx-auto mb-4">
         <table className="w-full table-auto border border-slate-300 hidden md:block">
-          {/* <tr className="py-4 flex items-center"> */}
           <tbody>
             {AnalysisTable.map((section) => {
               return (

@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import StarRateIcon from "@mui/icons-material/StarRate";
-import StarRate from "@mui/icons-material/StarRate";
-import GradeIcon from "@mui/icons-material/Grade";
 
 function CustomerRating() {
   return (

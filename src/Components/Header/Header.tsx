@@ -2,14 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import { Fragment } from "react";
 import "material-icons/iconfont/material-icons.css";
 import MobileHeader from "../MobileHeader/MobileHeader";
 import {
@@ -17,9 +14,7 @@ import {
   NavbarActions,
   SolutionsActions,
 } from "../../ActionTypes";
-import TempAnime from "../../Pages/TempAnime/TempAnime";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { SolutionPages } from "../../SolutionsData";
 interface Solution {
   name: string;
   href: string;
@@ -290,37 +285,11 @@ export const resourcesTools: ResourcesTools[] = [
 ];
 
 function Header() {
-  let navLinks = [
-    {
-      name: "Solutions",
-      path: "/solutions",
-    },
-    {
-      name: "Features",
-      path: "/features",
-    },
-    {
-      name: "Pricing",
-      path: "/pricing",
-    },
-    {
-      name: "Resources",
-      path: "/resources",
-    },
-    {
-      name: "Enterprise",
-      path: "/enterprise",
-    },
-  ];
 
-  // searchbar-dialog
-  let [referenceElement, setReferenceElement] = useState();
 
   let [isOpen, setIsOpen] = useState("");
   let [isTyping, setIsTyping] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const [isSelected, setIsSelected] = useState("");
-  function SearchDialog() {}
   return (
     <header>
       <nav className="flex items-center justify-between xl:max-w-[1200px] min-[992px]:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] w-full mx-auto px-4.5  min-h-[60px]">
@@ -854,17 +823,6 @@ function Header() {
                 />
               </form>
             </div>
-            {/* <Dialog
-                  open={isOpen}
-                  onClose={() => setIsOpen(false)}
-                  className="absolute"
-                >
-                  <Dialog.Panel className="">
-                    <form action="" className="rounded-sm border inline-block">
-                      <input type="search" placeholder="Search" />
-                    </form>
-                  </Dialog.Panel>
-                </Dialog> */}
           </div>
           {/* login/signup */}
           <div className="flex items-center font-extrabold text-[12px]">

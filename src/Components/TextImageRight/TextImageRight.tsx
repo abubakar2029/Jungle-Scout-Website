@@ -33,7 +33,6 @@ function TextImageRight(props: any) {
         className="lg:max-w-[41%] lg:basis-[41%] md:max-w-[50%]
         md:basis-1/2 w-full my-auto "
       >
-        {/* md-50 sm-100 */}
         <img src={props1.img} alt="" />
       </div>
     </section>

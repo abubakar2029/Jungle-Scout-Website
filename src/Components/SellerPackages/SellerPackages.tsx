@@ -104,14 +104,11 @@ function SellerPackages() {
             <div className="w-full justify-stretch flex-col-reverse md:flex-row flex lg:p-10 md:p-8 p-4">
               {/* Image-Div */}
               <div className="pr-12 hidden w-1/4 xl:block">
-                {/* <div className="pr-12 hidden min-[1180px]:block w-[calc(240px+3rem)] grow basis-auto shrink-0"> */}
                 {/* by using 3 flex it comes to normal */}
                 <img src={pkg.img} alt="" width={240} />
               </div>
               {/* Main-Div */}
-              {/* <div className="flex flex-col-reverse md:flex-row"> */}
               <div className="lg:pr-12 md:pr-6 flex flex-col xl:w-1/2 lg:w-3/5 md:w-8/12 w-full">
-                {/* <div className="lg:pr-12 md:pr-6 flex flex-col w-full md:w-[calc(357px+1.5rem)] lg:w-[calc(500px+3rem)]"> */}
                 <h2 className="mb-2 font-extrabold text-[28px] hidden md:block">
                   {pkg.name}
                 </h2>
@@ -187,13 +184,7 @@ function SellerPackages() {
               <div
                 className="border-neutral-100 md:border-l-2 max-md:mb-12
                   md:pl-6 xl:w-1/4 lg:w-2/5 md:w-2/6 w-full gap-y-1 flex flex-col items-center lg:pl-12"
-                  // md:pl-6 xl:w-1/4 lg:w-2/5 md:w-2/6 w-full  flex flex-col md:items-center max-md:justify-items-center lg:pl-12"
               >
-                {/* why justify is not working? */}
-                {/* <div
-                className="border-neutral-100 border-l-2 
-                  md:pl-6 w-full flex flex-col items-center lg:pl-12"
-              > */}
                 <h6
                   className={`text-center w-full mb-5 text-[12px] font-bold ${
                     pkg.backgroundBlack ? "text-[#ffe5c7]" : "text-green-600"

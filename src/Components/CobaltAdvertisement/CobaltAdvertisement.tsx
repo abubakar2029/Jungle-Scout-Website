@@ -13,7 +13,6 @@ function CobaltAdvertisement() {
     "https://www.junglescout.com/wp-content/uploads/2023/07/nuby-logo.svg",
   ];
   return (
-    // <div className="mb-12"> temp
     <div className="mb-96">
       <section className="w-full overflow-hidden max-w-[1200px] mx-auto px-4.5 relative">
         {/* div for gradient */}
@@ -68,4 +67,3 @@ function CobaltAdvertisement() {
 }
 
 export default CobaltAdvertisement;
-// https://www.junglescout.com/wp-content/uploads/2023/07/Enterprise-CTA-Homepage.png

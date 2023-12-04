@@ -71,16 +71,6 @@ function Herosection() {
                   {/* first-img */}
                 </figure>
               </Transition>
-              {/* first-img */}
-              {/* <figure className="z-10 absolute top-28">
-                <img
-                  src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_net-profit-callout-1.png"
-                  alt=""
-                  className={`mr-auto translate-x-0 transition-transform`}
-                  width="381px"
-                  height="71px"
-                />
-              </figure> */}
 
               {/* img-2 */}
               <Transition
@@ -104,15 +94,6 @@ function Herosection() {
                   />
                 </figure>
               </Transition>
-              {/* <figure className="z-10 absolute top-48 left-8">
-                <img
-                  src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_keyword-search-callout-2.png"
-                  alt="keyword-scratch-logo"
-                  className="mr-auto "
-                  width="385px"
-                  height="74px"
-                />
-              </figure> */}
               {/* img-3 */}
               <Transition
                 as={Fragment}
@@ -135,15 +116,6 @@ function Herosection() {
                   />
                 </figure>
               </Transition>
-              {/* <figure className="z-10 absolute top-[274px] left-8">
-                <img
-                  src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_review-automation-callout-3.png"
-                  alt="review automation"
-                  className="mr-auto"
-                  width="385px"
-                  height="74px"
-                />
-              </figure> */}
               <Transition
                 as={Fragment}
                 show={isTranslating}
@@ -165,15 +137,6 @@ function Herosection() {
                   />
                 </figure>
               </Transition>
-              {/* <figure className="mr-auto relative z-0 left-14 top-0">
-                <img
-                  src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_keyword-UI-1.png"
-                  alt=""
-                  className=" "
-                  height="508px"
-                  width="728px"
-                />
-              </figure> */}
             </div>
           </div>
         </div>

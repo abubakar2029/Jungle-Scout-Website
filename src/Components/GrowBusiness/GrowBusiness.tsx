@@ -2,7 +2,6 @@ import React, {MouseEventHandler} from "react";
 import Button from "../Button/Button";
 
 function GrowBusiness() {
-  // const
   return (
     <div
       className="w-full bg-cover"
