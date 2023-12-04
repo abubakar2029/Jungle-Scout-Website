@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Types from "../../Types";
+import "material-icons/iconfont/material-icons.css";
 
 function SolutionsPageHeader(props: Types.PageHeaderProps) {
   const props1 = props.pageHeader;
@@ -21,7 +22,6 @@ function SolutionsPageHeader(props: Types.PageHeaderProps) {
           <div>
             <h1
               className="mt-6 mb-2 text-[40px] font-extrabold block leading-[46px] pb-4"
-              style={{ fontSize: `calc(1.3rem + 1.5vw)` }}
             >
               {props1?.heading}
             </h1>
@@ -29,9 +29,9 @@ function SolutionsPageHeader(props: Types.PageHeaderProps) {
             <ul className="mb-6">
               {props1?.features?.map((feature, index) => {
                 return (
-                  <li className="mb-2 leading-6" key={index}>
-                    <span></span>
-                    <p className="pl-10">{feature}</p>
+                  <li className="mb-2 leading-6 flex" key={index}>
+                    <span><i className="material-icons">check</i></span>
+                    <p className="pl-5">{feature}</p>
                   </li>
                 );
               })}
