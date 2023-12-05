@@ -68,5 +68,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@headlessui/tailwindcss")({ prefix: "ui" })],
+  plugins: [
+    require("tailwind-scrollbar")({ nocompatible: true }),
+    require("@headlessui/tailwindcss")({ prefix: "ui" }),
+  ],
 };

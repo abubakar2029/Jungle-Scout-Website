@@ -23,7 +23,6 @@ import Example from "./Pages/Temp2/Temp2";
 import Temp3 from "./Pages/tEMP3/Temp3";
 import TempAnime from "./Pages/TempAnime/TempAnime";
 import MobileHeader from "./Components/MobileHeader/PreviousMobileHeader";
-import Solutions from "./Pages/Solutions/Solutions";
 import SolutionsPageHeader from "./Components/SolutionsPageHeader/SolutionsPageHeader";
 import TestimonialCardsStatic from "./Components/TestimonialCardsStatic/TestimonialCardsStatic";
 import { SolutionsActions } from "./ActionTypes";

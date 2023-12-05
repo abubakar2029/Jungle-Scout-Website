@@ -12,9 +12,9 @@ import {
   resourcesNewSellers,
 } from "../../Components/Header/Header";
 import { NavbarActions } from "../../ActionTypes";
-
+import "./style.css"
 export default function Example() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [headingRoute, setHeadingRoute] = useState("");
   const [heading, setHeading] = useState("");
   const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -54,7 +54,7 @@ export default function Example() {
                   leaveFrom="translate-x-0"
                   leaveTo="translate-x-full"
                 >
-                  <Dialog.Panel className="pointer-events-auto relative w-screen max-w-md bg-white">
+                  <Dialog.Panel className="pointer-events-auto relative w-screen max-w-md bg-white overflow-y-auto scrollbar scrollbar-thumb-gray-400 scrollbar-track-transparent scrollbar-w-[3px] scrollbar-h-[20%] scrollbar-thumb-rounded-full">
                     {/* Header */}
                     <div className="flex justify-between py-3 px-4 border-b border-neutral-300">
                       <Link
@@ -101,16 +101,16 @@ export default function Example() {
                           action=""
                           className="flex items-center justify-start"
                         >
-                          <i className="material-icons pr-3 pl-2">search</i>
+                          <i className="material-icons pr-3 pl-2 ">search</i>
                           <input
                             type="text"
                             placeholder="Search"
-                            className="h-full !border-none"
+                            className="h-full !border-none focus:outline-none"
                           />
                         </form>
                       </div>
 
-                      {/* centre-div */}
+                      {/* middle-div */}
                       <div
                         className={`relative ${
                           subMenuOpen ? "overflow-y-auto" : ""
@@ -118,16 +118,14 @@ export default function Example() {
                       >
                         {/* Nav-Links */}
                         <div className="flex flex-col">
-                          {/* 1st-nav-link */}
+                          {/* Solution */}
                           <Link
                             to=""
                             className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between leading-[0]"
                             onMouseEnter={() => {
-                              console.log("I am hovered");
                               setIsOpen("solutions");
                             }}
                             onMouseLeave={() => {
-                              console.log("Hover End");
                               setIsOpen("");
                             }}
                             onClick={() => {
@@ -142,21 +140,13 @@ export default function Example() {
                      `}
                               aria-hidden="true"
                             />
-                            <div className="absolute top-[92%] flex justify-center w-full h-full ">
-                              {/*  */}
-                              <div
-                                className={`h-[3px] rounded-md bg-orange-500   transition-all ${
-                                  isOpen === "solutions" ? "w-full" : "w-0"
-                                }  ui-open: !duration-300`}
-                              />
-                            </div>
                           </Link>
-                          {/* 2nd-nav */}
+                          {/* features */}
                           <Link
                             to=""
                             className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between"
                             onMouseEnter={() => {
-                              console.log("I am hovered");
+                              // console.log("I am hovered");
                               setIsOpen("features");
                               console.log("Matching soltuions");
                               console.log(isOpen === "solutions");
@@ -164,7 +154,7 @@ export default function Example() {
                               console.log(isOpen === "features");
                             }}
                             onMouseLeave={() => {
-                              console.log("Hover End");
+                              // console.log("Hover End");
                               setIsOpen("");
                             }}
                             onClick={() => {
@@ -177,26 +167,25 @@ export default function Example() {
                               className={`ui-open:text-black ange-300/70  text-black ml-2 h-5 w-5 -rotate-90`}
                               aria-hidden="true"
                             />
-                            <div className="absolute top-[92%] flex justify-center w-full h-full ">
-                              {/*  */}
+                            {/* <div className="absolute top-[92%] flex justify-center w-full h-full ">
                               <div
                                 className={`h-[3px] rounded-md bg-orange-500   transition-all ${
                                   isOpen === "features" ? "w-full" : "w-0"
                                 }  ui-open: !duration-300`}
                               />
-                            </div>
+                            </div> */}
                           </Link>
-                          {/* 3rd-nav */}
+                          {/* Pricing */}
 
                           <Link
                             to="/pricing"
                             className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between"
                             onMouseEnter={() => {
-                              console.log("I am hovered");
+                              // console.log("I am hovered");
                               setIsOpen("pricing");
                             }}
                             onMouseLeave={() => {
-                              console.log("Hover End");
+                              // console.log("Hover End");
                               setIsOpen("");
                             }}
                             onClick={() => {
@@ -204,13 +193,13 @@ export default function Example() {
                             }}
                           >
                             Pricing
-                            <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                            {/* <div className="absolute top-[92%] flex justify-center w-full h-full ">
                               <div
                                 className={`h-[3px] rounded-md bg-orange-500   transition-all ${
                                   isOpen === "pricing" ? "w-full" : "w-0"
                                 }  ui-open: !duration-300`}
                               />
-                            </div>
+                            </div> */}
                           </Link>
                           {/* Resources */}
                           <Link
@@ -233,16 +222,15 @@ export default function Example() {
                               className={`ui-open:text-black ange-300/70  text-black ml-2 h-5 w-5 -rotate-90`}
                               aria-hidden="true"
                             />
-                            <div className="absolute top-[92%] flex justify-center w-full h-full ">
-                              {/*  */}
+                            {/* <div className="absolute top-[92%] flex justify-center w-full h-full ">
                               <div
                                 className={`h-[3px] rounded-md bg-orange-500   transition-all ${
                                   isOpen === "resources" ? "w-full" : "w-0"
                                 }  ui-open: !duration-300`}
                               />
-                            </div>
+                            </div> */}
                           </Link>
-                          {/* 5th-link */}
+                          {/* Enterprise */}
                           <Link
                             to=""
                             className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between"
@@ -259,15 +247,15 @@ export default function Example() {
                             }}
                           >
                             Enterprise
-                            <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                            {/* <div className="absolute top-[92%] flex justify-center w-full h-full ">
                               <div
                                 className={`h-[3px] rounded-md bg-orange-500   transition-all ${
                                   isOpen === "enterprise" ? "w-full" : "w-0"
                                 }  ui-open: !duration-300`}
                               />
-                            </div>
+                            </div> */}
                           </Link>
-                          {/* 6th-link */}
+                          {/* Company */}
                           <Link
                             to=""
                             className="py-6 relative border-b font-extrabold border-gray-300 lg:ml-0  flex justify-between"
@@ -284,13 +272,13 @@ export default function Example() {
                             }}
                           >
                             Company
-                            <div className="absolute top-[92%] flex justify-center w-full h-full ">
+                            {/* <div className="absolute top-[92%] flex justify-center w-full h-full ">
                               <div
                                 className={`h-[3px] rounded-md bg-orange-500   transition-all ${
                                   isOpen === "enterprise" ? "w-full" : "w-0"
                                 }  ui-open: !duration-300`}
                               />
-                            </div>
+                            </div> */}
                           </Link>
                         </div>
 
@@ -305,7 +293,7 @@ export default function Example() {
                           leaveFrom="opacity-100"
                           leaveTo="opacity-0"
                         >
-                          <div className="absolute z-10 min-h-full w-full inset-y-0 right-0 transition-opacity bg-white overflow-y-scroll pr-3">
+                          <div className="absolute z-10 min-h-full w-full inset-y-0 right-0 transition-opacity bg-white overflow-y-scroll pr-3 scrollbar scrollbar-thumb-gray-300 scrollbar-track-transparent scrollbar-w-[3px] scrollbar-thumb-rounded-full">
                             {/* SOLUTIONS-SECTION */}
                             <div
                               className={`${
