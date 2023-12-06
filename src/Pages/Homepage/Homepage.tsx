@@ -1,13 +1,16 @@
-import React from "react";
-import Herosection from "../../Components/Herosection/Herosection";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
-import JSolutions from "../../Components/ExploreJSolutions/ExploreJSolutions";
-import Sellersrecommendation from "../../Components/Sellersrecommendation/Sellersrecommendation";
-import Testimonials from "../../Components/Testimonials/Testimonials";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import BrandAffiliations from "../../Components/BrandAffiliations/BrandAffiliations";
 import CobaltAdvertisement from "../../Components/CobaltAdvertisement/CobaltAdvertisement";
 import GrowBusiness from "../../Components/GrowBusiness/GrowBusiness";
+import Herosection from "../../Components/HeroSection/HeroSection";
+import JSolutions from "../../Components/ExploreJSolutions/ExploreJSolutions";
+import NewResources from "../../Components/NewResources/NewResources";
+import OldHeroSection from "../../Components/OldHerosection/Herosection";
+import React from "react";
 import ResourcesSlider from "../../Components/ResourcesSlider/ResourcesSlider";
+import Sellersrecommendation from "../../Components/Sellersrecommendation/Sellersrecommendation";
+import Testimonials from "../../Components/Testimonials/Testimonials";
 
 function Homepage() {
   let secondDiv = [
@@ -28,9 +31,12 @@ function Homepage() {
   return (
     <div>
       <Herosection />
+      <BrandAffiliations/>
+      <NewResources/>
+      {/* <OldHeroSection /> */}
 
       {/* 2nd div */}
-      <section className="pb-16 w-full max-w-[1200px] px-4.5 mx-auto basis-1/2">
+      {/* <section className="pb-16 w-full max-w-[1200px] px-4.5 mx-auto basis-1/2">
         <div className="px-4.5 flex justify-center flex-col max-md:max-w-[720px]">
           <p className="text-[12px] font-bold mb-6 text-center">
             What do you want to do?
@@ -52,18 +58,18 @@ function Homepage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
       <Advertisement1 />
       <JSolutions />
       <Sellersrecommendation />
       {/*  */}
-      <div className="flex justify-center px-4.5">
+      {/* <div className="flex justify-center px-4.5">
         <h1 className="font-normal text-center leading-10 lg:max-w-[66%] mb-14 text-32">
           Jungle Scout is the #1 trusted solution for
           <br />
           building & managing your Amazon business
         </h1>
-      </div>
+      </div> */}
       <Testimonials />
       <CobaltAdvertisement />
       <ResourcesSlider />

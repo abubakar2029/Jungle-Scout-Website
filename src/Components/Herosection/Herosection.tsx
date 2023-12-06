@@ -1,147 +1,53 @@
-import React, { Fragment, useEffect, useState } from "react";
-import Button from "../Button/Button";
-import { Transition } from "@headlessui/react";
+import React from "react";
 
 function Herosection() {
-  let [isTranslating, setisTranslating] = useState(false);
-
-  useEffect(() => {
-    setisTranslating(true);
-  }, []);
-
   return (
-    <div className="w-full bg-no-repeat box-border bg-cover bg-[url('https://www.junglescout.com/wp-content/uploads/2023/10/js_hero-background-img-Angle_1440@1.5x.png')] pb4.5">
-      <section className="w-full max-w-[1200px] px-4.5 pb-10 mx-auto">
-        <div className="-mx-4 flex">
-          {/* left-container */}
-          <div className="text-left lg:mt-88 px-4.5 w-5/12">
-            <figure className="mb-4 mr-auto">
-              <img
-                src="https://www.junglescout.com/wp-content/uploads/2023/10/js_trust-pilot@1.5x.png"
-                alt="Excellent 4.7 stars on Trustpilot"
-                width="292px"
-                height="25px"
-                className="max-h-full"
-              />
-            </figure>
-            <h1 className="block text-2.5xl leading-10 font-semibold">
-              Smart Tools for
-              <br />
-              <span className="text-blue-700">Amazon Sellers</span>
-            </h1>
-            <p className="mb-6 pr-60 font-normal text-[12px]">
-              Whether you want to start selling on Amazon or accelerate your
-              brand’s growth, Jungle Scout has the industry-leading data, tools,
-              and expertise to help you succeed.
+    <section
+      className="bg-cover"
+      style={{
+        backgroundImage: `url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-hero-background-graph-desktop-1.5x.jpg")`,
+      }}
+    >
+      {/* PARENT-DIV */}
+      <div className="px-3 flex max-md:flex-col pt-14 mx-auto xl:max-w-[1200px] min-[992px]:max-w-[992px] md:max-w-[720px] sm:max-w-[540px] w-full">
+        {/* content-section */}
+        <div className="text-left md:max-w-[50%] md:basis-1/2 w-full max-md:relative max-md:z-30 max-md:bg-blue-500">
+          <h1 className="text-[24px] sm:text-32 lg:text-2.5xl !font-extrabold md:mb-4 mb-3">
+            Start and scale your ecommerce business
+          </h1>
+          <p className="text-[20px] font-normal">
+            Jungle Scout’s essential data and tools help you win on Amazon and
+            beyond.
+          </p>
+          {/* Card */}
+          <div className="bg-white p-4 shadow-[0_0_15px-rgba(0,0,0,0.2)] rounded-sm">
+            <p className="mb-4 text-[20px]">
+              We have solutions for all types of sellers. <br />
+              <strong className="font-extrabold">I am here to…</strong>
             </p>
             <div>
-              <Button
-                label="Sign up now"
-                href="/"
-                bgColor="black"
-                textColor="white"
-                width="106"
-                height="4"
-              />
-            </div>
-          </div>
-          {/* right-container */}
-          <div className="max-w-[50%] px-4.5 basis-1/2">
-            <div className="relative left-0 mr-auto top-1">
-              {/* first-img */}
-              <Transition
-                as={Fragment}
-                show={isTranslating}
-                enter="transform transition duration-[1100ms]"
-                enterFrom="translate-x-[-50%]"
-                enterTo="translate-x-0"
-                leave="transform duration-500 transition ease-in-out"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-[-10%]"
+              {/* yahan map chla ga */}
+              <div
+                className={`flex justify-between px-2.5 items-center py-3 rounded-sm border transition-all `}
               >
-                {/* Your content goes here */}
-                <figure className="z-10 absolute top-28">
-                  <img
-                    src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_net-profit-callout-1.png"
-                    alt=""
-                    className={`mr-auto translate-x-0 transition-transform`}
-                    width="381px"
-                    height="71px"
-                  />
-                  {/* first-img */}
-                </figure>
-              </Transition>
-
-              {/* img-2 */}
-              <Transition
-                as={Fragment}
-                show={isTranslating}
-                enter="transform transition duration-[1100ms]"
-                enterFrom="translate-x-[10%]"
-                enterTo="translate-x-0"
-                leave="transform duration-500 transition ease-in-out"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-[-10%]"
-              >
-                {/* Your content goes here */}
-                <figure className="z-10 absolute top-48 left-8">
-                  <img
-                    src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_keyword-search-callout-2.png"
-                    alt="keyword-scratch-logo"
-                    className="mr-auto "
-                    width="385px"
-                    height="74px"
-                  />
-                </figure>
-              </Transition>
-              {/* img-3 */}
-              <Transition
-                as={Fragment}
-                show={isTranslating}
-                enter="transform transition duration-[1100ms]"
-                enterFrom="translate-x-[10%]"
-                enterTo="translate-x-0"
-                leave="transform duration-500 transition ease-in-out"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-[-10%]"
-              >
-                {/* Your content goes here */}
-                <figure className="z-10 absolute top-[274px] left-8">
-                  <img
-                    src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_review-automation-callout-3.png"
-                    alt="review automation"
-                    className="mr-auto"
-                    width="385px"
-                    height="74px"
-                  />
-                </figure>
-              </Transition>
-              <Transition
-                as={Fragment}
-                show={isTranslating}
-                enter="transform transition duration-[1100ms]"
-                enterFrom="translate-x-[10%]"
-                enterTo="translate-x-0"
-                leave="transform duration-500 transition ease-in-out"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-[-10%]"
-              >
-                {/* Your content goes here */}
-                <figure className="mr-auto relative z-0 left-14 top-0">
-                  <img
-                    src="https://www.junglescout.com/wp-content/uploads/2023/10/js_hero_keyword-UI-1.png"
-                    alt=""
-                    className=" "
-                    height="508px"
-                    width="728px"
-                  />
-                </figure>
-              </Transition>
+                <p></p>
+                <i className="material-icons">arrow_forward</i>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+        {/* Hero-Img */}
+        <div className="px-3 md:pt-6 md:max-w-[50%] md:basis-1/2 w-full">
+          <img
+            src="https://www.junglescout.com/wp-content/uploads/2022/03/lifestyle-asset_1x.png"
+            alt=""
+            width={705}
+            height={497}
+            className="!min-w-[705px] !min-h-[497px]"
+          />
+        </div>
+      </div>
+    </section>
   );
 }
 
