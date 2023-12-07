@@ -1,3 +1,9 @@
+import {
+  AffliatedBrandsLogos,
+  featuredBrandLogos,
+  jungleScoutResources,
+} from "../../HomepadeData";
+
 import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import BrandAffiliations from "../../Components/BrandAffiliations/BrandAffiliations";
@@ -10,6 +16,7 @@ import OldHeroSection from "../../Components/OldHerosection/Herosection";
 import React from "react";
 import ResourcesSlider from "../../Components/ResourcesSlider/ResourcesSlider";
 import Sellersrecommendation from "../../Components/Sellersrecommendation/Sellersrecommendation";
+import StaticPopularContentCards from "../../Components/StaticPopularContentCards/StaticPopularContentCards";
 import Testimonials from "../../Components/Testimonials/Testimonials";
 
 function Homepage() {
@@ -31,8 +38,14 @@ function Homepage() {
   return (
     <div>
       <Herosection />
-      <BrandAffiliations/>
-      <NewResources/>
+      <BrandAffiliations
+        data={{
+          brandsLogos: AffliatedBrandsLogos,
+          heading: "Trusted by leading brands",
+        }}
+      />
+
+      <NewResources />
       {/* <OldHeroSection /> */}
 
       {/* 2nd div */}
@@ -59,7 +72,7 @@ function Homepage() {
           </div>
         </div>
       </section> */}
-      <Advertisement1 />
+      {/* <Advertisement1 /> */}
       <JSolutions />
       <Sellersrecommendation />
       {/*  */}
@@ -74,6 +87,13 @@ function Homepage() {
       <CobaltAdvertisement />
       <ResourcesSlider />
       <GrowBusiness />
+      <StaticPopularContentCards PopularContentData={jungleScoutResources} />
+      <BrandAffiliations
+        data={{
+          brandsLogos: featuredBrandLogos,
+          heading: "Featured in",
+        }}
+      />
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import React from "react";
 import Button from "../Button/Button";
+import React from "react";
 
 function Sellersrecommendation() {
   return (
-    <div>
+    <section className="py-11">
       <div className="w-ful lg:max-w-[1200px] md:max-w-[960px] sm:max-w-[720px] mx-auto px-6 sm:py-8 md:py-12 lg:py-20 ">
         {/* 540px xsm */}
         {/*gradient-div  */}
@@ -19,7 +19,7 @@ function Sellersrecommendation() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

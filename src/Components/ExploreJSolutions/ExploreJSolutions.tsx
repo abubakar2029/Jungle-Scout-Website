@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function JSolutions() {
   let customerSolutions = [
@@ -21,9 +21,9 @@ function JSolutions() {
   ];
 
   return (
-    <div className="block box-border">
+    <section className="block box-border mt-14">
       <div className="px-4.5 mx-auto w-full max-w-[1200px] ">
-        <h1 className=" w-full text-center mb-12 text-32">
+        <h1 className=" w-full text-center mb-12 text-32 font-extrabold">
           Explore Jungle Scout’s powerful solutions
         </h1>
         <div className="flex">
@@ -78,7 +78,7 @@ function JSolutions() {
           </section>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,7 +1,10 @@
-import React from "react";
-import * as Types from "../../Types";
 import "material-icons/iconfont/material-icons.css";
+
+import * as Types from "../../Types";
+
 import { Link } from "react-router-dom";
+import React from "react";
+
 function StaticPopularContentCards(props: Types.PopularContentDataProps) {
   const data = props.PopularContentData;
   return (
@@ -13,18 +16,18 @@ function StaticPopularContentCards(props: Types.PopularContentDataProps) {
         {data.map((item, index) => {
           return (
             <div
-              className="max-w-sm bg-white border border-gray-200 rounded-b-md rounded-t-sm shadow dark:bg-gray-800 dark:border-gray-700 mb-6"
+              className="max-w-sm bg-white border border-gray-200 rounded-b-md rounded-t-sm shadow mb-6"
               key={index}
             >
-              <img src={item.img} alt="" />
-              <div className="p-5 h-52">
+              <img src={item.img} alt="" className="w-full"/>
+              <div className="p-5 h-64">
                 <p className="uppercase text-[12px] text-gray-400 h-[10%]">
                   {item.category}
                 </p>
-                <h5 className="mb-2 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white h-[25%]">
+                <h5 className="mb-2 font-extrabold tracking-tight text-gray-900 h-[15%] leading-tight">
                   {item.title}
                 </h5>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 h-[45%]">
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 h-[55%]">
                   {item.text}
                 </p>
                 <p className="inline-flex items-center py-2 text-sm text-center font-bold text-[12px] text-blue-700 h-[20%]">

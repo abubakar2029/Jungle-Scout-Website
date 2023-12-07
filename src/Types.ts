@@ -90,3 +90,16 @@ export interface GetStarted3 {
   getStartedLink: string;
   bgImg: string;
 }
+
+export interface brandsLogo {
+  logo: string;
+  width: string;
+  height: string;
+}
+
+export interface BrandAffliationsProps {
+  data: {
+    heading: string;
+    brandsLogos: brandsLogo[];
+  };
+}

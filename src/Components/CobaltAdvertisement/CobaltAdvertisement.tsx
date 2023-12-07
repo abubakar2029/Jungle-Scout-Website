@@ -1,5 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React from "react";
+
 function CobaltAdvertisement() {
   let cobaltFeaturesList = [
     "Streamline reporting and research with custom data dashboards",
@@ -17,11 +18,9 @@ function CobaltAdvertisement() {
       <section className="w-full overflow-hidden max-w-[1200px] mx-auto px-4.5 relative">
         {/* div for gradient */}
         <div className="absolute top-[100%] bg-gradient-to-br blur-[137px] from-violet-500 from-0% via-blue-700 via-45% to-teal-400 to-100% h-36 -z-10">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus,
-          eaque nihil sint suscipit ipsa fugiat velit cum deleniti natus quo qua
         </div>
         {/* div for content */}
-        <div className="flex">
+        <div className="flex max-md:flex-col">
           {/* left-container */}
           <div className="px4.5">
             <div className="pl-16 pr-4">
