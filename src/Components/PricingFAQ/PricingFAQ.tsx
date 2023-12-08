@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Disclosure, Transition } from "@headlessui/react";
 import "material-icons/iconfont/material-icons.css";
+
+import { Disclosure, Transition } from "@headlessui/react";
+import React, { useState } from "react";
 
 function PricingFAQ() {
   let [selectedQuestions, setSelectedQuestion] = useState<number[]>([]);
@@ -119,7 +120,7 @@ function PricingFAQ() {
   return (
     <div>
       <section className="bg-neutral-100 py-5">
-        <h1 className="text-center mb-14 leading-4 text-32 font-bold px-4.5">
+        <h1 className="text-center leading-snug mb-14 text-32 font-bold px-4.5">
           Frequently asked questions
         </h1>
         <div>

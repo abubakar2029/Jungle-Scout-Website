@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import MinimizeIcon from "@mui/icons-material/Minimize";
-import SubscriptionOptionsPanel from "../../Components/SubscriptionOptionsPanel/SubscriptionOptionsPanel";
-import PricingPlansHeader from "../../Components/PricingPlansHeader/PricingPlansHeader";
+
 import ChooseYourPlan from "../../Components/ChooseYourPlan/ChooseYourPlan";
-import PricingTable from "../../Components/PricingTable/PricingTable";
+import CustomerRating from "../../Components/CustomerRating/CustomerRating";
 import EnterpriseDemo from "../../Components/EnterpriseDemo/EnterpriseDemo";
 import Heading from "../../Components/Heading/Heading";
-import SignupBanner from "../../Components/SignupBanner/SignupBanner";
-import SellerPackages from "../../Components/SellerPackages/SellerPackages";
-import PaymentOptions from "../../Components/PaymentOptions/PaymentOptions";
-import CustomerRating from "../../Components/CustomerRating/CustomerRating";
-import PricingFAQ from "../../Components/PricingFAQ/PricingFAQ";
 import MiniSubcriptionCard from "../../Components/MiniSubcriptionCard/MiniSubcriptionCard";
+import PaymentOptions from "../../Components/PaymentOptions/PaymentOptions";
 import PlanGuideVideo from "../../Components/PlanGuideVideo/PlanGuideVideo";
+import PricingFAQ from "../../Components/PricingFAQ/PricingFAQ";
+import PricingPlansHeader from "../../Components/PricingPlansHeader/PricingPlansHeader";
+import PricingTable from "../../Components/PricingTable/PricingTable";
+import SellerPackages from "../../Components/SellerPackages/SellerPackages";
+import SignupBanner from "../../Components/SignupBanner/SignupBanner";
+import SubscriptionOptionsPanel from "../../Components/SubscriptionOptionsPanel/SubscriptionOptionsPanel";
 
 // plan-selection
 export const planSelectionGuide = {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../Button/Button";
+
 import CheckIcon from "@mui/icons-material/Check";
 import { Link } from "react-router-dom";
 
@@ -71,7 +71,7 @@ function SubscriptionOptionsPanel() {
   return (
     <div className="w-full flex flex-col justify-center ">
       {/* top-buttons */}
-      <div className="flex mx-auto mt-8 w-full justify-center max-sm:-mb-4 mb-16">
+      <div className="flex mx-auto py-8 w-full justify-center max-sm:-mb-4 mb-16">
         <button
           onClick={() => {
             setSelectedButton("Pay monthly");
@@ -114,101 +114,101 @@ function SubscriptionOptionsPanel() {
         </p>
       </div>
       {/* pricing-cards-section */}
-      <section className="max-md:!border-none max-lg:mb-6 flex border border-collapse border-neutral-300  w-full max-w-[995px] max-md:flex-col max-md:justify-center items-center mx-auto ">
-        {/* <section className="flex items-center justify-center w-full max-w-[995px] max-lg:flex-col "> */}
-        <div className="py-6 h-[640px] px-4.5 hidden lg:block w-1/4 border-r border-neutral-300   ">
+      <section className="max-md:!border-none max-lg:mb-6 flex border border-collapse border-neutral-300  w-full max-w-[995px] max-md:flex-col max-md:justify-center items-center mx-auto">
+        <div className="py-6 min-h-[640px] px-4.5 hidden lg:block w-1/4 border-r border-neutral-300   ">
           <p className="text-[24px]">
             The only platform you need to build and grow a successful business
             on Amazon.
           </p>
         </div>
         {/* pricing-cards */}
-        {subcriptionPlans.map((plan, index) => {
-          return (
-            <div
-              key={index}
-              className={`max-lg:mb-6 h-[640px] lg:w-1/4 px-4.5 py-6 max-w-[50%] ${
-                plan.popular
-                  ? "border-collapse border-orange-500 border"
-                  : "max-md:!border border-neutral-300"
-              } 
+        <div className="flex justify-center flex-col items-center">
+          {subcriptionPlans.map((plan, index) => {
+            return (
+              <div
+                key={index}
+                className={`max-lg:mb-6 min-h-[640px] lg:w-1/4 px-4.5 py-6 max-w-[50%] ${
+                  plan.popular
+                    ? "border-collapse border-orange-500 border"
+                    : "max-md:!border border-neutral-300"
+                } 
               `}
-            >
-              <div className="text-center px-1">
-                <h3 className="font-bold uppercase text-green-500 text-[12px] text-center">
-                  {plan.popular}
-                </h3>
-                <h1
-                  className={`mb-2 pt-1 font-extrabold text-center text-[calc(1.275rem + .3vw)]  ${
-                    plan.popular ? "mt-1" : "mt-6"
-                  }`}
-                >
-                  <span className="text-[20px]">{plan.subcriptionType}</span>
-                </h1>
-              </div>
-              {/* 2nd div */}
-              <div className="mb-4 px-1 text-center leading-6 text-[12px]">
-                {plan.subcriptionMessage}
-              </div>
-              {/* 3rd div */}
-              <div className="pb-4 font-bold text-[14px] text-center">
-                <h4
-                  className={`font-extrabold ${
-                    plan.popular ? "text-orange-500" : ""
-                  }`}
-                >
-                  {plan.discountMessage}
-                </h4>
-                {/* monthly-yearly-price */}
-                <div className="flex text-center justify-center">
-                  <div className="pt-2 pr-1 text-[24px]">{plan.currency}</div>
-                  <div className="text-[4rem] ">{plan.monthlyPrice}</div>
-                  <div className="pl-1 pb-4 text-[24px] self-end">/mo</div>
+              >
+                <div className="text-center px-1">
+                  <h3 className="font-bold uppercase text-green-500 text-[12px] text-center">
+                    {plan.popular}
+                  </h3>
+                  <h1
+                    className={`mb-2 pt-1 font-extrabold text-center text-[calc(1.275rem + .3vw)]  ${
+                      plan.popular ? "mt-1" : "mt-6"
+                    }`}
+                  >
+                    <span className="text-[20px]">{plan.subcriptionType}</span>
+                  </h1>
                 </div>
-                <p className="mb-2 -mt-[5px] font-normal leading-6">
-                  Billed at {plan.currency}
-                  {plan.yearlyPrice}/yr
-                </p>
-              </div>
-              {/* 4th div => button */}
-              <div className="flex justify-center">
-                <Link
-                  // onClick={On_Click}
-                  to="/"
-                  className={`min-w-[200px] min-h-[16px] ${
-                    plan.popular
-                      ? "bg-orange-500 hover:bg-orange-400 hover:shadow-xl"
-                      : "bg-transparent border border-black hover:bg-stone-300"
-                  } py-4 px-7.5 rounded text-center font-bold ${
-                    plan.popular ? "text-white" : "text-black"
-                  }`}
-                >
-                  Buy now
-                </Link>
-                {/* bgColor={``} */}
-              </div>
+                {/* 2nd div */}
+                <div className="mb-4 px-1 text-center leading-6 text-[12px]">
+                  {plan.subcriptionMessage}
+                </div>
+                {/* 3rd div */}
+                <div className="pb-4 font-bold text-[14px] text-center">
+                  <h4
+                    className={`font-extrabold ${
+                      plan.popular ? "text-orange-500" : ""
+                    }`}
+                  >
+                    {plan.discountMessage}
+                  </h4>
+                  {/* monthly-yearly-price */}
+                  <div className="flex text-center justify-center">
+                    <div className="pt-2 pr-1 text-[24px]">{plan.currency}</div>
+                    <div className="text-[4rem] ">{plan.monthlyPrice}</div>
+                    <div className="pl-1 pb-4 text-[24px] self-end">/mo</div>
+                  </div>
+                  <p className="mb-2 -mt-[5px] font-normal leading-6">
+                    Billed at {plan.currency}
+                    {plan.yearlyPrice}/yr
+                  </p>
+                </div>
+                {/* 4th div => button */}
+                <div className="flex justify-center">
+                  <Link
+                    // onClick={On_Click}
+                    to="/"
+                    className={`sm:min-w-[200px] min-h-[16px] ${
+                      plan.popular
+                        ? "bg-orange-500 hover:bg-orange-400 hover:shadow-xl"
+                        : "bg-transparent border border-black hover:bg-stone-300"
+                    } py-4 px-7.5 rounded text-center font-extrabold ${
+                      plan.popular ? "text-white" : "text-black"
+                    }`}
+                  >
+                    Buy now
+                  </Link>
+                </div>
 
-              {/* 5th div => features */}
-              <div className="pl-4.5">
-                <h2 className="mt-6 mb-2 whitespace-nowrap text-left leading-6 font-bold text-[16px]">
-                  {plan.featureHeading}
-                </h2>
-                <ul className="mb-4">
-                  {plan.features.map((feature, index) => {
-                    return (
-                      <li key={index} className="flex text-[12px]">
-                        <span>
-                          <CheckIcon />
-                        </span>
-                        <p className="mb-2 pl-4">{feature}</p>
-                      </li>
-                    );
-                  })}
-                </ul>
+                {/* 5th div => features */}
+                <div className="pl-4.5">
+                  <h2 className="mt-6 mb-2 sm:whitespace-nowrap text-left leading-6 font-bold text-[16px]">
+                    {plan.featureHeading}
+                  </h2>
+                  <ul className="mb-4">
+                    {plan.features.map((feature, index) => {
+                      return (
+                        <li key={index} className="flex text-[12px]">
+                          <span>
+                            <CheckIcon />
+                          </span>
+                          <p className="mb-2 pl-4">{feature}</p>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </section>
     </div>
   );

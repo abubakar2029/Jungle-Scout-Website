@@ -29,11 +29,11 @@ function PricingPlansHeader({ on_Click }: any) {
         <h2 className="text-center max-sm:py-12 sm:py-16 md:py-[72px] px-4.5 text-white font-extrabold text-2.5xl">
           Pricing & Plans
         </h2>
-        <div className="flex justify-around pt-6 overflow-hidden">
+        <div className="flex justify-around pt-6 overflow-hidden space-y-3">
           {subcriptionOptions.map((item, index) => {
             return (
               <div
-                className={`mx-4 rounded-t-lg flex flex-col gap-y-1 transition-transform duration-500 ${
+                className={`mx-2.5 rounded-t-lg flex flex-col gap-y-1 transition-transform duration-500 ${
                   card === item.name
                     ? "py-8 pb-8 text-black bg-white scale-y-105"
                     : "mt-2 text-slate-500 py-10 bg-gray-50 hover:bg-white"
