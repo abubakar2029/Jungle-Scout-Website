@@ -4,15 +4,12 @@ import {
   jungleScoutResources,
 } from "../../HomepadeData";
 
-import Advertisement1 from "../../Components/Advertisement1/Advertisement1";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import BrandAffiliations from "../../Components/BrandAffiliations/BrandAffiliations";
 import CobaltAdvertisement from "../../Components/CobaltAdvertisement/CobaltAdvertisement";
 import GrowBusiness from "../../Components/GrowBusiness/GrowBusiness";
 import Herosection from "../../Components/HeroSection/HeroSection";
 import JSolutions from "../../Components/ExploreJSolutions/ExploreJSolutions";
 import NewResources from "../../Components/NewResources/NewResources";
-import OldHeroSection from "../../Components/OldHerosection/Herosection";
 import React from "react";
 import RegisterEmailForm from "../../Components/RegisterEmailForm/RegisterEmailForm";
 import ResourcesSlider from "../../Components/ResourcesSlider/ResourcesSlider";

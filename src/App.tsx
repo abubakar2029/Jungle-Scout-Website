@@ -3,25 +3,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
 import Example from "./Pages/Temp2/Temp2";
 import Features from "./Pages/Features/Features";
-import FeaturespageHeader from "./Components/FeaturespageHeader/FeaturespageHeader";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
-import Herosection from "./Components/OldHerosection/Herosection";
 import Homepage from "./Pages/Homepage/Homepage";
 import MobileHeader from "./Components/MobileHeader/PreviousMobileHeader";
 import PaymentOptions from "./Components/PaymentOptions/PaymentOptions";
 import Pricing from "./Pages/Pricing/Pricing";
-import PricingFAQ from "./Components/PricingFAQ/PricingFAQ";
-import PricingPlansHeader from "./Components/PricingPlansHeader/PricingPlansHeader";
-import PricingTable from "./Components/PricingTable/PricingTable";
 import React from "react";
-import RegionSelectCard from "./Components/RegionSelectCard/RegionSelectCard";
-import SellerPackages from "./Components/SellerPackages/SellerPackages";
 import Signup from "./Pages/Signup/Signup";
 import { SolutionsActions } from "./ActionTypes";
-import SolutionsPageHeader from "./Components/SolutionsPageHeader/SolutionsPageHeader";
 import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAmazon";
-import SubscriptionOptionsPanel from "./Components/SubscriptionOptionsPanel/SubscriptionOptionsPanel";
 import Temp from "./Pages/Temp/Temp";
 import Temp3 from "./Pages/tEMP3/Temp3";
 import TempAnime from "./Pages/TempAnime/TempAnime";
@@ -44,7 +35,10 @@ function App() {
           <Route path="/t3" element={<Temp3 />} />
           <Route path="/s" element={<Example />} />
           <Route path="/features/:pID" element={<Features />} />
-          <Route path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`} element={<StartSellingOnAmazon />} />
+          <Route
+            path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`}
+            element={<StartSellingOnAmazon />}
+          />
           <Route path="/t2" element={<BrowserExtension />} />
         </Routes>
       </div>
