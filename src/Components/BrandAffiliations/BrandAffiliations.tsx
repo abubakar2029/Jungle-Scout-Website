@@ -4,7 +4,7 @@ import React from "react";
 
 function BrandAffiliations(props: Types.BrandAffliationsProps) {
   return (
-    <section className="mx-auto xl:max-w-[1200px] min-[992px]:max-w-[992px] md:max-w-[720px] sm:max-w-[540px] w-full">
+    <section className="-mt-2 mx-auto xl:max-w-[1200px] min-[992px]:max-w-[992px] md:max-w-[720px] sm:max-w-[540px] w-full">
       <div className="pt-8 pb-12">
         <h4 className="text-slate-500 mb-8 text-center font-bold">
           {props.data.heading}

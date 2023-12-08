@@ -51,12 +51,13 @@ function NewResources() {
                   </p>
                   <p className="font-extrabold mb-4">{item.heading}</p>
                 </div>
-                <div className="flex items-center text-blue-700 font-medium">
-                  <Link to="" className="">
-                    {item.buttontext}
-                  </Link>
+                <Link
+                  to={item.buttonLink}
+                  className="flex items-center text-blue-700 font-medium"
+                >
+                  <span className="whitespace-nowrap">{item.buttontext}</span>
                   <i className="material-icons pl-3">arrow_forward</i>
-                </div>
+                </Link>
               </div>
             </div>
           ))}
