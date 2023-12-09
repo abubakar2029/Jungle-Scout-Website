@@ -5,6 +5,7 @@ import {
 } from "../../HomepadeData";
 
 import BrandAffiliations from "../../Components/BrandAffiliations/BrandAffiliations";
+import BusinessLaunchpad from "../../Components/BusinessLaunchpad/BusinessLaunchpad";
 import CobaltAdvertisement from "../../Components/CobaltAdvertisement/CobaltAdvertisement";
 import GrowBusiness from "../../Components/GrowBusiness/GrowBusiness";
 import Herosection from "../../Components/HeroSection/HeroSection";
@@ -35,6 +36,7 @@ function Homepage() {
 
   return (
     <div>
+      <BusinessLaunchpad />
       <Herosection />
       <BrandAffiliations
         data={{
@@ -51,7 +53,7 @@ function Homepage() {
 
       <Testimonials />
       <CobaltAdvertisement />
-      <RegisterEmailForm/>
+      <RegisterEmailForm />
       <ResourcesSlider />
       <GrowBusiness />
       <StaticPopularContentCards PopularContentData={jungleScoutResources} />

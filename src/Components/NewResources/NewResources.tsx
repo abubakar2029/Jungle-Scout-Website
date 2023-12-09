@@ -33,10 +33,10 @@ function NewResources() {
           New resources from Jungle Scout
         </p>
         {/* cards */}
-        <div className="flex justify-center">
+        <div className="flex justify-center max-sm:flex-col items-center max-sm:space-y-4 px-4">
           {newResearches.map((item: newResearches, index: number) => (
             <div
-              className="max-w-[50%] flex px-3 max-[992px]:flex-col"
+              className="sm:max-w-[50%] w-full mx-auto flex px-3 max-[992px]:flex-col"
               key={index}
             >
               {/* IMAGE */}
