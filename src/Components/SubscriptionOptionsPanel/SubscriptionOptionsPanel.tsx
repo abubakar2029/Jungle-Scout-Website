@@ -114,20 +114,21 @@ function SubscriptionOptionsPanel() {
         </p>
       </div>
       {/* pricing-cards-section */}
-      <section className="max-md:!border-none max-lg:mb-6 flex border border-collapse border-neutral-300  w-full max-w-[995px] max-md:flex-col max-md:justify-center items-center mx-auto">
-        <div className="py-6 min-h-[640px] px-4.5 hidden lg:block w-1/4 border-r border-neutral-300   ">
-          <p className="text-[24px]">
+      <section className="max-md:!border-none max-lg:mb-6 flex border border-collapse border-neutral-300  w-full min-h-[640px] max-w-[995px] max-md:flex-col max-md:justify-center items-center mx-auto">
+        <div className="py-6 !h-auto px-4.5 hidden lg:block w-1/4 border-r border-neutral-300   ">
+          <p className="text-[24px] ">
             The only platform you need to build and grow a successful business
             on Amazon.
           </p>
         </div>
         {/* pricing-cards */}
-        <div className="flex justify-center flex-col items-center">
+        <div className="flex max-md:justify-center flex-col md:flex-row max-md:items-center
+        lg:w-3/4">
           {subcriptionPlans.map((plan, index) => {
             return (
               <div
                 key={index}
-                className={`max-lg:mb-6 min-h-[640px] lg:w-1/4 px-4.5 py-6 max-w-[50%] ${
+                className={`max-lg:mb-6 h-full lg:w-2/6 px-4.5 py-6 max-w-[50%] ${
                   plan.popular
                     ? "border-collapse border-orange-500 border"
                     : "max-md:!border border-neutral-300"
