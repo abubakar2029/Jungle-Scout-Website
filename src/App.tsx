@@ -10,7 +10,10 @@ import MobileHeader from "./Components/MobileHeader/PreviousMobileHeader";
 import PaymentOptions from "./Components/PaymentOptions/PaymentOptions";
 import Pricing from "./Pages/Pricing/Pricing";
 import React from "react";
+import Registration from "./Pages/Registration/Registration";
 import Signup from "./Pages/Signup/Signup";
+import SignupBanner from "./Components/SignupBanner/SignupBanner";
+import SignupBannerFeaturesPage from "./Components/SignupBannerFeaturesPage/SignupBannerFeaturesPage";
 import { SolutionsActions } from "./ActionTypes";
 import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAmazon";
 import Temp from "./Pages/Temp/Temp";
@@ -28,18 +31,18 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/pkg" element={<PaymentOptions />} />
           <Route path="/t" element={<Temp />} />
-          <Route path="/tA" element={<MobileHeader />} />
           <Route path="/tAn" element={<TempAnime />} />
           <Route path="/t3" element={<Temp3 />} />
           <Route path="/s" element={<Example />} />
           <Route path="/features/:pID" element={<Features />} />
+          <Route path="/registration/:pID" element={<Registration />} />
           <Route
             path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`}
             element={<StartSellingOnAmazon />}
           />
           <Route path="/t2" element={<BrowserExtension />} />
+          <Route path="/signup" element={<SignupBanner/>}/>
         </Routes>
       </div>
       <Footer />
