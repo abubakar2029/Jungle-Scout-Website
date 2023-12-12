@@ -6,7 +6,6 @@ import Features from "./Pages/Features/Features";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Homepage from "./Pages/Homepage/Homepage";
-import MobileHeader from "./Components/MobileHeader/PreviousMobileHeader";
 import PaymentOptions from "./Components/PaymentOptions/PaymentOptions";
 import Pricing from "./Pages/Pricing/Pricing";
 import React from "react";
@@ -19,9 +18,6 @@ import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAma
 import Temp from "./Pages/Temp/Temp";
 import Temp3 from "./Pages/tEMP3/Temp3";
 import TempAnime from "./Pages/TempAnime/TempAnime";
-import TestimonialCardsStatic from "./Components/TestimonialCardsStatic/TestimonialCardsStatic";
-import Testimonials from "./Components/Testimonials/Testimonials";
-import TextImageRight from "./Components/TextImageRight/TextImageRight";
 
 function App() {
   return (
