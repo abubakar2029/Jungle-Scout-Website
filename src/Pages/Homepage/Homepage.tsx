@@ -36,7 +36,15 @@ function Homepage() {
 
   return (
     <div>
-      <BusinessLaunchpad />
+      <BusinessLaunchpad
+        style={{
+          backgroundColor: "#f0f0f0 !important",
+          border: "1px solid #ccc",
+          // Add more styles as needed
+        }}
+        aho="aho"
+      />
+
       <Herosection />
       <BrandAffiliations
         data={{

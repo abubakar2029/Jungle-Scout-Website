@@ -1,8 +1,9 @@
 import "./style.css";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function BusinessLaunchpad() {
+function BusinessLaunchpad(props: any) {
+
   interface BusinessLaunchpadCard {
     backgroundImage: string;
     backgroundImageMobile: string;
@@ -16,9 +17,17 @@ function BusinessLaunchpad() {
     referencePerson: string;
     referencePosition: string;
     referenceBlogLink?: string;
+    cardType: string;
   }
+  const enum Cards {
+    START_SELLING = "StartSelling",
+    GROW_BUSINESS = "GrowBusiness",
+    ACCELERATE_ENTERPRISE = "AccelerateEnterprise",
+  }
+
   const businessLaunchpadCards: BusinessLaunchpadCard[] = [
     {
+      cardType: Cards.START_SELLING,
       backgroundImage:
         "https://www.junglescout.com/wp-content/uploads/2022/03/hp-insights-d-orange-desktop-1.5x.jpg",
       backgroundImageMobile:
@@ -43,6 +52,7 @@ function BusinessLaunchpad() {
         "https://www.junglescout.com/blog/amazon-seller-stories-littil/",
     },
     {
+      cardType: Cards.GROW_BUSINESS,
       title: "Grow your business",
       heroImg:
         "https://www.junglescout.com/wp-content/uploads/2022/03/hp-start-business-asset-1x.png",
@@ -67,6 +77,7 @@ function BusinessLaunchpad() {
         "https://www.junglescout.com/wp-content/uploads/2022/03/hp-insights-d-orange-mobile-1.5x.jpg",
     },
     {
+      cardType: Cards.ACCELERATE_ENTERPRISE,
       backgroundImageMobile:
         "https://www.junglescout.com/wp-content/uploads/2022/08/js_tab-Banner-Background_320px-mobile.jpg",
       backgroundImage:
@@ -90,14 +101,34 @@ function BusinessLaunchpad() {
       referencePosition: "Advertising Lead at Code3",
     },
   ];
+  let [activeCard, setActiveCard] = useState<string>(Cards.START_SELLING);
+  console.log("Active ", activeCard);
+  const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
+  const handleResize = () => {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth < 600) {
+      setBackgroundImage("mobile-image-url");
+    } else if (screenWidth < 1024) {
+      setBackgroundImage("tablet-image-url");
+    } else {
+      setBackgroundImage("https://www.junglescout.com/wp-content/uploads/2022/03/hp-insights-d-orange-desktop-1.5x.jpg");
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+  }, []);
   return (
-    <section>
+    <section
+      id="Business_Launchpad"
+      style={{
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+      }}
+    >
       <div className="mx-auto xl:max-w-[1200px] min-[992px]:max-w-[992px] md:max-w-[720px] sm:max-w-[540px] w-full relative">
         {/* TOP_DIV_CONTENT */}
-        <div
-          className="flex flex-col justify-center items-center pt-36 pb-56 text-center text-white"
-          id="Business_Launchpad"
-        >
+        <div className="flex flex-col justify-center items-center pt-36 pb-56 text-center text-white">
           <h1 className="text-[calc(1.325rem+0.9vw)] font-extrabold mb-4">
             Jungle Scout powers ecommerce
           </h1>
@@ -110,18 +141,32 @@ function BusinessLaunchpad() {
         {/* CARDS */}
         <section className="-mt-40 flex justify-center">
           {/* yahan map chla ga */}
-          {/* CARD */}
-          <div className="px-8 pt-10 pb-8 h-full">
-            <figure className="mb-6">
-              <img src="" alt="" />
-            </figure>
-            <div>
-              <h1 className="mb-2"></h1>
-              <p className="mb-6"></p>
+          {businessLaunchpadCards.map((cardData, index) => (
+            <div
+              className={`px-8 pt-10 pb-8 h-full cursor-pointer  hover:bg-gray-50 ${
+                activeCard === cardData.cardType ? "bg-white" : "bg-gray-100"
+              }`}
+              key={index}
+              onClick={() => setActiveCard(cardData.cardType)}
+            >
+              {/* CARD */}
+              <figure className="mb-6">
+                <img src={cardData.icon} alt="" />
+              </figure>
+              <div>
+                <h1 className="mb-2">{cardData.title}</h1>
+                <p className="mb-6">{cardData.text}</p>
+              </div>
+              {/* ARROW-BUTTON */}
+              <div
+                className={`mt-auto w-10 h-10 transition-all bg-neutral-100 p-1 rounded-[50%] flex justify-center items-center duration-150 ${
+                  activeCard === cardData.cardType ? "rotate-90" : "rotate-0"
+                }`}
+              >
+                <i className="material-icons">arrow_forward</i>
+              </div>
             </div>
-            {/* ARROW-BUTTON */}
-            <div className="mt-auto"></div>
-          </div>
+          ))}
         </section>
       </div>
     </section>
