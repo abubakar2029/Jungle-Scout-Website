@@ -34,6 +34,21 @@ function Homepage() {
     },
   ];
 
+  let heroSectionProps = [
+    {
+      href: "/",
+      name: "Start Selling on Amazon",
+    },
+    {
+      href: "/",
+      name: "Grow my existing Business",
+    },
+    {
+      href: "/",
+      name: "Explore brand and Retailer Options",
+    },
+  ];
+
   return (
     <div>
       <BusinessLaunchpad
@@ -45,7 +60,7 @@ function Homepage() {
         aho="aho"
       />
 
-      <Herosection />
+      <Herosection linkArr={heroSectionProps} />
       <BrandAffiliations
         data={{
           brandsLogos: AffliatedBrandsLogos,

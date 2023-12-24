@@ -20,3 +20,38 @@ body {
 *{
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+
+/* hero section styled by Abdul */
+.animate-hero-section:hover{
+  transition: margin-left ease-in-out 0.7s;
+}
+.animate-hero-section:last-child:hover {
+  border: 1px solid #042bdb;
+  background-color: #042bdb20;
+  color: #042bdb;
+}
+.animate-hero-section:last-child{
+  border: 1px solid #042bdb;
+  color: #042bdb;
+}
+
+@keyframes Bounce {
+  0%, 100%{
+    
+    transform: translateX(0px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }  
+  50%{
+    transform: translateX(-15px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }  
+}
+.animate-hero-section:hover i.material-icons{
+  transition: transform ease-in-out 1s;
+  animation-name: Bounce;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
