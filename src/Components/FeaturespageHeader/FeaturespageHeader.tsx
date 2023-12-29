@@ -1,11 +1,13 @@
-import React from "react";
 import { Link } from "react-router-dom";
-function FeaturespageHeader(props: any) {
-  const props1 = props.heroSection;
+import React from "react";
+
+// function FeaturespageHeader(props: any) {
+function FeaturespageHeader({ heroSection }: any) {
+  // const props1 = props.heroSection;
+  const props1 = heroSection;
   return (
     <div
       className="py-4.5 bg-cover bg-center bg-no-repeat"
-      
       style={
         props1.bgImg
           ? {

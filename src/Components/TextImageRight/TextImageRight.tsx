@@ -1,6 +1,8 @@
-import React from "react";
+import * as Types from "../../entities/Types";
+
 import { Link } from "react-router-dom";
-import * as Types from "../../Types";
+import React from "react";
+
 function TextImageRight(props: any) {
   const props1: Types.InfoItem = props.data;
   return (

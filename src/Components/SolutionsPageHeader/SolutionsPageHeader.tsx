@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import * as Types from "../../Types";
 import "material-icons/iconfont/material-icons.css";
+
+import * as Types from "../../entities/Types";
+
+import { Link } from "react-router-dom";
+import React from "react";
 
 function SolutionsPageHeader(props: Types.PageHeaderProps) {
   const props1 = props.pageHeader;

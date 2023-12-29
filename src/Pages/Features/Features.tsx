@@ -1,29 +1,31 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import FeaturespageHeader from "../../Components/FeaturespageHeader/FeaturespageHeader";
-import FeaturesTopHeading from "../../Components/FeaturesTopHeading/FeaturesTopHeading";
-import TextImageRight from "../../Components/TextImageRight/TextImageRight";
+import React, { useEffect } from "react";
+
 import { FeaturePages } from "../../FeaturesData";
+import FeaturesTopHeading from "../../Components/FeaturesTopHeading/FeaturesTopHeading";
+import FeaturespageHeader from "../../Components/FeaturespageHeader/FeaturespageHeader";
+import TextImageRight from "../../Components/TextImageRight/TextImageRight";
+import { useParams } from "react-router-dom";
 
 function Features() {
   let param = useParams();
-  console.log("Param ID",param.pID);
+  console.log("Param ID", param.pID);
   let overview = {
-    heading:"",
-    text:"",
+    heading: "",
+    text: "",
   };
   let heroSection;
-  let extensionInfo;
-  for (const page of FeaturePages) {
-    if (param.pID === page.name) {
-      console.log(page);
-      heroSection = page.Header;
-      overview.text = page.Overview;
-      extensionInfo = page.Info;
-      overview.heading=page.name
+  let extensionInfo: any[] = [];
+  useEffect(() => {
+    for (const page of FeaturePages) {
+      if (param.pID === page.name) {
+        console.log("Ya page mila", page);
+        heroSection = page.Header;
+        overview.text = page.Overview;
+        extensionInfo = page.Info;
+        overview.heading = page.name;
+      }
     }
-  }
-
+  }, []);
   return (
     <div>
       <FeaturespageHeader heroSection={heroSection} />

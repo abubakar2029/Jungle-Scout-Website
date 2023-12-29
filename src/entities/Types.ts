@@ -90,11 +90,15 @@ export interface GetStarted3 {
   getStartedLink: string;
   bgImg: string;
 }
-
+interface StyleProps {
+  width?: string;
+  height?: string;
+}
 export interface brandsLogo {
   logo: string;
-  width: string;
-  height: string;
+  style: StyleProps;
+  // width: string;
+  // height: string;
 }
 
 export interface BrandAffliationsProps {

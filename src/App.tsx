@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
 import Example from "./Pages/Temp2/Temp2";
+import { FeatureActions } from "./ActionTypes";
 import Features from "./Pages/Features/Features";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
@@ -31,14 +32,19 @@ function App() {
           <Route path="/tAn" element={<TempAnime />} />
           <Route path="/t3" element={<Temp3 />} />
           <Route path="/s" element={<Example />} />
-          <Route path="/features/:pID" element={<Features />} />
+          {/* <Route path="/features/:pID" element={<Features />} /> */}
+
+          <Route
+            path={`/features/${FeatureActions.BROWSER_EXTENSION}`}
+            element={<BrowserExtension />}
+          />
           <Route path="/registration/:pID" element={<Registration />} />
           <Route
             path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`}
             element={<StartSellingOnAmazon />}
           />
           <Route path="/t2" element={<BrowserExtension />} />
-          <Route path="/signup" element={<SignupBanner/>}/>
+          <Route path="/signup" element={<SignupBanner />} />
         </Routes>
       </div>
       <Footer />

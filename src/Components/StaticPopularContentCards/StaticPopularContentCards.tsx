@@ -1,6 +1,6 @@
 import "material-icons/iconfont/material-icons.css";
 
-import * as Types from "../../Types";
+import * as Types from "../../entities/Types";
 
 import { Link } from "react-router-dom";
 import React from "react";

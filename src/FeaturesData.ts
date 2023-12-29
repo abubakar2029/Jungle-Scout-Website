@@ -1,6 +1,7 @@
+import * as Types from "./entities/Types";
+
 import { FeatureActions } from "./ActionTypes";
 
-import * as Types from "./Types";
 interface heroSection {
   bgImg: string;
   heroImg: string;

@@ -1,7 +1,7 @@
 import React from "react";
 
-function FeaturesTopHeading(props: any) {
-  const props1 = props.ExtensionOverview;
+function FeaturesTopHeading({ ExtensionOverview }: any) {
+  const props1 = ExtensionOverview;
 
   return (
     <div className="flex justify-center">

@@ -1,6 +1,8 @@
-import React from "react";
+import * as Types from "../../entities/Types";
+
 import { Link } from "react-router-dom";
-import * as Types from "../../Types";
+import React from "react";
+
 function GetStarted3(props: any) {
   const data: Types.GetStarted3 = props.getStarted;
   return (

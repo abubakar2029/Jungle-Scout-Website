@@ -1,54 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "material-icons/iconfont/material-icons.css";
-import MobileHeader from "../MobileHeader/MobileHeader";
+
+import * as NavEntities from "../../entities/Navbar";
+
 import {
   FeatureActions,
   NavbarActions,
   SolutionsActions,
 } from "../../ActionTypes";
+
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import FacebookIcon from "@mui/icons-material/Facebook";
-interface Solution {
-  name: string;
-  href: string;
-  description: string;
-  icon?: string;
-  new?: boolean;
-}
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { Link } from "react-router-dom";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MobileHeader from "../MobileHeader/MobileHeader";
+import React from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import { useState } from "react";
 
-interface Features {
-  name: string;
-  href: string;
-  icon: string;
-}
-
-interface ResourcesNewSellers {
-  name: string;
-  href: string;
-  description: string;
-  updated?: boolean;
-}
-
-interface ResourcesTools {
-  name: string;
-  href: string;
-}
-
-interface ResourcesLearn {
-  name: string;
-  href: string;
-  description?: string;
-  updated?: boolean;
-}
-
-export const solutionsFor: Solution[] = [
+export const solutionsFor: NavEntities.Solution[] = [
   {
     name: "First-time Sellers",
     href: `/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`,
@@ -69,7 +41,7 @@ export const solutionsFor: Solution[] = [
   },
 ];
 
-export const solutionsRecomended: Solution[] = [
+export const solutionsRecomended: NavEntities.Solution[] = [
   {
     name: "Launch My Product",
     description:
@@ -89,7 +61,7 @@ export const solutionsRecomended: Solution[] = [
       "Make your Amazon listings more profitable and beat the competition",
   },
 ];
-export const solutionsRecomended2: Solution[] = [
+export const solutionsRecomended2: NavEntities.Solution[] = [
   {
     href: "/",
     name: "Get More Reviews",
@@ -110,7 +82,7 @@ export const solutionsRecomended2: Solution[] = [
   },
 ];
 
-export const resourcesLearn: ResourcesLearn[] = [
+export const resourcesLearn: NavEntities.ResourcesLearn[] = [
   {
     name: "Amazon Advertising Report",
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
@@ -146,7 +118,7 @@ export const resourcesLearn: ResourcesLearn[] = [
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
 ];
-export const resourcesCompany: ResourcesLearn[] = [
+export const resourcesCompany: NavEntities.ResourcesLearn[] = [
   {
     name: "About Jungle Scout",
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
@@ -163,7 +135,7 @@ export const resourcesCompany: ResourcesLearn[] = [
     description: "Now hiring! View career opportunities",
   },
 ];
-export const resourcesCommunitySupport: ResourcesTools[] = [
+export const resourcesCommunitySupport: NavEntities.ResourcesTools[] = [
   {
     name: "Help center",
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
@@ -173,7 +145,7 @@ export const resourcesCommunitySupport: ResourcesTools[] = [
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
   },
 ];
-export const features2: Features[] = [
+export const features2: NavEntities.Features[] = [
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-keyword-scout_dc83440bbeb1383e7013.svg",
     name: "Keyword Scout",
@@ -216,7 +188,7 @@ export const features2: Features[] = [
   },
 ];
 
-export const features1: Features[] = [
+export const features1: NavEntities.Features[] = [
   {
     name: FeatureActions.BROWSER_EXTENSION,
     href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
@@ -225,7 +197,8 @@ export const features1: Features[] = [
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-product-tracker_9f6be6df6fc0cc653f18.svg",
     name: "Product Tracker",
-    href: `/features/${FeatureActions.PRODUCT_TRACKER}`,
+    href: `/features/${FeatureActions.BROWSER_EXTENSION}`,
+    // href: `/features/${FeatureActions.PRODUCT_TRACKER}`,
   },
   {
     icon: "https://www.junglescout.com/wp-content/themes/wolfpack-v2/dist/images/navigation/icon-opp-finder_a8631af9f3c3a3acd637.svg",
@@ -259,7 +232,7 @@ export const features1: Features[] = [
   },
 ];
 
-export const resourcesNewSellers: ResourcesNewSellers[] = [
+export const resourcesNewSellers: NavEntities.ResourcesNewSellers[] = [
   {
     name: "How to Sell on Amazon",
     href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
@@ -273,7 +246,7 @@ export const resourcesNewSellers: ResourcesNewSellers[] = [
   },
 ];
 
-export const resourcesTools: ResourcesTools[] = [
+export const resourcesTools: NavEntities.ResourcesTools[] = [
   {
     name: "Profit Calculator",
     href: `/features/${FeatureActions.CATEGORY_TRENDS}`,
@@ -285,8 +258,6 @@ export const resourcesTools: ResourcesTools[] = [
 ];
 
 function Header() {
-
-
   let [isOpen, setIsOpen] = useState("");
   let [isTyping, setIsTyping] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -741,23 +712,23 @@ function Header() {
                   </div>
                   {/* BOTTOM_SOCIAL-ICONS */}
                   {/* <div className="flex flex-col"> */}
-                    <div className="flex items-center py-3">
-                      <Link to="/" className="mr-4">
-                        <FacebookIcon />
-                      </Link>
-                      <Link to="/" className="mr-4">
-                        <TwitterIcon />
-                      </Link>
-                      <Link to="/" className="mr-4">
-                        <InstagramIcon />
-                      </Link>
-                      <Link to="/" className="mr-4">
-                        <YouTubeIcon />
-                      </Link>
-                      <Link to="/" className="mr-4">
-                        <LinkedInIcon />
-                      </Link>
-                    </div>
+                  <div className="flex items-center py-3">
+                    <Link to="/" className="mr-4">
+                      <FacebookIcon />
+                    </Link>
+                    <Link to="/" className="mr-4">
+                      <TwitterIcon />
+                    </Link>
+                    <Link to="/" className="mr-4">
+                      <InstagramIcon />
+                    </Link>
+                    <Link to="/" className="mr-4">
+                      <YouTubeIcon />
+                    </Link>
+                    <Link to="/" className="mr-4">
+                      <LinkedInIcon />
+                    </Link>
+                  </div>
                   {/* </div> */}
                 </div>
               </section>
@@ -826,7 +797,10 @@ function Header() {
           </div>
           {/* login/signup */}
           <div className="flex items-center font-extrabold text-[12px]">
-            <Link to="/login" className="text-[14px] !font-bold mx-2.5 whitespace-nowrap">
+            <Link
+              to="/login"
+              className="text-[14px] !font-bold mx-2.5 whitespace-nowrap"
+            >
               Log In
             </Link>
             <Link

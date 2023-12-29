@@ -1,17 +1,14 @@
-import * as Types from "../../Types";
+import * as Types from "../../entities/Types";
 
 import React, { Fragment } from "react";
 
 import CustomerRating from "../../Components/CustomerRating/CustomerRating";
 import GetStarted3 from "../../Components/GetStarted3/GetStarted3";
 import ResourcesStaticShowCase from "../../Components/ResourcesStaticShowCase/ResourcesStaticShowCase";
-import { SolutionPages } from "../../SolutionsData";
 import SolutionsPageHeader from "../../Components/SolutionsPageHeader/SolutionsPageHeader";
 import StaticPopularContentCards from "../../Components/StaticPopularContentCards/StaticPopularContentCards";
 import TestimonialCardsStatic from "../../Components/TestimonialCardsStatic/TestimonialCardsStatic";
 import TextImageRight from "../../Components/TextImageRight/TextImageRight";
-import { staticTestimonialCards } from "../../Types";
-import { useParams } from "react-router-dom";
 
 function StartSellingOnAmazon() {
   const Header: Types.Header = {

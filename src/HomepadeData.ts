@@ -1,70 +1,59 @@
-import * as Types from "./Types";
+import * as Types from "./entities/Types";
 
 export const AffliatedBrandsLogos: Types.brandsLogo[] = [
   {
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp_trusted-brand-johnson-outdoors_3x.png",
-    width: "w-[114px]",
-    height: "!h-[31px]",
+    style: { width: "114px", height: "31px" },
   },
   {
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp_trusted-brand-starbucks_3x.png",
-    width: "!w-[39px]",
-    height: "!h-[39px]",
+    style: { width: "39px", height: "39px" },
   },
   {
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-fedex-logo@3x-1.png",
-    width: "w-[84px]",
-    height: "!h-[24px]",
+    style: { width: "84px", height: "24px" },
   },
   {
-    height: "!h-[24px]",
-    width: "!w-[97px]",
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-press-forbes-logo_3x.png",
+    style: { width: "97px", height: "24px" },
   },
   {
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-press-bloomberg-logo_3x.png",
-    width: "!w-[130px]",
-    height: "!h-[24px]",
+    style: { width: "130px", height: "24px" },
   },
   {
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp_trusted-brand-keurig_3x.png",
-    width: "w-[113px]",
-    height: "!h-[19px]",
+    style: { width: "113px", height: "19px" },
   },
   {
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp_trusted-brand-IP_3x.png",
-    height: "!h-[18px]",
-    width: "!w-[124px]",
+    style: { width: "124px", height: "18px" },
   },
   {
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-intel-logo@3x.png",
-    height: "!h-[33px]",
-    width: "w-[50px]",
+    style: { width: "50px", height: "33px" },
   },
 ];
 
 export const featuredBrandLogos: Types.brandsLogo[] = [
   {
-    height: "!h-[24px]",
-    width: "!w-[97px]",
+    style: { height: "24px", width: "97px" },
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-press-forbes-logo_3x.png",
   },
   {
+    style: { width: "130px", height: "24px" },
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-press-bloomberg-logo_3x.png",
-    width: "!w-[130px]",
-    height: "!h-[24px]",
   },
   {
+    style: { height: "24px", width: "123px" },
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-press-entrepreneur-logo_3x.png",
-    height: "!h-[24px]",
-    width: "!w-[123px]",
   },
   {
+    style: { height: "21px", width: "9px" },
     logo: "https://www.junglescout.com/wp-content/uploads/2022/03/hp-press-nyt-logo_3x.png",
-    height: "h-[21px]",
-    width: "!w-9",
   },
 ];
+
 
 export const jungleScoutResources: Types.PopularContentData[] = [
   {

@@ -1,5 +1,5 @@
 import React from "react";
-import { TestimonialCardsStaticProps } from "../../Types";
+import { TestimonialCardsStaticProps } from "../../entities/Types";
 
 function TestimonialCardsStatic(props: TestimonialCardsStaticProps) {
   const data = props.testimonialsData;
