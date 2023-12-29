@@ -60,7 +60,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 
-function HeroSection(props: any) {  
+function Hero_Section(props: any) {  
   return (
     <section
       className="bg-cover"
@@ -126,4 +126,4 @@ function HeroSection(props: any) {
   );
 }
 
-export default HeroSection;
+export default Hero_Section;

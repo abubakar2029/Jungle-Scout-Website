@@ -8,7 +8,7 @@ import BrandAffiliations from "../../Components/BrandAffiliations/BrandAffiliati
 import BusinessLaunchpad from "../../Components/BusinessLaunchpad/BusinessLaunchpad";
 import CobaltAdvertisement from "../../Components/CobaltAdvertisement/CobaltAdvertisement";
 import GrowBusiness from "../../Components/GrowBusiness/GrowBusiness";
-import HeroSection from "../../Components/HeroSection/HeroSection";
+import HeroSection from "../../Components/Hero_Section/Hero_Section";
 import JSolutions from "../../Components/ExploreJSolutions/ExploreJSolutions";
 import NewResources from "../../Components/NewResources/NewResources";
 import React from "react";
