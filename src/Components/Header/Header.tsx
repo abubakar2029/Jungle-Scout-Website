@@ -776,7 +776,7 @@ function Header() {
             <div
               className={
                 isActive
-                  ? "inline-block absolute right-0 top-7 w-250 p-2.5 bg-white"
+                  ? "z-10 mt-5 inline-block absolute right-0 top-7 w-250 p-2.5 bg-white"
                   : "hidden"
               }
             >
