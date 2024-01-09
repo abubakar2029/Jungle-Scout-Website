@@ -3,17 +3,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
 import Example from "./Pages/Temp2/Temp2";
 import { FeatureActions } from "./ActionTypes";
-import Features from "./Pages/Features/Features";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Homepage from "./Pages/Homepage/Homepage";
-import PaymentOptions from "./Components/PaymentOptions/PaymentOptions";
 import Pricing from "./Pages/Pricing/Pricing";
 import React from "react";
 import Registration from "./Pages/Registration/Registration";
-import Signup from "./Pages/Signup/Signup";
 import SignupBanner from "./Components/SignupBanner/SignupBanner";
-import SignupBannerFeaturesPage from "./Components/SignupBannerFeaturesPage/SignupBannerFeaturesPage";
 import { SolutionsActions } from "./ActionTypes";
 import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAmazon";
 import Temp from "./Pages/Temp/Temp";
@@ -38,7 +34,7 @@ function App() {
             path={`/features/${FeatureActions.BROWSER_EXTENSION}`}
             element={<BrowserExtension />}
           />
-          <Route path="/registration/:pID" element={<Registration />} />
+          <Route path="/registration" element={<Registration />} />
           <Route
             path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`}
             element={<StartSellingOnAmazon />}

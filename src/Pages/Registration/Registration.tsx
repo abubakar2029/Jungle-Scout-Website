@@ -1,4 +1,5 @@
 import React from "react";
+import ProgressSteps from "./ProgressSteps/ProgressSteps";
 
 function Registration() {
   let PlanSummaryFeatures: String[] = [
@@ -49,7 +50,8 @@ function Registration() {
                 {/* yahan map chla ga */}
                 {PlanSummaryFeatures.map((feature, index) => (
                   <li key={index} className="">
-                    <p>{feature}</p>
+                    {feature}
+                    {/* <p>{feature}</p> */}
                   </li>
                 ))}
               </ul>
@@ -58,15 +60,16 @@ function Registration() {
             <div className="shadow-[0_0_0_0.1-rgba(0,4px,10px,0px)] bg-white w-full rounded border border-gray-300 p-4">
               {/* PROGRESS_BAR */}
               <div className="flex justify-center items-center">
-                <div className="flex flex-col justify-center max-w-[200px] w-full">
+              <ProgressSteps/>
+                {/* <div className="flex flex-col justify-center max-w-[200px] w-full">
                   <div className="flex justify-center items-center border-orange-400 text-orange-400 border-2 rounded-[50%] w-8 h-8 mx-auto">
                     <p>1</p>
                   </div>
                   <p className="text-[13px] pt-2.5 font-medium text-center">
                     Create Your Account
                   </p>
-                </div>
-                <div className="flex flex-col justify-center max-w-[200px] w-full">
+                </div> */}
+                {/* <div className="flex flex-col justify-center max-w-[200px] w-full">
                   <div className="flex justify-center items-center relative w-full">
                     <hr className="absolute !w-[84%] !bg-gray-00 !h-0.5 top-1/2 !right-[58%]" />
                     <div className="flex justify-center items-center border-orange-400 text-orange-400 border-2 rounded-[50%] w-8 h-8">
@@ -76,7 +79,7 @@ function Registration() {
                   <p className="text-[13px] pt-2.5 font-medium text-center">
                     Create Your Account
                   </p>
-                </div>
+                </div> */}
               </div>
               <form action=""></form>
             </div>
