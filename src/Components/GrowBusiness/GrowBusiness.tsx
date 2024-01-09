@@ -1,5 +1,5 @@
-import React, {MouseEventHandler} from "react";
-import Button from "../Button/Button";
+import React, { MouseEventHandler } from "react";
+import Button from "../NavBtn/NavBtn";
 
 function GrowBusiness() {
   return (
@@ -15,12 +15,21 @@ function GrowBusiness() {
         </h1>
         <Button
           // On_Click={}
-          href="/"
-          label="Get Started"
-          width="24"
-          height="4"
-          bgColor="white"
-          textColor="black"
+          btn={{
+            hoverBgColor: "",
+            href: "",
+            shadow: false,
+            text: "Get Started",
+            style: {
+              width: "96px",
+              height: "16px",
+              backgroundColor: "white",
+              color: "black",
+              fontSize: "medium",
+              fontWeight: 600,
+              padding: "10px 12px",
+            },
+          }}
         />
       </section>
     </div>

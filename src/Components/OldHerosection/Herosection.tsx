@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 
-import Button from "../Button/Button";
+import NavBtn from "../NavBtn/NavBtn";
 import { Transition } from "@headlessui/react";
 
 function OldHeroSection() {
@@ -36,13 +36,22 @@ function OldHeroSection() {
               and expertise to help you succeed.
             </p>
             <div>
-              <Button
-                label="Sign up now"
-                href="/"
-                bgColor="black"
-                textColor="white"
-                width="106"
-                height="4"
+              <NavBtn
+                btn={{
+                  hoverBgColor: "#0D0D0D",
+                  href: "/",
+                  shadow: false,
+                  text: "Sign up now",
+                  style: {
+                    backgroundColor: "black",
+                    color: "white",
+                    width: "106px",
+                    height: "16px",
+                    padding: "10px 14px",
+                    fontWeight: 600,
+                    fontSize: "medium",
+                  },
+                }}
               />
             </div>
           </div>

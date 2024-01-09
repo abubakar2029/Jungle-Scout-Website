@@ -1,4 +1,4 @@
-import Button from "../Button/Button";
+import Button from "../NavBtn/NavBtn";
 import React from "react";
 
 function Sellersrecommendation() {
@@ -13,7 +13,23 @@ function Sellersrecommendation() {
             <p>Don’t wait! Make the leap with support from Jungle Scout.</p>
           </div>
           <div className="flex items-center  justify-center lg:w-1/4 w-full md:w-1/3">
-            <Button label="Get started" height="4" width="140" bgColor="white" textColor="black" href="/"/>
+            <Button
+              btn={{
+                hoverBgColor: "#0D0D0D",
+                href: "/",
+                shadow: false,
+                text: "Get started",
+                style: {
+                  height: "16px",
+                  backgroundColor: "white",
+                  width: "140px",
+                  color: "black",
+                  fontSize: "large",
+                  padding: "12px 16px",
+                  fontWeight: 700,
+                },
+              }}
+            />
           </div>
         </div>
       </div>
