@@ -1,19 +1,29 @@
-import React from "react";
-
 declare module 'react-step-progress-bar' {
-  export interface Step {
-    transition: string;
-  }
+  import React from 'react'
 
-  export interface ProgressBarProps {
-    children: React.ReactNode[];
-    percent: number;
-    filledBackground: string;
+  interface ProgressBarProps {
+    percent: number
+    stepPositions?: number[]
+    unfilledBackground?: string
+    filledBackground?: string
+    width?: number
+    height?: number
+    hasStepZero?: boolean
+    text?: string
+    children?:
+    | React.ReactChild
+    | React.ReactChild[]
   }
-
-  export class ProgressBar extends React.Component<ProgressBarProps> {}
-
-  export class StepProgressBar extends React.Component {
-    render(): JSX.Element;
+  interface StepProps {
+    children: (props: {
+      accomplished: boolean
+      transitionState: string
+      index: number
+      position: number
+    }) => React.ReactNode
+    transition?: 'scale' | 'rotate' | 'skew'
+    transitionDuration?: number
   }
+  class ProgressBar extends React.Component<ProgressBarProps, any> {}
+  class Step extends React.Component<StepProps, any> {}
 }

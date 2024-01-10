@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <div className="relative">
+      <div className="relative min-h-screen	">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />

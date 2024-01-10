@@ -176,7 +176,7 @@ function SubscriptionOptionsPanel() {
                 <div className="flex justify-center">
                   <Link
                     // onClick={On_Click}
-                    to="/"
+                    to="/registration"
                     className={`sm:min-w-[200px] min-h-[16px] ${
                       plan.popular
                         ? "bg-orange-500 hover:bg-orange-400 hover:shadow-xl"

@@ -804,7 +804,7 @@ function Header() {
               Log In
             </Link>
             <Link
-              to="/login"
+              to="/pricing"
               className="mx-2.5 text-white bg-orange-400 hover:shadow-[0_0_5px_3px_rgba(0,0,0,0.15)] transition-shadow duration-300 focus:ring focus:ring-orange-300 py-1.5 px-4.5 rounded-sm text-xs"
             >
               Sign up
