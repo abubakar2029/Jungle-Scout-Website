@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import ProgressSteps from "../ProgressBar/ProgressBar";
+import { Link } from "react-router-dom";
 
 interface FormData {
   email: string;
@@ -90,9 +91,13 @@ const EmailForm: React.FC = () => {
       /> */}
 
       {/* Submit Button */}
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-        Submit
-      </button>
+      <Link
+        to="/registration/accountDetails"
+        type="submit"
+        className="bg-blue-500 text-white p-2 rounded"
+      >
+        Next
+      </Link>
     </form>
   );
 };

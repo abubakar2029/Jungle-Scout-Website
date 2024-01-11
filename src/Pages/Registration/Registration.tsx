@@ -1,12 +1,11 @@
 import React, { ReactNode, useEffect } from "react";
 import ProgressSteps from "./ProgressBar/ProgressBar";
 import EmailForm from "./EmailForm/EmailForm";
-import { useMatch } from "react-router-dom";
+import { Outlet, useMatch } from "react-router-dom";
 function Registration() {
-  let { path, url, } = useMatch();
+  let match = useMatch("/registration");
   useEffect(() => {
-    console.log("ya path ha ", path);
-    console.log("ya url ha ", url);
+    console.log("ya path ha ", match);
   }, []);
   let PlanSummaryFeatures: String[] = [
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
@@ -97,7 +96,8 @@ function Registration() {
                   </p>
                 </div> */}
             {/* </div> */}
-            <EmailForm />
+            {/* <EmailForm /> */}
+            <Outlet />
             <footer className="border-t-[1px] border-gray-300  h-16 pt-2.5 mt-5 text-center">
               <p className="mt-3 text-14">
                 By signing up, you agree to Jungle Scout's{" "}

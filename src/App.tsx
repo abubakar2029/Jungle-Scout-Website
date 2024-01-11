@@ -15,14 +15,16 @@ import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAma
 import Temp from "./Pages/Temp/Temp";
 import Temp3 from "./Pages/tEMP3/Temp3";
 import TempAnime from "./Pages/TempAnime/TempAnime";
+import PaymentForm from "./Pages/Registration/PaymentForm/PaymentForm";
+import EmailForm from "./Pages/Registration/EmailForm/EmailForm";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <div className="relative min-h-screen	">
-        <Route path="/" element={<Homepage />} />
         <Routes>
+          <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/t" element={<Temp />} />
           <Route path="/tAn" element={<TempAnime />} />
@@ -34,7 +36,10 @@ function App() {
             path={`/features/${FeatureActions.BROWSER_EXTENSION}`}
             element={<BrowserExtension />}
           />
-          <Route path="/registration" element={<Registration />} />
+          <Route path="/registration" element={<Registration />}>
+            <Route path="accountDetails" element={<PaymentForm />} />
+            <Route path="email" element={<EmailForm />} />
+          </Route>
           <Route
             path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`}
             element={<StartSellingOnAmazon />}
