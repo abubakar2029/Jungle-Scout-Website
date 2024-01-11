@@ -1,13 +1,13 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import ProgressSteps from "./ProgressBar/ProgressBar";
 import EmailForm from "./EmailForm/EmailForm";
-
+import { useMatch } from "react-router-dom";
 function Registration() {
-  const myDiv: ReactNode = (
-    <div className="w-3 aspect-square rounded-[50%] border border-orange-500">
-      Content of the div
-    </div>
-  );
+  let { path, url, } = useMatch();
+  useEffect(() => {
+    console.log("ya path ha ", path);
+    console.log("ya url ha ", url);
+  }, []);
   let PlanSummaryFeatures: String[] = [
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",

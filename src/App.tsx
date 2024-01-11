@@ -21,8 +21,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <div className="relative min-h-screen	">
+        <Route path="/" element={<Homepage />} />
         <Routes>
-          <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/t" element={<Temp />} />
           <Route path="/tAn" element={<TempAnime />} />
