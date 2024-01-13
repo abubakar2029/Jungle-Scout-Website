@@ -1,4 +1,4 @@
-import * as Types from "./entities/Types";
+import * as Types from "../entities/Types";
 
 export const AffliatedBrandsLogos: Types.brandsLogo[] = [
   {

@@ -3,7 +3,6 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import ProgressSteps from "../ProgressBar/ProgressBar";
 import { Link } from "react-router-dom";
 
-// Define the form data interface
 interface FormData {
   email: string;
   confirmEmail: string;

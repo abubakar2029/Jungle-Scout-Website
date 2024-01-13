@@ -1,6 +1,6 @@
-import * as Types from "./entities/Types";
+import * as Types from "../entities/Types";
 
-import { SolutionsActions } from "./ActionTypes";
+import { SolutionsActions } from "../entities/NavbarEnums";
 
 export const SolutionPages: Types.SolutionPage[] = [
   // LAUNCH_MY_PRODUCT

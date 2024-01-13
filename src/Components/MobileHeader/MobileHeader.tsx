@@ -11,7 +11,7 @@ import {
   features2,
   resourcesNewSellers,
 } from "../../Components/Header/Header";
-import { NavbarActions } from "../../ActionTypes";
+import { NavbarActions } from "../../entities/NavbarEnums";
 import "./style.css"
 export default function Example() {
   const [open, setOpen] = useState(false);

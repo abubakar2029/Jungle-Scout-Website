@@ -1,6 +1,6 @@
-import * as Types from "./entities/Types";
+import * as Types from "../entities/Types";
 
-import { FeatureActions } from "./ActionTypes";
+import { FeatureActions } from "../entities/NavbarEnums";
 
 interface heroSection {
   bgImg: string;

@@ -4,7 +4,7 @@ import { Fragment, useState } from "react";
 import "material-icons/iconfont/material-icons.css";
 import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { NavbarActions } from "../../ActionTypes";
+import { NavbarActions } from "../../entities/NavbarEnums";
 import {
   solutionsFor,
   solutionsRecomended,

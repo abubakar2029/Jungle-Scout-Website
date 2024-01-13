@@ -6,7 +6,7 @@ import {
   FeatureActions,
   NavbarActions,
   SolutionsActions,
-} from "../../ActionTypes";
+} from "../../entities/NavbarEnums";
 
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import FacebookIcon from "@mui/icons-material/Facebook";

@@ -2,7 +2,7 @@ import {
   AffliatedBrandsLogos,
   featuredBrandLogos,
   jungleScoutResources,
-} from "../../HomepadeData";
+} from "../../PagesData/HomepadeData";
 
 import BrandAffiliations from "../../Components/BrandAffiliations/BrandAffiliations";
 import BusinessLaunchpad from "../../Components/BusinessLaunchpad/BusinessLaunchpad";

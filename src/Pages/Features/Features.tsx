@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { FeaturePages } from "../../FeaturesData";
+import { FeaturePages } from "../../PagesData/FeaturesData";
 import FeaturesTopHeading from "../../Components/FeaturesTopHeading/FeaturesTopHeading";
 import FeaturespageHeader from "../../Components/FeaturespageHeader/FeaturespageHeader";
 import TextImageRight from "../../Components/TextImageRight/TextImageRight";
