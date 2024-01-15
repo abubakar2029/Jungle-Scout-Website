@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import BrowserExtension from "./Pages/BrowserExtension/BrowserExtension";
-import Example from "./Pages/Temp2/Temp2";
+// import Example from "./Pages/Temp2/Temp2";
 import { FeatureActions } from "./entities/NavbarEnums";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
@@ -12,9 +12,9 @@ import Registration from "./Pages/Registration/Registration";
 import SignupBanner from "./Components/SignupBanner/SignupBanner";
 import { SolutionsActions } from "./entities/NavbarEnums";
 import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAmazon";
-import Temp from "./Pages/Temp/Temp";
-import Temp3 from "./Pages/tEMP3/Temp3";
-import TempAnime from "./Pages/TempAnime/TempAnime";
+// import Temp from "./Pages/Temp/Temp";
+// import Temp3 from "./Pages/tEMP3/Temp3";
+// import TempAnime from "./Pages/TempAnime/TempAnime";
 import PaymentForm from "./Pages/Registration/PaymentForm/PaymentForm";
 import EmailForm from "./Pages/Registration/EmailForm/EmailForm";
 
@@ -26,10 +26,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/t" element={<Temp />} />
-          <Route path="/tAn" element={<TempAnime />} />
-          <Route path="/t3" element={<Temp3 />} />
-          <Route path="/s" element={<Example />} />
+          {/* <Route path="/t" element={<Temp />} />
+          <Route path="/tAn" element={<TempAnime />} /> */}
+          {/* <Route path="/t3" element={<Temp3 />} />
+          <Route path="/s" element={<Example />} /> */}
           {/* <Route path="/features/:pID" element={<Features />} /> */}
 
           <Route
