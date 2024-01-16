@@ -123,8 +123,10 @@ function SubscriptionOptionsPanel() {
         </div>
         <div className="lg:w-1/4"></div>
         {/* pricing-cards */}
-        <div className="flex max-md:justify-center flex-col md:flex-row max-md:items-center
-        lg:w-3/4">
+        <div
+          className="flex max-md:justify-center flex-col md:flex-row max-md:items-center
+        lg:w-3/4"
+        >
           {subcriptionPlans.map((plan, index) => {
             return (
               <div
@@ -176,7 +178,7 @@ function SubscriptionOptionsPanel() {
                 <div className="flex justify-center">
                   <Link
                     // onClick={On_Click}
-                    to="/registration"
+                    to="/registration/email"
                     className={`sm:min-w-[200px] min-h-[16px] ${
                       plan.popular
                         ? "bg-orange-500 hover:bg-orange-400 hover:shadow-xl"

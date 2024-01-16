@@ -96,7 +96,6 @@ function Registration() {
                   </p>
                 </div> */}
             {/* </div> */}
-            {/* <EmailForm /> */}
             <Outlet />
             <footer className="border-t-[1px] border-gray-300  h-16 pt-2.5 mt-5 text-center">
               <p className="mt-3 text-14">

@@ -1,23 +1,24 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import ProgressSteps from "../ProgressBar/ProgressBar";
-import { Link } from "react-router-dom";
-
-interface FormData {
-  email: string;
-  confirmEmail: string;
-  password: string;
-}
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { emailDispatch } from "../../../store/signup/actions";
+import { emailData } from "../../../store/signup/types";
 
 const EmailForm: React.FC = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<emailData>();
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<emailData> = (data) => {
+    navigate("/registration/accountDetails");
+    dispatch(emailDispatch(data));
     console.log(data);
   };
 
@@ -91,13 +92,9 @@ const EmailForm: React.FC = () => {
       /> */}
 
       {/* Submit Button */}
-      <Link
-        to="/registration/accountDetails"
-        type="submit"
-        className="bg-blue-500 text-white p-2 rounded"
-      >
+      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
         Next
-      </Link>
+      </button>
     </form>
   );
 };

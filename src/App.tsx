@@ -37,6 +37,7 @@ function App() {
             element={<BrowserExtension />}
           />
           <Route path="/registration" element={<Registration />}>
+            <Route path="*" element={<EmailForm />} />
             <Route path="accountDetails" element={<PaymentForm />} />
             <Route path="email" element={<EmailForm />} />
           </Route>

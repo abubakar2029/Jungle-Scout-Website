@@ -4,7 +4,7 @@ import { actionType, emailData, addressData, creditCardData } from "./types";
 
 const emailState: emailData = {
   email: "",
-  name: "",
+  confirmEmail: "",
   password: "",
 };
 const emailDetail = (state = emailState, action: actionType<emailData>) => {

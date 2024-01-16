@@ -1,5 +1,5 @@
 export interface emailData {
-  name: string;
+  confirmEmail: string;
   email: string;
   password: string;
 }
