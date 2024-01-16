@@ -51,14 +51,6 @@ function Homepage() {
 
   return (
     <div>
-      <BusinessLaunchpad
-        style={{
-          backgroundColor: "#f0f0f0 !important",
-          border: "1px solid #ccc",
-        }}
-        aho="aho"
-      />
-
       <HeroSection linkArr={heroSectionProps} />
       <BrandAffiliations
         data={{
@@ -68,6 +60,13 @@ function Homepage() {
       />
 
       <NewResources />
+      <BusinessLaunchpad
+        style={{
+          backgroundColor: "#f0f0f0 !important",
+          border: "1px solid #ccc",
+        }}
+        aho="aho"
+      />
 
       {/* <Advertisement1 /> */}
       <JSolutions />

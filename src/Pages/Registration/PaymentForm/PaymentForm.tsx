@@ -2,23 +2,18 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import ProgressSteps from "../ProgressBar/ProgressBar";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addressData, creditCardData } from "../../../store/signup/types";
+import {
+  addressDispatch,
+  creditCardDispatch,
+} from "../../../store/signup/actions";
+import { Routes } from "../../../entities/Routes";
 
-interface FormData {
-  email: string;
-  confirmEmail: string;
-  firstName: string;
-  lastName: string;
-  address: string;
-  cardNumber: string;
-  expires: string;
-  cvc: string;
-  city: string;
-  zip: string;
-  country: string;
-  state: string;
-}
-
+type FormData = addressData & creditCardData;
 const EmailForm: React.FC = () => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -28,8 +23,34 @@ const EmailForm: React.FC = () => {
 
   // Form submission handler
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
-    // Add logic to handle form submission
+    const {
+      address,
+      city,
+      country,
+      firstName,
+      lastName,
+      state,
+      zip,
+    }: addressData = data;
+    const { cardNumber, cvc, expires }: creditCardData = data;
+    dispatch(
+      addressDispatch({
+        address,
+        city,
+        country,
+        firstName,
+        lastName,
+        state,
+        zip,
+      })
+    );
+    dispatch(
+      creditCardDispatch({
+        cardNumber,
+        cvc,
+        expires,
+      })
+    );
   };
 
   return (
@@ -46,10 +67,11 @@ const EmailForm: React.FC = () => {
             Card Number
           </label>
           <input
-            type="text"
+            type="number"
             id="cardNumber"
             {...register("cardNumber", {
               required: "Card Number is required",
+              value: 5545454545454544,
               pattern: /^\d{16}$/i, // Add your validation pattern
             })}
             className="mt-1 p-2 border w-full"
@@ -68,17 +90,17 @@ const EmailForm: React.FC = () => {
             Expires
           </label>
           <input
-            type="text"
+            type="date"
             id="expires"
-            placeholder="MM/YY"
             {...register("expires", {
-              required: "Expiry Date is required",
-              pattern: /^(0[1-9]|1[0-2])\/\d{2}$/i, // Add your validation pattern
+              valueAsDate: true,
+              required: true,
+              value: new Date(),
             })}
             className="mt-1 p-2 border w-full"
           />
           {errors.expires && (
-            <p className="text-red-500 text-sm">{errors.expires.message}</p>
+            <p className="text-red-500 text-sm">Expire Date is required</p>
           )}
         </div>
 
@@ -91,11 +113,12 @@ const EmailForm: React.FC = () => {
             CVC
           </label>
           <input
-            type="text"
+            type="number"
             placeholder="123"
             id="cvc"
             {...register("cvc", {
               required: "CVC is required",
+              value: 123,
               pattern: /^\d{3}$/i, // Add your validation pattern
             })}
             className="mt-1 p-2 border w-full"
@@ -120,7 +143,10 @@ const EmailForm: React.FC = () => {
           <input
             type="text"
             id="firstName"
-            {...register("firstName", { required: "First Name is required" })}
+            {...register("firstName", {
+              required: "First Name is required",
+              value: "Abu",
+            })}
             className="mt-1 p-2 border w-full"
           />
           {errors.firstName && (
@@ -139,7 +165,10 @@ const EmailForm: React.FC = () => {
           <input
             type="text"
             id="lastName"
-            {...register("lastName", { required: "Last Name is required" })}
+            {...register("lastName", {
+              required: "Last Name is required",
+              value: "Bakar",
+            })}
             className="mt-1 p-2 border w-full"
           />
           {errors.lastName && (
@@ -158,7 +187,10 @@ const EmailForm: React.FC = () => {
           <input
             type="text"
             id="address"
-            {...register("address", { required: "Address is required" })}
+            {...register("address", {
+              required: "Address is required",
+              value: "Taj Colony",
+            })}
             className="mt-1 p-2 border w-full"
           />
           {errors.address && (
@@ -177,7 +209,10 @@ const EmailForm: React.FC = () => {
           <input
             type="text"
             id="city"
-            {...register("city", { required: "City is required" })}
+            {...register("city", {
+              required: "City is required",
+              value: "FSD",
+            })}
             className="mt-1 p-2 border w-full"
           />
           {errors.city && (
@@ -194,9 +229,12 @@ const EmailForm: React.FC = () => {
             Zip
           </label>
           <input
-            type="text"
+            type="number"
             id="zip"
-            {...register("zip", { required: "Zip is required" })}
+            {...register("zip", {
+              required: "Zip is required",
+              value: 37000,
+            })}
             className="mt-1 p-2 border w-full"
           />
           {errors.zip && (
@@ -212,7 +250,10 @@ const EmailForm: React.FC = () => {
             </label>
             <select
               id="country"
-              {...register("country", { required: "Country is required" })}
+              {...register("country", {
+                required: "Country is required",
+                value: "Pak",
+              })}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="AF">Afghanistan</option>
@@ -226,17 +267,6 @@ const EmailForm: React.FC = () => {
               <option value="AQ">Antarctica</option>
               <option value="AG">Antigua and Barbuda</option>
               <option value="AR">Argentina</option>
-              <option value="AM">Armenia</option>
-              <option value="AW">Aruba</option>
-              <option value="AU">Australia</option>
-              <option value="AT">Austria</option>
-              <option value="AZ">Azerbaijan</option>
-              <option value="BS">Bahamas</option>
-              <option value="BH">Bahrain</option>
-              <option value="BD">Bangladesh</option>
-              <option value="BB">Barbados</option>
-              <option value="BY">Belarus</option>
-              <option value="BE">Belgium</option>
               <option value="BZ">Belize</option>
               <option value="BJ">Benin</option>
               <option value="BM">Bermuda</option>
@@ -253,34 +283,6 @@ const EmailForm: React.FC = () => {
               <option value="BF">Burkina Faso</option>
               <option value="BI">Burundi</option>
               <option value="KH">Cambodia</option>
-              <option value="CM">Cameroon</option>
-              <option value="CA">Canada</option>
-              <option value="CV">Cape Verde</option>
-              <option value="KY">Cayman Islands</option>
-              <option value="CF">Central African Republic</option>
-              <option value="TD">Chad</option>
-              <option value="CL">Chile</option>
-              <option value="CN">China</option>
-              <option value="CX">Christmas Island</option>
-              <option value="CC">Cocos (Keeling) Islands</option>
-              <option value="CO">Colombia</option>
-              <option value="KM">Comoros</option>
-              <option value="CG">Congo</option>
-              <option value="CD">Congo, the Democratic Republic of the</option>
-              <option value="CK">Cook Islands</option>
-              <option value="CR">Costa Rica</option>
-              <option value="CI">Côte d'Ivoire</option>
-              <option value="HR">Croatia</option>
-              <option value="CU">Cuba</option>
-              <option value="CW">Curaçao</option>
-              <option value="CY">Cyprus</option>
-              <option value="CZ">Czech Republic</option>
-              <option value="DK">Denmark</option>
-              <option value="DJ">Djibouti</option>
-              <option value="DM">Dominica</option>
-              <option value="DO">Dominican Republic</option>
-              <option value="EC">Ecuador</option>
-              <option value="EG">Egypt</option>
               <option value="SV">El Salvador</option>
               <option value="GQ">Equatorial Guinea</option>
               <option value="ER">Eritrea</option>
@@ -486,7 +488,10 @@ const EmailForm: React.FC = () => {
             </label>
             <select
               id="state"
-              {...register("state", { required: "State is required" })}
+              {...register("state", {
+                required: "State is required",
+                value: "Punjab",
+              })}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="">Select</option>
@@ -504,9 +509,12 @@ const EmailForm: React.FC = () => {
 
       <div className="grid grid-cols-subgrid grid-cols-2 col-span-2 gap-x-3">
         {/* Go Back*/}
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+        <Link
+          to={Routes.REGISTRATION_EMAIL}
+          className="bg-blue-500 text-white p-2 rounded"
+        >
           Go Back
-        </button>
+        </Link>
         {/* Create Button */}
         <button type="submit" className="bg-blue-500 text-white p-2 rounded">
           Create Ypur Acoount

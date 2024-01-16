@@ -6,7 +6,7 @@ export interface emailData {
 
 export interface creditCardData {
   cardNumber: Number;
-  cardExpire: Date;
+  expires: Date;
   cvc: Number;
 }
 export interface addressData {

@@ -13,17 +13,15 @@ const emailDispatch = (payload: emailData): ActionReturn<emailData> => {
   };
 };
 
-const addressDispatch = (
-  payload: creditCardData
-): ActionReturn<creditCardData> => {
+const addressDispatch = (payload: addressData): ActionReturn<addressData> => {
   return {
     type: ActionTypes.ADD_ADDRESS,
     payload,
   };
 };
 const creditCardDispatch = (
-  payload: addressData
-): ActionReturn<addressData> => {
+  payload: creditCardData
+): ActionReturn<creditCardData> => {
   return {
     type: ActionTypes.ADD_CREDIT_CARD_DETAIL,
     payload,

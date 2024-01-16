@@ -2,22 +2,17 @@ import React, { Fragment } from "react";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 import "material-icons/iconfont/material-icons.css";
+import { ProgressBarData } from "../types";
 
-interface Data {
-  icons: boolean;
-  background: string;
-  percent: number;
-  height: number;
-}
 interface Props {
-  Data: Data;
+  Data: ProgressBarData;
 }
 const ProgressSteps = ({ Data }: Props) => {
   return (
     <ProgressBar
       percent={Data.percent}
-      filledBackground={Data.background}
-      height={Data.height}
+      filledBackground={Data.background ? Data.background : "#F57706"}
+      height={Data.height ? Data.height : 2}
     >
       <Step transition="scale">
         {({ accomplished }) =>

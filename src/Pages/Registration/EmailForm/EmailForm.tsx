@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import ProgressSteps from "../ProgressBar/ProgressBar";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { emailDispatch } from "../../../store/signup/actions";
 import { emailData } from "../../../store/signup/types";
 
 const EmailForm: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { confirmEmail, email, password }: emailData = useSelector(
+    (store: any) => store.emailDetail
+  );
+  useEffect(() => {}, []);
   const {
     register,
     handleSubmit,
@@ -37,6 +41,7 @@ const EmailForm: React.FC = () => {
           id="email"
           {...register("email", {
             required: "Email is required",
+            value=email,
             pattern: /^\S+@\S+$/i,
           })}
           className="mt-1 p-2 border w-full"
@@ -80,7 +85,9 @@ const EmailForm: React.FC = () => {
         <input
           type="password"
           id="password"
-          {...register("password", { required: "Password is required" })}
+          {...register("password",
+         { required: "Password is required",
+        value:password })}
           className="mt-1 p-2 border w-full"
         />
         {errors.password && (

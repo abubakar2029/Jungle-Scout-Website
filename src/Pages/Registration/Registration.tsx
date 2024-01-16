@@ -1,12 +1,9 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import ProgressSteps from "./ProgressBar/ProgressBar";
 import EmailForm from "./EmailForm/EmailForm";
 import { Outlet, useMatch } from "react-router-dom";
+import { ProgressBarData } from "./types";
 function Registration() {
-  let match = useMatch("/registration");
-  useEffect(() => {
-    console.log("ya path ha ", match);
-  }, []);
   let PlanSummaryFeatures: String[] = [
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
@@ -14,6 +11,8 @@ function Registration() {
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
   ];
+
+  let [progressData, setProgressData] = useState<ProgressBarData>();
 
   return (
     // <main className="!font-sans min-h-full heelo">
@@ -68,8 +67,6 @@ function Registration() {
             <div className="pt-3 max-w-[200px] w-full mx-auto">
               <ProgressSteps
                 Data={{
-                  background: "#F57706",
-                  height: 2,
                   icons: true,
                   percent: 50,
                 }}
