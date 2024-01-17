@@ -1,0 +1,29 @@
+/* #Registration_Section {
+    background-size: cover;
+    background-image: url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-newsletter-block-background-desktop-1.5x.png");
+}
+
+@media screen and (max-width: 760px) {
+  #Registration_Section {
+    background-image: url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-newsletter-block-background-mobile-1.5x.jpg");
+    background-size: cover;
+  }
+} */
+
+#Registration_Section {
+    background-size: cover;
+    background-image: url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-newsletter-block-background-desktop-1.5x.png");
+}
+
+@media screen and (min-width: 720px) and (max-width: 760px) {
+  #Registration_Section {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #Registration_Section {
+    background-image: url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-newsletter-block-background-mobile-1.5x.jpg");
+  }
+}
+

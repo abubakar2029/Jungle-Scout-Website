@@ -1,0 +1,5 @@
+export enum ActionTypes {
+  ADD_EMAIL = "ADD_EMAIL",
+  ADD_CREDIT_CARD_DETAIL = "ADD_CREDIT_CARD_DETAIL",
+  ADD_ADDRESS = "ADD_ADDRESS",
+}

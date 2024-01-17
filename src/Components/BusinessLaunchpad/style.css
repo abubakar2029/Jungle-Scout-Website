@@ -1,0 +1,21 @@
+@media screen and (min-width: 992px) {
+  #Business_Launchpad {
+    background-image: url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-insights-d-orange-desktop-1.5x.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 580px) {
+  #Business_Launchpad {
+    background-image: url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-insights-d-orange-tablet-1.5x.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+@media screen and (max-width: 580px) {
+  #Business_Launchpad {
+    background-image: url("https://www.junglescout.com/wp-content/uploads/2022/03/hp-insights-d-orange-mobile-1.5x.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}

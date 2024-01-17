@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 0;
+  height: 2px;
+  background-color: blue;
+  transition: width 0.5s; /* Adding transition for smooth width change */
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+
+<p id="anime" onmouseover="expandLine()" onmouseout="resetLine()">
+  <b>Note:</b> When an animation is finished, it goes back to its original style.
+  <div id="line" style="margin-left: auto;margin-right: auto;"></div>
+</p>
+
+</body>
+<script>
+function expandLine() {
+  var line = document.getElementById('line');
+  line.style.width = '100%';
+}
+
+function resetLine() {
+  var line = document.getElementById('line');
+  line.style.width = '0';
+}
+</script>
+</html>
