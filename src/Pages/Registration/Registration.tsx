@@ -39,7 +39,7 @@ function Registration() {
         </div>
       </div>
       {/* RIGHT-MAIN-SECTION */}
-      <section className="bg-neutral-100 p-14 col-span-8">
+      <section className="bg-neutral-100 p-5 md:p-14 col-span-8">
         <div>
           {/* PLAN_SUMMARY */}
           <div className="w-full rounded border space-y-3 border-gray-300 p-4 bg-white h-40">

@@ -1,39 +1,26 @@
 import React, { useState } from "react";
-import { useMutation, gql } from "@apollo/client";
-
-const TEST_MUTATION = gql`
-  mutation TestMutation($msg: String, $num: Int) {
-    testMutation(data: { msg: $msg, num: $num })
-  }
-`;
+import PasswordStrengthBar from "react-password-strength-bar";
 
 function Temp() {
-  const [executeMutation] = useMutation(TEST_MUTATION);
-  const [state, setState] = useState();
-
-  const handleClick = async () => {
-    try {
-      const { data } = await executeMutation({
-        variables: {
-          msg: "test",
-          num: 1,
-        },
-      });
-
-      setState(data);
-    } catch (error) {
-      console.error("Mutation Error", error);
-    }
-  };
-
-  console.log("Mutation Response", state);
-
+  const [state, setState] = useState("abc@");
   return (
     <div>
-      Temp
-      <button className="bg-green-300 p-5" onClick={handleClick}>
-        Click Me
-      </button>
+      <p>Enter password</p>
+      <input
+        type="password"
+        name="password"
+        value={state}
+        className="bg-orange-300 p-3 w-24 h-6 border"
+        onChange={(e) => setState(e.target.value)}
+      />
+      <PasswordStrengthBar
+        password={state}
+        onChangeScore={(score, feedback) => {
+          console.log("score : ", score, "feedback : ", feedback);
+        }}
+        scoreWordClassName=""
+        scoreWords={false}
+      />
     </div>
   );
 }
