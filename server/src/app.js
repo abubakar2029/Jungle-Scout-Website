@@ -8,10 +8,11 @@ const resolvers = require("./graphQL/resolvers");
 // Specifying path to .env
 dotenv.config({ path: "../.env" });
 const app = express();
-const port = process.env.PORT || 4000;
-
+const port = process.env.PORT || 8080;
+const cors = require("cors");
 /* Middleware */
 app.use(express.json());
+app.use(cors())
 
 const mongoURI = process.env.MONGODB_URI;
 

@@ -17,6 +17,7 @@ import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAma
 // import TempAnime from "./Pages/TempAnime/TempAnime";
 import PaymentForm from "./Pages/Registration/PaymentForm/PaymentForm";
 import EmailForm from "./Pages/Registration/EmailForm/EmailForm";
+import Temp from "./Temp";
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
             path={`/solutions/${SolutionsActions.START_SELLING_ON_AMAZON}`}
             element={<StartSellingOnAmazon />}
           />
-          <Route path="/t2" element={<BrowserExtension />} />
+          <Route path="/t2" element={<Temp />} />
           <Route path="/signup" element={<SignupBanner />} />
         </Routes>
       </div>

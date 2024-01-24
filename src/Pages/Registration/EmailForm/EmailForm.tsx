@@ -41,7 +41,7 @@ const EmailForm: React.FC = () => {
           id="email"
           {...register("email", {
             required: "Email is required",
-            value:email,
+            value: email,
             pattern: /^\S+@\S+$/i,
           })}
           className="mt-1 p-2 border w-full"
@@ -85,9 +85,10 @@ const EmailForm: React.FC = () => {
         <input
           type="password"
           id="password"
-          {...register("password",
-         { required: "Password is required",
-        value:password })}
+          {...register("password", {
+            required: "Password is required",
+            value: password,
+          })}
           className="mt-1 p-2 border w-full"
         />
         {errors.password && (
@@ -107,3 +108,4 @@ const EmailForm: React.FC = () => {
 };
 
 export default EmailForm;
+

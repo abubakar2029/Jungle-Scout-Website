@@ -11,7 +11,7 @@ const emailDetail = (state = emailState, action: actionType<emailData>) => {
   state = { ...state };
   switch (action.type) {
     case ActionTypes.ADD_EMAIL:
-      console.log("Ya email data payload ma aya", action.payload);
+      // console.log("Ya email data payload ma aya", action.payload);
       state = action.payload;
       return state;
 
@@ -31,7 +31,7 @@ const creditCardDetail = (
 ) => {
   switch (action.type) {
     case ActionTypes.ADD_CREDIT_CARD_DETAIL:
-      console.log("Ya card data payload ma aya", action.payload);
+      // console.log("Ya card data payload ma aya", action.payload);
 
       return state;
 

@@ -1,28 +1,82 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import ProgressSteps from "../ProgressBar/ProgressBar";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addressData, creditCardData } from "../../../store/signup/types";
 import {
   addressDispatch,
   creditCardDispatch,
 } from "../../../store/signup/actions";
 import { Routes } from "../../../entities/Routes";
-
+import { useMutation, gql } from "@apollo/client";
 type FormData = addressData & creditCardData;
+const TEST_MUTATION = gql`
+  mutation TestMutation($msg: String, $num: Int) {
+    testMutation(data: { msg: $msg, num: $num })
+  }
+`;
+const SIGNUP_MUTATION = gql`
+  mutation SignupMutation(
+    $email: String
+    $password: String
+    # $cardNumber: String
+    $cvc: Int!
+    $expires: Date
+    $firstName: String!
+    $lastName: String!
+    $address: String!
+    $city: String!
+    $state: String!
+    $zip: Float
+    $country: String!
+  ) {
+    signup(
+      data: {
+        emailData: { email: $email, password: $password }
+        creditCardData: {
+          # cardNumber: $cardNumber
+          cvc: $cvc
+          expires: $expires
+        }
+        addressData: {
+          firstName: $firstName
+          lastName: $lastName
+          address: $address
+          city: $city
+          state: $state
+          zip: $zip
+          country: $country
+        }
+      }
+    ) {
+      emailData {
+        email
+      }
+      creditCardData {
+        # cardNumber
+        cvc
+      }
+      addressData {
+        firstName
+      }
+    }
+  }
+`;
+
 const EmailForm: React.FC = () => {
   const dispatch = useDispatch();
-
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<FormData>();
+  const [signup] = useMutation(SIGNUP_MUTATION);
+  const [executeMutation] = useMutation(TEST_MUTATION);
 
+  const { email, password } = useSelector((store: any) => store.emailDetail);
   // Form submission handler
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    console.log("On submit chla");
     const {
       address,
       city,
@@ -32,7 +86,41 @@ const EmailForm: React.FC = () => {
       state,
       zip,
     }: addressData = data;
+
     const { cardNumber, cvc, expires }: creditCardData = data;
+    try {
+      const { data } = await executeMutation({
+        variables: {
+          msg: "test",
+          num: 1,
+        },
+      });
+      console.log("test Muatation", data);
+
+      const result = await signup({
+        variables: {
+          email: "dummy@example.com",
+          password: "dummyPassword",
+          // cardNumber: "12345673456",
+          expires: "2023-12-31", // Assuming "expires" is a date in YYYY-MM-DD format
+          cvc: 123,
+          firstName: "John",
+          lastName: "Doe",
+          address: "123 Main St",
+          city: "Cityville",
+          state: "Stateville",
+          zip: 54321,
+          country: "Dummyland",
+        },
+      });
+
+      console.log("Signup Result", result);
+    } catch (err: any) {
+      console.log(JSON.stringify(err, null, 2));
+      console.log("================================================");
+
+      console.error("Signup Error aya:", err instanceof Error);
+    }
     dispatch(
       addressDispatch({
         address,
@@ -346,122 +434,6 @@ const EmailForm: React.FC = () => {
               <option value="LY">Libya</option>
               <option value="LI">Liechtenstein</option>
               <option value="LT">Lithuania</option>
-              <option value="LU">Luxembourg</option>
-              <option value="MO">Macao</option>
-              <option value="MK">
-                Macedonia, the former Yugoslav Republic of
-              </option>
-              <option value="MG">Madagascar</option>
-              <option value="MW">Malawi</option>
-              <option value="MY">Malaysia</option>
-              <option value="MV">Maldives</option>
-              <option value="ML">Mali</option>
-              <option value="MT">Malta</option>
-              <option value="MH">Marshall Islands</option>
-              <option value="MQ">Martinique</option>
-              <option value="MR">Mauritania</option>
-              <option value="MU">Mauritius</option>
-              <option value="YT">Mayotte</option>
-              <option value="MX">Mexico</option>
-              <option value="FM">Micronesia, Federated States of</option>
-              <option value="MD">Moldova, Republic of</option>
-              <option value="MC">Monaco</option>
-              <option value="MN">Mongolia</option>
-              <option value="ME">Montenegro</option>
-              <option value="MS">Montserrat</option>
-              <option value="MA">Morocco</option>
-              <option value="MZ">Mozambique</option>
-              <option value="MM">Myanmar</option>
-              <option value="NA">Namibia</option>
-              <option value="NR">Nauru</option>
-              <option value="NP">Nepal</option>
-              <option value="NL">Netherlands</option>
-              <option value="NC">New Caledonia</option>
-              <option value="NZ">New Zealand</option>
-              <option value="NI">Nicaragua</option>
-              <option value="NE">Niger</option>
-              <option value="NG">Nigeria</option>
-              <option value="NU">Niue</option>
-              <option value="NF">Norfolk Island</option>
-              <option value="MP">Northern Mariana Islands</option>
-              <option value="NO">Norway</option>
-              <option value="OM">Oman</option>
-              <option value="PK">Pakistan</option>
-              <option value="PW">Palau</option>
-              <option value="PS">Palestinian Territory, Occupied</option>
-              <option value="PA">Panama</option>
-              <option value="PG">Papua New Guinea</option>
-              <option value="PY">Paraguay</option>
-              <option value="PE">Peru</option>
-              <option value="PH">Philippines</option>
-              <option value="PN">Pitcairn</option>
-              <option value="PL">Poland</option>
-              <option value="PT">Portugal</option>
-              <option value="PR">Puerto Rico</option>
-              <option value="QA">Qatar</option>
-              <option value="RE">Réunion</option>
-              <option value="RO">Romania</option>
-              <option value="RU">Russian Federation</option>
-              <option value="RW">Rwanda</option>
-              <option value="BL">Saint Barthélemy</option>
-              <option value="SH">
-                Saint Helena, Ascension and Tristan da Cunha
-              </option>
-              <option value="KN">Saint Kitts and Nevis</option>
-              <option value="LC">Saint Lucia</option>
-              <option value="MF">Saint Martin (French part)</option>
-              <option value="PM">Saint Pierre and Miquelon</option>
-              <option value="VC">Saint Vincent and the Grenadines</option>
-              <option value="WS">Samoa</option>
-              <option value="SM">San Marino</option>
-              <option value="ST">Sao Tome and Principe</option>
-              <option value="SA">Saudi Arabia</option>
-              <option value="SN">Senegal</option>
-              <option value="RS">Serbia</option>
-              <option value="SC">Seychelles</option>
-              <option value="SL">Sierra Leone</option>
-              <option value="SG">Singapore</option>
-              <option value="SX">Sint Maarten (Dutch part)</option>
-              <option value="SK">Slovakia</option>
-              <option value="SI">Slovenia</option>
-              <option value="SB">Solomon Islands</option>
-              <option value="SO">Somalia</option>
-              <option value="ZA">South Africa</option>
-              <option value="GS">
-                South Georgia and the South Sandwich Islands
-              </option>
-              <option value="SS">South Sudan</option>
-              <option value="ES">Spain</option>
-              <option value="LK">Sri Lanka</option>
-              <option value="SD">Sudan</option>
-              <option value="SR">Suriname</option>
-              <option value="SJ">Svalbard and Jan Mayen</option>
-              <option value="SZ">Swaziland</option>
-              <option value="SE">Sweden</option>
-              <option value="CH">Switzerland</option>
-              <option value="SY">Syrian Arab Republic</option>
-              <option value="TW">Taiwan, Province of China</option>
-              <option value="TJ">Tajikistan</option>
-              <option value="TZ">Tanzania, United Republic of</option>
-              <option value="TH">Thailand</option>
-              <option value="TL">Timor-Leste</option>
-              <option value="TG">Togo</option>
-              <option value="TK">Tokelau</option>
-              <option value="TO">Tonga</option>
-              <option value="TT">Trinidad and Tobago</option>
-              <option value="TN">Tunisia</option>
-              <option value="TR">Turkey</option>
-              <option value="TM">Turkmenistan</option>
-              <option value="TC">Turks and Caicos Islands</option>
-              <option value="TV">Tuvalu</option>
-              <option value="UG">Uganda</option>
-              <option value="UA">Ukraine</option>
-              <option value="AE">United Arab Emirates</option>
-              <option value="GB">United Kingdom</option>
-              <option value="US">United States</option>
-              <option value="UM">United States Minor Outlying Islands</option>
-              <option value="UY">Uruguay</option>
-              <option value="UZ">Uzbekistan</option>
               <option value="VU">Vanuatu</option>
               <option value="VE">Venezuela, Bolivarian Republic of</option>
               <option value="VN">Viet Nam</option>
@@ -517,7 +489,7 @@ const EmailForm: React.FC = () => {
         </Link>
         {/* Create Button */}
         <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-          Create Ypur Acoount
+          Create Your Acoount
         </button>
       </div>
     </form>
