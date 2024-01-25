@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import ProgressSteps from "./ProgressBar/ProgressBar";
 import EmailForm from "./EmailForm/EmailForm";
-import { Outlet, useMatch } from "react-router-dom";
+import { Outlet, useLocation, useMatch } from "react-router-dom";
 import { ProgressBarData } from "./types";
 function Registration() {
   let PlanSummaryFeatures: String[] = [
@@ -11,8 +11,16 @@ function Registration() {
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
   ];
-
-  let [progressData, setProgressData] = useState<ProgressBarData>();
+  const location = useLocation();
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    console.log("Location route : ", location.pathname);
+    if (location.pathname === "/registration/accountDetails") {
+      setProgress(50);
+    } else {
+      setProgress(0);
+    }
+  }, [location]);
 
   return (
     // <main className="!font-sans min-h-full heelo">
@@ -67,8 +75,7 @@ function Registration() {
             <div className="pt-3 max-w-[200px] w-full mx-auto">
               <ProgressSteps
                 Data={{
-                  icons: true,
-                  percent: 50,
+                  percent: progress,
                 }}
               />
             </div>

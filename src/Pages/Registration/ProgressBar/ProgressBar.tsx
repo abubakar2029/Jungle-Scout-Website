@@ -15,43 +15,59 @@ const ProgressSteps = ({ Data }: Props) => {
       height={Data.height ? Data.height : 2}
     >
       <Step transition="scale">
-        {({ accomplished }) =>
-          accomplished ? (
+        {({ accomplished }) => (
+          // accomplished ? <p>{accomplished} Ho gaya</p> : <p>{accomplished} Nahi ha</p>
+          // accomplished ? (
+
+          //   <i
+          //     className={`material-icons w-5 h-5 inline rounded-[50%] bg-orange-500 pt-0.5 ${
+          //       Data.percent >= 50 ? "" : "hidden"
+          //     }`}
+          //     style={{ fontSize: "18px", color: "white" }}
+          //   >
+          //     check_small
+          //   </i>
+          // ) : (
+          //   <div
+          //     className={`w-6 inline bg-white text-orange-500 aspect-square rounded-[50%] font-medium border-2 border-orange-500 ${
+          //       Data.percent >= 50 ? "" : "hidden"
+          //     }`}
+          //   >
+          //     1
+          //   </div>
+          // )
+
+          <>
             <i
               className={`material-icons w-5 h-5 inline rounded-[50%] bg-orange-500 pt-0.5 ${
-                Data.icons ? "" : "hidden"
+                Data.percent >= 50 ? "" : "hidden"
               }`}
               style={{ fontSize: "18px", color: "white" }}
             >
               check_small
             </i>
-          ) : (
             <div
-              className={`w-6 inline bg-white text-orange-500 aspect-square rounded-[50%] font-medium border-2 border-orange-500 ${
-                Data.icons ? "" : "hidden"
+              className={`w-7 font-medium flex justify-center text-orange-500 bg-white items-center aspect-square rounded-[50%] border-2 border-orange-500  ${
+                Data.percent >= 50 ? "hidden" : ""
               }`}
             >
               1
             </div>
-          )
-        }
+          </>
+        )}
       </Step>
       <Step transition="scale">
         {({ accomplished }) =>
           accomplished ? (
             <i
-              className={`material-icons w-5 h-5 stroke-white fill-white inline-flex justify-center items-center rounded-[50%] bg-orange-500 pt-0.5 ${
-                Data.icons ? "" : "hidden"
-              }`}
+              className={`material-icons w-5 h-5 stroke-white fill-white inline-flex justify-center items-center rounded-[50%] bg-orange-500 pt-0.5 `}
               style={{ fontSize: "18px", color: "white" }}
             >
               check_small
             </i>
           ) : (
             <div
-              className={`w-7 font-medium flex justify-center text-orange-500 bg-white items-center aspect-square rounded-[50%] border-2 border-orange-500 ${
-                Data.icons ? "" : "hidden"
-              }`}
+              className={`w-7 font-medium flex justify-center text-orange-500 bg-white items-center aspect-square rounded-[50%] border-2 border-orange-500 `}
             >
               2
             </div>
