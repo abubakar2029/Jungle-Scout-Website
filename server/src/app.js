@@ -11,9 +11,8 @@ const app = express();
 const port = process.env.PORT || 8080;
 const cors = require("cors");
 /* Middleware */
-app.use(express.json());
-app.use(cors())
-
+app.use(cors());
+const jwt = require("jsonwebtoken");
 const mongoURI = process.env.MONGODB_URI;
 
 // Connect to MongoDB
@@ -29,6 +28,12 @@ async function connect() {
 }
 connect();
 
+app.post("/check-token", (req, res) => {
+  console.log(req.body.token);
+  jwt.verify(req.body.token, "monday", (err, data) => {
+    console.log("Data : ", data);
+  });
+});
 const bootstrapServer = async () => {
   // Setting up the server
   const server = new ApolloServer({

@@ -7,7 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Homepage from "./Pages/Homepage/Homepage";
 import Pricing from "./Pages/Pricing/Pricing";
-import React from "react";
+import React, { useEffect } from "react";
 import Registration from "./Pages/Registration/Registration";
 import SignupBanner from "./Components/SignupBanner/SignupBanner";
 import { SolutionsActions } from "./entities/NavbarEnums";
@@ -15,11 +15,24 @@ import StartSellingOnAmazon from "./Pages/StartSellingOnAmazon/StartSellingOnAma
 // import Temp from "./Pages/Temp/Temp";
 // import Temp3 from "./Pages/tEMP3/Temp3";
 // import TempAnime from "./Pages/TempAnime/TempAnime";
+import axios from "axios";
 import PaymentForm from "./Pages/Registration/PaymentForm/PaymentForm";
 import EmailForm from "./Pages/Registration/EmailForm/EmailForm";
 import Temp from "./Temp";
 
 function App() {
+  useEffect(() => {
+    console.log("hello");
+
+    axios
+      .post("/check-token", {
+        token: localStorage.getItem("token"),
+        //  s:localStorage.removeItem("token"),
+      })
+      .then((res: any) => {
+        debugger;
+      });
+  }, []);
   return (
     <BrowserRouter>
       <Header />

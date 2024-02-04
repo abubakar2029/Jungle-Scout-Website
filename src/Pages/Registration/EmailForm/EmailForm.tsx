@@ -27,7 +27,7 @@ const EmailForm: React.FC = () => {
     console.log(data);
   };
   let [data, setData] = useState<emailData>({
-    email: "@gmail.com",
+    email: "abc@gmail.com",
     confirmEmail: "",
     password: "",
   });

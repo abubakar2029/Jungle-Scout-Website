@@ -7,8 +7,8 @@ import {
   addressDispatch,
   creditCardDispatch,
 } from "../../../store/signup/actions";
-import { Routes } from "../../../entities/Routes";
 import { useMutation, gql } from "@apollo/client";
+import { Routes } from "../../../entities/Routes";
 type FormData = addressData & creditCardData;
 const TEST_MUTATION = gql`
   mutation TestMutation($msg: String, $num: Int) {
@@ -19,7 +19,6 @@ const SIGNUP_MUTATION = gql`
   mutation SignupMutation(
     $email: String
     $password: String
-    # $cardNumber: String
     $cvc: Int!
     $expires: Date
     $firstName: String!
@@ -27,17 +26,13 @@ const SIGNUP_MUTATION = gql`
     $address: String!
     $city: String!
     $state: String!
-    $zip: Float
+    $zip: Int
     $country: String!
   ) {
     signup(
       data: {
         emailData: { email: $email, password: $password }
-        creditCardData: {
-          # cardNumber: $cardNumber
-          cvc: $cvc
-          expires: $expires
-        }
+        creditCardData: { cvc: $cvc, expires: $expires }
         addressData: {
           firstName: $firstName
           lastName: $lastName
@@ -49,15 +44,22 @@ const SIGNUP_MUTATION = gql`
         }
       }
     ) {
-      emailData {
-        email
-      }
-      creditCardData {
-        # cardNumber
-        cvc
-      }
-      addressData {
-        firstName
+      token
+      user {
+        emailData {
+          email
+        }
+        creditCardData {
+          cvc
+        }
+        addressData {
+          lastName
+          address
+          city
+          state
+          zip
+          country
+        }
       }
     }
   }
@@ -71,7 +73,7 @@ const EmailForm: React.FC = () => {
     formState: { errors },
   } = useForm<FormData>();
   const [signup] = useMutation(SIGNUP_MUTATION);
-  const [executeMutation] = useMutation(TEST_MUTATION);
+  // const [executeMutation] = useMutation(TEST_MUTATION);
 
   const { email, password } = useSelector((store: any) => store.emailDetail);
   // Form submission handler
@@ -89,13 +91,13 @@ const EmailForm: React.FC = () => {
 
     const { cardNumber, cvc, expires }: creditCardData = data;
     try {
-      const { data } = await executeMutation({
-        variables: {
-          msg: "test",
-          num: 1,
-        },
-      });
-      console.log("test Muatation", data);
+      // const { data } = await executeMutation({
+      //   variables: {
+      //     msg: "test",
+      //     num: 1,
+      //   },
+      // });
+      // console.log("test Muatation", data);
 
       const result = await signup({
         variables: {
@@ -115,6 +117,8 @@ const EmailForm: React.FC = () => {
       });
 
       console.log("Signup Result", result);
+      console.log("token", result.data.signup.token);
+      localStorage.setItem("token", result.data.signup.token)
     } catch (err: any) {
       console.log(JSON.stringify(err, null, 2));
       console.log("================================================");

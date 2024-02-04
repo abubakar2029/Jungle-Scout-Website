@@ -44,12 +44,66 @@ module.exports = {
         const newPerson = new User(data);
         const response = await newPerson.save();
         console.log("New User Created", response);
-        return newPerson;
+
+        // let jwtToken;
+        // await jwt.sign(
+        //   { email: response.email },
+        //   "monday",
+        //   {
+        //     expiresIn: "2h",
+        //   },
+        //   (err, token) => {
+        //     if (err) {
+        //       console.log(err);
+        //     } else {
+        //       console.log(token);
+        //       jwtToken = token;
+        //     }
+        //   }
+        // );
+
+        console.log("response.emailData.email", response.emailData.email);
+       
+        try{
+          let token = await jwt.sign(
+                { email: response.emailData.email },
+                "monday",
+                {
+                  expiresIn: "2h",
+                },
+                );
+
+
+          
+        }catch(e){
+
+        }
+       
+        // const jwtToken = await new Promise((resolve, reject) => {
+        //   jwt.sign(
+        //     { email: response.emailData.email },
+        //     "monday",
+        //     {
+        //       expiresIn: "2h",
+        //     },
+        //     (err, token) => {
+        //       if (err) {
+        //         reject(err);
+        //       } else {
+        //         resolve(token);
+        //       }
+        //     }
+        //   );
+        // });
+
+        console.log("jwtToken : ", jwtToken);
+        return { user: newPerson, token: jwtToken };
       } catch (error) {
         console.log(error.message);
         throw new Error("Error adding a new person", error);
       }
     },
+
     async login(_, { email, password }) {
       try {
         // Find the user by email

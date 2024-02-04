@@ -3,7 +3,9 @@ type EmailData {
   email: String!
   password: String!
 }
+
 scalar Date
+
 type CreditCardData {
   cardNumber: Int!
   expires: Date!
@@ -17,7 +19,7 @@ type AddressData {
   city: String!
   country: String!
   state: String!
-  zip: Int!
+  zip: Int # Change from Float to Int or String
 }
 
 type User {
@@ -25,30 +27,36 @@ type User {
   creditCardData: CreditCardData!
   addressData: AddressData!
 }
+
 type Query {
-    test:Int
+    test: Int
 }
-type Mutation{
-    testMutation(data:data):Int
-    signup(data:userInput):User
+
+type Mutation {
+    testMutation(data: Data): Int
+    signup(data: UserInput): AuthPayload
     login(email: String!, password: String!): AuthPayload!
-    addPerson(data:addUserInput!):User
-    delPerson(id:ID!):[User]
+    addPerson(data: AddUserInput!): User
+    delPerson(id: ID!): [User]
 }
+
 type AuthPayload {
   token: String
   user: User
 }
-input data{
+
+input Data {
   msg: String
   num: Int
 }
+
 input EmailDataInput {
   email: String
   password: String
 }
+
 input CreditCardDataInput {
-  # cardNumber: String
+  cardNumber: String
   expires: Date
   cvc: Int!
 }
@@ -60,18 +68,21 @@ input AddressDataInput {
   city: String!
   country: String!
   state: String!
-  zip: Float
+  zip: Int # Change from Float to Int or String
 }
-input userInput {
+
+input UserInput {
   emailData: EmailDataInput!
   creditCardData: CreditCardDataInput!
   addressData: AddressDataInput!
 }
-input addUserInput{
-    name:String!
-    email:String
-    password:String! 
+
+input AddUserInput {
+    name: String!
+    email: String
+    password: String!
 }
+
 `;
 
 module.exports = typeDefs;
