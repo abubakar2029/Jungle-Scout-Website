@@ -63,23 +63,17 @@ module.exports = {
         // );
 
         console.log("response.emailData.email", response.emailData.email);
-       
-        try{
-          let token = await jwt.sign(
-                { email: response.emailData.email },
-                "monday",
-                {
-                  expiresIn: "2h",
-                },
-                );
-
-
-          
-        }catch(e){
-
-        }
-       
-        // const jwtToken = await new Promise((resolve, reject) => {
+        let token;
+        try {
+          token = await jwt.sign(
+            { email: response.emailData.email },
+            "monday",
+            {
+              expiresIn: "2h",
+            }
+          );
+        } catch (err) {}
+        // const token = await new Promise((resolve, reject) => {
         //   jwt.sign(
         //     { email: response.emailData.email },
         //     "monday",
@@ -96,8 +90,8 @@ module.exports = {
         //   );
         // });
 
-        console.log("jwtToken : ", jwtToken);
-        return { user: newPerson, token: jwtToken };
+        console.log("jwtToken : ", token);
+        return { user: newPerson, token };
       } catch (error) {
         console.log(error.message);
         throw new Error("Error adding a new person", error);

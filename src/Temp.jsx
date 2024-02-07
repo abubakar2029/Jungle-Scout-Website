@@ -1,28 +1,29 @@
 import React, { useState } from "react";
-import PasswordStrengthBar from "react-password-strength-bar";
+import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
+import Select from "react-select"
+const Example = () => {
+  const [country, setCountry] = useState("");
+  const [region, setRegion] = useState("");
 
-function Temp() {
-  const [state, setState] = useState("abc@");
+  const selectCountry = (val) => {
+    setCountry(val);
+  };
+
+  const selectRegion = (val) => {
+    setRegion(val);
+  };
+
   return (
     <div>
-      <p>Enter password</p>
-      <input
-        type="password"
-        name="password"
-        value={state}
-        className="bg-orange-300 p-3 w-24 h-6 border"
-        onChange={(e) => setState(e.target.value)}
-      />
-      <PasswordStrengthBar
-        password={state}
-        onChangeScore={(score, feedback) => {
-          console.log("score : ", score, "feedback : ", feedback);
-        }}
-        scoreWordClassName=""
-        scoreWords={false}
+      <CountryDropdown value={country} onChange={(val) => selectCountry(val)} />
+      <RegionDropdown
+        country={country}
+        value={region}
+        onChange={(val) => selectRegion(val)}
       />
     </div>
   );
-}
+};
 
-export default Temp;
+export default Example;
+

@@ -21,18 +21,18 @@ import EmailForm from "./Pages/Registration/EmailForm/EmailForm";
 import Temp from "./Temp";
 
 function App() {
-  useEffect(() => {
-    console.log("hello");
+  // useEffect(() => {
+  //   console.log("hello");
 
-    axios
-      .post("/check-token", {
-        token: localStorage.getItem("token"),
-        //  s:localStorage.removeItem("token"),
-      })
-      .then((res: any) => {
-        debugger;
-      });
-  }, []);
+  //   axios
+  //     .post("/check-token", {
+  //       token: localStorage.getItem("token"),
+  //       //  s:localStorage.removeItem("token"),
+  //     })
+  //     .then((res: any) => {
+  //       debugger;
+  //     });
+  // }, []);
   return (
     <BrowserRouter>
       <Header />
