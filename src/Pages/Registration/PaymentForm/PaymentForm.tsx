@@ -365,12 +365,15 @@ const EmailForm: React.FC = () => {
               required: "Zip is required",
               value: formData.addressData.zip,
             })}
-            // onChange={(e) =>
-            //   setFormData((prevData) => ({
-            //     ...prevData,
-            //     addressData: { ...prevData.addressData, zip: e.target.value },
-            //   }))
-            // }
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                addressData: {
+                  ...prevData.addressData,
+                  zip: Number(e.target.value),
+                },
+              }))
+            }
             className="mt-1 p-2 border w-full"
           />
           {errors.zip && (
@@ -379,8 +382,17 @@ const EmailForm: React.FC = () => {
         </div>
         <CountryDropdown
           classes="h-9 w-full my-3 !focus:outline-none border border-gray-200"
-          value={country}
-          onChange={(val) => setCountry(val)}
+          value={formData.addressData.country}
+          onChange={(val) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              addressData: {
+                ...prevData.addressData,
+                country: val,
+              },
+            }));
+            setCountry(val);
+          }}
         />
         {countryErr && (
           <p className="text-red-500 text-sm">Country is required.</p>
@@ -389,9 +401,18 @@ const EmailForm: React.FC = () => {
         {/* State */}
         <RegionDropdown
           classes="h-9 w-full my-3 !focus:outline-none  border border-gray-200"
-          country={country}
-          value={state}
-          onChange={(val) => setState(val)}
+          country={formData.addressData.country}
+          value={formData.addressData.state}
+          onChange={(val) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              addressData: {
+                ...prevData.addressData,
+                state: val,
+              },
+            }));
+            setCountry(val);
+          }}
         />
       </div>
 
