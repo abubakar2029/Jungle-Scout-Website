@@ -92,41 +92,33 @@ const EmailForm: React.FC = () => {
     } else {
     }
     console.log("On submit chla", formData);
-    // try {
-    //   // const { data } = await executeMutation({
-    //   //   variables: {
-    //   //     msg: "test",
-    //   //     num: 1,
-    //   //   },
-    //   // });
-    //   // console.log("test Muatation", data);
+    try {
+      const result = await signup({
+        variables: {
+          email: emailData.email,
+          password: emailData.password,
+          // cardNumber: "12345673456",
+          expires: formData.creditCardData.expires, // Assuming "expires" is a date in YYYY-MM-DD format
+          cvc: formData.creditCardData.cvc,
+          firstName: formData.addressData.firstName,
+          lastName: formData.addressData.lastName,
+          address: formData.addressData.address,
+          city: formData.addressData.city,
+          state: formData.addressData.state,
+          zip: formData.addressData.zip,
+          country: formData.addressData.country,
+        },
+      });
 
-    //   // const result = await signup({
-    //   //   variables: {
-    //   //     email: "dummy@example.com",
-    //   //     password: "dummyPassword",
-    //   //     // cardNumber: "12345673456",
-    //   //     expires: "2023-12-31", // Assuming "expires" is a date in YYYY-MM-DD format
-    //   //     cvc: 123,
-    //   //     firstName: "John",
-    //   //     lastName: "Doe",
-    //   //     address: "123 Main St",
-    //   //     city: "Cityville",
-    //   //     state: "Stateville",
-    //   //     zip: 54321,
-    //   //     country: "Dummyland",
-    //   //   },
-    //   // });
+      console.log("Signup Result", result);
+      console.log("token", result.data.signup.token);
+      localStorage.setItem("token", result.data.signup.token);
+    } catch (err: any) {
+      console.log(JSON.stringify(err, null, 2));
+      console.log("================================================");
 
-    //   console.log("Signup Result", result);
-    //   console.log("token", result.data.signup.token);
-    //   localStorage.setItem("token", result.data.signup.token);
-    // } catch (err: any) {
-    //   console.log(JSON.stringify(err, null, 2));
-    //   console.log("================================================");
-
-    //   console.error("Signup Error aya:", err instanceof Error);
-    // }
+      console.error("Signup Error aya:", err instanceof Error);
+    }
     dispatch({
       type: ActionTypes.ADD_FORM2_DATA,
       payload: formData,
