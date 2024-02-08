@@ -6,12 +6,12 @@ interface ActionReturn<T> {
   payload: T;
 }
 
-const emailDispatch = (payload: emailData): ActionReturn<emailData> => {
-  return {
-    type: ActionTypes.ADD_EMAIL,
-    payload,
-  };
-};
+// const emailDispatch = (payload: emailData): ActionReturn<emailData> => {
+//   return {
+//     type: ActionTypes.ADD_EMAIL,
+//     payload,
+//   };
+// };
 
 const addressDispatch = (payload: addressData): ActionReturn<addressData> => {
   return {
@@ -28,4 +28,4 @@ const creditCardDispatch = (
   };
 };
 
-export { emailDispatch, creditCardDispatch, addressDispatch };
+export {  creditCardDispatch, addressDispatch };

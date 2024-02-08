@@ -23,3 +23,7 @@ export interface actionType<T> {
   type: string;
   payload: T;
 }
+export type Signup_Form_2 = {
+  creditCardData: creditCardData;
+  addressData: addressData;
+};

@@ -1,16 +1,50 @@
 import { combineReducers } from "redux";
 import { ActionTypes } from "./enums";
-import { actionType, emailData, addressData, creditCardData } from "./types";
+import {
+  Signup_Form_2,
+  actionType,
+  emailData,
+  addressData,
+  creditCardData,
+} from "./types";
 
-const emailState: emailData = {
-  email: "",
-  confirmEmail: "",
-  password: "",
+const signupInitial: Signup_Form_2 = {
+  addressData: {
+    address: "lorem ipsum dolor sit amet",
+    city: "Lorem Ipsum",
+    country: "United States",
+    firstName: "John",
+    lastName: "Smith",
+    state: "New York",
+    zip: 123,
+  },
+  creditCardData: {
+    cardNumber: 123,
+    cvc: 123,
+    expires: new Date(),
+  },
 };
-const emailDetail = (state = emailState, action: actionType<emailData>) => {
+
+const form2 = (state = signupInitial, action: actionType<Signup_Form_2>) => {
   state = { ...state };
   switch (action.type) {
-    case ActionTypes.ADD_EMAIL:
+    case ActionTypes.ADD_SIGNUP_DATA:
+      state = action.payload;
+      break;
+    default:
+      return state;
+  }
+};
+
+const emailState: emailData = {
+  email: "you@gmail.com",
+  confirmEmail: "you@gmail.com",
+  password: "you@gmail.com",
+};
+const emailForm = (state = emailState, action: actionType<emailData>) => {
+  state = { ...state };
+  switch (action.type) {
+    case ActionTypes.ADD_EMAIL_FORM:
       // console.log("Ya email data payload ma aya", action.payload);
       state = action.payload;
       return state;
@@ -64,9 +98,10 @@ const adressDetail = (
   }
 };
 const rootReducer = combineReducers({
-  emailDetail,
+  emailForm,
   creditCardDetail,
   adressDetail,
+  form2,
 });
 
 export { rootReducer };

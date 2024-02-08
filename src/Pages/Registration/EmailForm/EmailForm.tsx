@@ -3,16 +3,15 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import ProgressSteps from "../ProgressBar/ProgressBar";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { emailDispatch } from "../../../store/signup/actions";
+// import { emailDispatch } from "../../../store/signup/actions";
 import { emailData } from "../../../store/signup/types";
 import PasswordStrengthBar from "react-password-strength-bar";
-
+import { ActionTypes } from "../../../store/signup/enums";
 const EmailForm: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { confirmEmail, email, password }: emailData = useSelector(
-    (store: any) => store.emailDetail
-  );
+  const emailData: emailData = useSelector((store: any) => store.emailForm);
+  let [data, setData] = useState<emailData>(emailData);
   useEffect(() => {}, []);
   const {
     register,
@@ -23,16 +22,12 @@ const EmailForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<emailData> = (data) => {
     navigate("/registration/accountDetails");
-    dispatch(emailDispatch(data));
-    console.log(data);
+    dispatch({
+      type: ActionTypes.ADD_EMAIL_FORM,
+      payload: data,
+    });
+    console.log("Email form data", data);
   };
-  let [data, setData] = useState<emailData>({
-    email: "abc@gmail.com",
-    confirmEmail: "",
-    password: "",
-  });
-
-  console.log(data);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
@@ -75,6 +70,7 @@ const EmailForm: React.FC = () => {
           id="confirmEmail"
           {...register("confirmEmail", {
             required: "Confirm Email is required",
+            value: data.confirmEmail,
             validate: (value) =>
               value === watch("email") || "Emails do not match",
           })}
@@ -112,6 +108,7 @@ const EmailForm: React.FC = () => {
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
       </div>
+
       <PasswordStrengthBar
         password={data.password}
         scoreWords={["", "", "", "", ""]}

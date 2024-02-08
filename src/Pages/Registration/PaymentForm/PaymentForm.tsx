@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addressData, creditCardData } from "../../../store/signup/types";
+import {
+  addressData,
+  creditCardData,
+  emailData,
+} from "../../../store/signup/types";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 import {
   addressDispatch,
@@ -72,7 +76,9 @@ const EmailForm: React.FC = () => {
   let [country, setCountry] = useState<string>("");
   const [signup] = useMutation(SIGNUP_MUTATION);
 
-  const { email, password } = useSelector((store: any) => store.emailDetail);
+  const { email, password }: emailData = useSelector(
+    (store: any) => store.emailForm
+  );
 
   let [countryErr, setCountryErr] = useState(false);
   let [state, setState] = useState("");
@@ -83,14 +89,8 @@ const EmailForm: React.FC = () => {
     } else {
     }
     console.log("On submit chla", data);
-    const {
-      address,
-      city,
-      firstName,
-      lastName,
-      state,
-      zip,
-    }: addressData = data;
+    const { address, city, firstName, lastName, state, zip }: addressData =
+      data;
 
     const { cardNumber, cvc, expires }: creditCardData = data;
     try {
