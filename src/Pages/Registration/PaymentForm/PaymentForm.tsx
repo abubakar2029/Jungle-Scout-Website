@@ -7,12 +7,10 @@ import {
   addressData,
   creditCardData,
   emailData,
+  Signup_Form_2,
 } from "../../../store/signup/types";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
-import {
-  addressDispatch,
-  creditCardDispatch,
-} from "../../../store/signup/actions";
+import { ActionTypes } from "../../../store/signup/enums";
 import { useMutation, gql } from "@apollo/client";
 import { Routes } from "../../../entities/Routes";
 type FormData = addressData & creditCardData;
@@ -67,6 +65,15 @@ const SIGNUP_MUTATION = gql`
 `;
 
 const EmailForm: React.FC = () => {
+  const emailData: emailData = useSelector((store: any) => store.emailForm);
+  const { addressData, creditCardData }: Signup_Form_2 = useSelector(
+    (store: any) => store.form2
+  );
+  let [formData, setFormData] = useState<Signup_Form_2>({
+    addressData,
+    creditCardData,
+  });
+
   const dispatch = useDispatch();
   const {
     register,
@@ -76,10 +83,6 @@ const EmailForm: React.FC = () => {
   let [country, setCountry] = useState<string>("");
   const [signup] = useMutation(SIGNUP_MUTATION);
 
-  const { email, password }: emailData = useSelector(
-    (store: any) => store.emailForm
-  );
-
   let [countryErr, setCountryErr] = useState(false);
   let [state, setState] = useState("");
   // Form submission handler
@@ -88,64 +91,46 @@ const EmailForm: React.FC = () => {
       setCountryErr(true);
     } else {
     }
-    console.log("On submit chla", data);
-    const { address, city, firstName, lastName, state, zip }: addressData =
-      data;
+    console.log("On submit chla", formData);
+    // try {
+    //   // const { data } = await executeMutation({
+    //   //   variables: {
+    //   //     msg: "test",
+    //   //     num: 1,
+    //   //   },
+    //   // });
+    //   // console.log("test Muatation", data);
 
-    const { cardNumber, cvc, expires }: creditCardData = data;
-    try {
-      // const { data } = await executeMutation({
-      //   variables: {
-      //     msg: "test",
-      //     num: 1,
-      //   },
-      // });
-      // console.log("test Muatation", data);
+    //   // const result = await signup({
+    //   //   variables: {
+    //   //     email: "dummy@example.com",
+    //   //     password: "dummyPassword",
+    //   //     // cardNumber: "12345673456",
+    //   //     expires: "2023-12-31", // Assuming "expires" is a date in YYYY-MM-DD format
+    //   //     cvc: 123,
+    //   //     firstName: "John",
+    //   //     lastName: "Doe",
+    //   //     address: "123 Main St",
+    //   //     city: "Cityville",
+    //   //     state: "Stateville",
+    //   //     zip: 54321,
+    //   //     country: "Dummyland",
+    //   //   },
+    //   // });
 
-      const result = await signup({
-        variables: {
-          email: "dummy@example.com",
-          password: "dummyPassword",
-          // cardNumber: "12345673456",
-          expires: "2023-12-31", // Assuming "expires" is a date in YYYY-MM-DD format
-          cvc: 123,
-          firstName: "John",
-          lastName: "Doe",
-          address: "123 Main St",
-          city: "Cityville",
-          state: "Stateville",
-          zip: 54321,
-          country: "Dummyland",
-        },
-      });
+    //   console.log("Signup Result", result);
+    //   console.log("token", result.data.signup.token);
+    //   localStorage.setItem("token", result.data.signup.token);
+    // } catch (err: any) {
+    //   console.log(JSON.stringify(err, null, 2));
+    //   console.log("================================================");
 
-      console.log("Signup Result", result);
-      console.log("token", result.data.signup.token);
-      localStorage.setItem("token", result.data.signup.token);
-    } catch (err: any) {
-      console.log(JSON.stringify(err, null, 2));
-      console.log("================================================");
-
-      console.error("Signup Error aya:", err instanceof Error);
-    }
-    dispatch(
-      addressDispatch({
-        address,
-        city,
-        country,
-        firstName,
-        lastName,
-        state,
-        zip,
-      })
-    );
-    dispatch(
-      creditCardDispatch({
-        cardNumber,
-        cvc,
-        expires,
-      })
-    );
+    //   console.error("Signup Error aya:", err instanceof Error);
+    // }
+    dispatch({
+      type: ActionTypes.ADD_FORM2_DATA,
+      payload: formData,
+    });
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-8 grid grid-cols-2 ">
@@ -165,9 +150,18 @@ const EmailForm: React.FC = () => {
             id="cardNumber"
             {...register("cardNumber", {
               required: "Card Number is required",
-              value: 5545454545454544,
+              value: formData.creditCardData.cardNumber,
               pattern: /^\d{16}$/i, // Add your validation pattern
             })}
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                addressData: {
+                  ...prevData.addressData,
+                  cardNumber: e.target.value,
+                },
+              }))
+            }
             className="mt-1 p-2 border w-full"
           />
           {errors.cardNumber && (
@@ -189,7 +183,7 @@ const EmailForm: React.FC = () => {
             {...register("expires", {
               valueAsDate: true,
               required: true,
-              value: new Date(),
+              value: formData.creditCardData.expires,
             })}
             className="mt-1 p-2 border w-full"
           />
@@ -212,9 +206,18 @@ const EmailForm: React.FC = () => {
             id="cvc"
             {...register("cvc", {
               required: "CVC is required",
-              value: 123,
+              value: formData.creditCardData.cvc,
               pattern: /^\d{3}$/i, // Add your validation pattern
             })}
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                addressData: {
+                  ...prevData.addressData,
+                  cvc: e.target.value,
+                },
+              }))
+            }
             className="mt-1 p-2 border w-full"
           />
           {errors.cvc && (
@@ -239,8 +242,17 @@ const EmailForm: React.FC = () => {
             id="firstName"
             {...register("firstName", {
               required: "First Name is required",
-              value: "Abu",
+              value: formData.addressData.firstName,
             })}
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                addressData: {
+                  ...prevData.addressData,
+                  firstName: e.target.value,
+                },
+              }))
+            }
             className="mt-1 p-2 border w-full"
           />
           {errors.firstName && (
@@ -261,8 +273,17 @@ const EmailForm: React.FC = () => {
             id="lastName"
             {...register("lastName", {
               required: "Last Name is required",
-              value: "Bakar",
+              value: formData.addressData.lastName,
             })}
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                addressData: {
+                  ...prevData.addressData,
+                  lastName: e.target.value,
+                },
+              }))
+            }
             className="mt-1 p-2 border w-full"
           />
           {errors.lastName && (
@@ -283,8 +304,17 @@ const EmailForm: React.FC = () => {
             id="address"
             {...register("address", {
               required: "Address is required",
-              value: "Taj Colony",
+              value: formData.addressData.address,
             })}
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                addressData: {
+                  ...prevData.addressData,
+                  address: e.target.value,
+                },
+              }))
+            }
             className="mt-1 p-2 border w-full"
           />
           {errors.address && (
@@ -305,8 +335,14 @@ const EmailForm: React.FC = () => {
             id="city"
             {...register("city", {
               required: "City is required",
-              value: "FSD",
+              value: formData.addressData.city,
             })}
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                addressData: { ...prevData.addressData, city: e.target.value },
+              }))
+            }
             className="mt-1 p-2 border w-full"
           />
           {errors.city && (
@@ -327,43 +363,20 @@ const EmailForm: React.FC = () => {
             id="zip"
             {...register("zip", {
               required: "Zip is required",
-              value: 37000,
+              value: formData.addressData.zip,
             })}
+            // onChange={(e) =>
+            //   setFormData((prevData) => ({
+            //     ...prevData,
+            //     addressData: { ...prevData.addressData, zip: e.target.value },
+            //   }))
+            // }
             className="mt-1 p-2 border w-full"
           />
           {errors.zip && (
             <p className="text-red-500 text-sm">{errors.zip.message}</p>
           )}
         </div>
-
-        {/* Country */}
-        {/* <div className="col-span-1">
-          <>
-            <label htmlFor="country" className="block mb-2 text-sm font-medium">
-              Select your country
-            </label>
-            <select
-            id="country"
-            {...register("country", {
-              required: "Country is required",
-                value: "Pak",
-              })}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            >
-              <option value="VG">Virgin Islands, British</option>
-              <option value="VI">Virgin Islands, U.S.</option>
-              <option value="WF">Wallis and Futuna</option>
-              <option value="EH">Western Sahara</option>
-              <option value="YE">Yemen</option>
-              <option value="ZM">Zambia</option>
-              <option value="ZW">Zimbabwe</option>
-            </select>
-          </>
-
-          {errors.country && (
-            <p className="text-red-500 text-sm">{errors.country.message}</p>
-            )}
-          </div> */}
         <CountryDropdown
           classes="h-9 w-full my-3 !focus:outline-none border border-gray-200"
           value={country}

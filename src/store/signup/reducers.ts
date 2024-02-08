@@ -28,9 +28,10 @@ const signupInitial: Signup_Form_2 = {
 const form2 = (state = signupInitial, action: actionType<Signup_Form_2>) => {
   state = { ...state };
   switch (action.type) {
-    case ActionTypes.ADD_SIGNUP_DATA:
+    case ActionTypes.ADD_FORM2_DATA:
       state = action.payload;
-      break;
+      console.log("Form 2 data updated successfully", state);
+      return state;
     default:
       return state;
   }
