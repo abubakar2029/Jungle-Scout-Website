@@ -15,6 +15,7 @@ const LOGIN_MUTATION = gql`
     login(email: $email, password: $password) {
       token
       status
+      message
       user {
         addressData {
           firstName
@@ -47,11 +48,11 @@ function Login() {
       variables: { email: data.email, password: data.password },
     });
     if (response.data.login.status === 200) {
-      toast("Login successful");
+      toast(response.data.login.message);
       console.log("Login response", response.data.login);
     } else {
-      console.log("Login response", response.data.login);
-      toast("Login failed");
+      // console.log("Login response", response.data.login);
+      toast(response.data.login.status);
     }
   };
   return (
@@ -130,7 +131,7 @@ function Login() {
           )}
           <button
             type="submit"
-            className="font-semibold text-white bg-orange-400 opacity-50 rounded min-w-full py-2 px-3 mb-4 mt-10 border-b-4 border-b-orange-500 outline-none"
+            className="font-semibold text-white bg-orange-400 opacity-50 hover:opacity-70 rounded min-w-full py-2 px-3 mb-4 mt-10 border-b-4 border-b-orange-500 outline-none"
           >
             Log in
           </button>

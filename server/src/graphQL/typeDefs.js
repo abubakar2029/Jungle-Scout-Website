@@ -42,6 +42,7 @@ type Mutation {
 
 type AuthPayload {
   token: String
+  message: String
   user: User
   status: Int
 }

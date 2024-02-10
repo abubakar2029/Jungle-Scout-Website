@@ -101,18 +101,21 @@ module.exports = {
     async login(_, { email, password }) {
       try {
         // Find the user by email
-        const user = await User.findOne({ "emailData.email": email });
+        const user = await User.findOne({
+          "emailData.email": email,
+          "emailData.password": password,
+        });
 
         // Check if the user exists
         if (!user) {
-          return { status: 500 };
+          return { status: 200, message: "User not found" };
         }
         console.log("user mil gaya: ", user);
 
         // Generate a JWT token
         const token = jwt.sign({ email: user.emailData.email }, "secret");
 
-        return { token, user, status: 200 };
+        return { token, user, status: 200, message: "Login successful" };
       } catch (error) {
         return { status: error.status };
         // throw new Error("Error logging in", error);

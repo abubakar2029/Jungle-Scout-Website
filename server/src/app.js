@@ -41,7 +41,6 @@ const bootstrapServer = async () => {
     resolvers,
   });
   await server.start();
-
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use("/graphql", expressMiddleware(server));
