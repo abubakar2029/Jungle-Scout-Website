@@ -38,9 +38,9 @@ const form2 = (state = signupInitial, action: actionType<Signup_Form_2>) => {
 };
 
 const emailState: emailData = {
-  email: "you@gmail.com",
-  confirmEmail: "you@gmail.com",
-  password: "you@gmail.com",
+  email: "gulabkhan@gmail.com",
+  confirmEmail: "gulabkhan@gmail.com",
+  password: "gulabkhan@gmail.com",
 };
 const emailForm = (state = emailState, action: actionType<emailData>) => {
   state = { ...state };

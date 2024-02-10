@@ -19,7 +19,8 @@ import axios from "axios";
 import PaymentForm from "./Pages/Registration/PaymentForm/PaymentForm";
 import EmailForm from "./Pages/Registration/EmailForm/EmailForm";
 import Temp from "./Temp";
-
+import Login from "./Pages/Login/Login";
+import { WebRoutes } from "./entities/Routes";
 function App() {
   // useEffect(() => {
   //   console.log("hello");
@@ -39,7 +40,8 @@ function App() {
       <div className="relative min-h-screen	">
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path={WebRoutes.LOGIN} element={<Login />} />
+          <Route path={WebRoutes.PRICING} element={<Pricing />} />
           {/* <Route path="/t" element={<Temp />} />
           <Route path="/tAn" element={<TempAnime />} /> */}
           {/* <Route path="/t3" element={<Temp3 />} />

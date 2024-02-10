@@ -19,6 +19,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { useState } from "react";
+import { WebRoutes } from "../../entities/Routes";
 
 export const solutionsFor: NavEntities.Solution[] = [
   {
@@ -798,7 +799,7 @@ function Header() {
           {/* login/signup */}
           <div className="flex items-center font-extrabold text-[12px]">
             <Link
-              to="/login"
+              to={WebRoutes.LOGIN}
               className="text-[14px] !font-bold mx-2.5 whitespace-nowrap"
             >
               Log In

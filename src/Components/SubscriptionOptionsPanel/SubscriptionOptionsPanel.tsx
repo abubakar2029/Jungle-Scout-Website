@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import CheckIcon from "@mui/icons-material/Check";
 import { Link } from "react-router-dom";
-import { Routes } from "../../entities/Routes";
+import { WebRoutes } from "../../entities/Routes";
 
 interface pricingPlan {
   subcriptionType: string;
@@ -179,7 +179,7 @@ function SubscriptionOptionsPanel() {
                 <div className="flex justify-center">
                   <Link
                     // onClick={On_Click}
-                    to={Routes.REGISTRATION_EMAIL}
+                    to={WebRoutes.REGISTRATION_EMAIL}
                     className={`sm:min-w-[200px] min-h-[16px] ${
                       plan.popular
                         ? "bg-orange-500 hover:bg-orange-400 hover:shadow-xl"

@@ -43,6 +43,7 @@ type Mutation {
 type AuthPayload {
   token: String
   user: User
+  status: Int
 }
 
 input Data {

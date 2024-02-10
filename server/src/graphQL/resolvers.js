@@ -105,17 +105,17 @@ module.exports = {
 
         // Check if the user exists
         if (!user) {
-          throw new Error("User not found");
+          return { status: 500 };
         }
-        console.log("FindeOne ka response", user);
+        console.log("user mil gaya: ", user);
 
         // Generate a JWT token
         const token = jwt.sign({ email: user.emailData.email }, "secret");
 
-        console.log("Logged In");
-        return { token, user };
+        return { token, user, status: 200 };
       } catch (error) {
-        throw new Error("Error logging in", error);
+        return { status: error.status };
+        // throw new Error("Error logging in", error);
       }
     },
     async delPerson(_, { id }) {

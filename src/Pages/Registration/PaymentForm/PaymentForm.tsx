@@ -12,7 +12,7 @@ import {
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 import { ActionTypes } from "../../../store/signup/enums";
 import { useMutation, gql } from "@apollo/client";
-import { Routes } from "../../../entities/Routes";
+import { WebRoutes } from "../../../entities/Routes";
 type FormData = addressData & creditCardData;
 const SIGNUP_MUTATION = gql`
   mutation (
@@ -84,7 +84,6 @@ const EmailForm: React.FC = () => {
   const [signup] = useMutation(SIGNUP_MUTATION);
 
   let [countryErr, setCountryErr] = useState(false);
-  let [state, setState] = useState("");
   // Form submission handler
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     if (country.length === 0) {
@@ -411,7 +410,7 @@ const EmailForm: React.FC = () => {
       <div className="grid grid-cols-subgrid grid-cols-2 col-span-2 gap-x-3">
         {/* Go Back*/}
         <Link
-          to={Routes.REGISTRATION_EMAIL}
+          to={WebRoutes.REGISTRATION_EMAIL}
           className="bg-blue-500 text-white p-2 rounded"
         >
           Go Back
