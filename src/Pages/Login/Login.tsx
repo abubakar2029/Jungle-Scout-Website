@@ -15,6 +15,7 @@ const LOGIN_MUTATION = gql`
     login(email: $email, password: $password) {
       token
       status
+      _id
       message
       user {
         addressData {

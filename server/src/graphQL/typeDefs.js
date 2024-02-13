@@ -44,6 +44,7 @@ type AuthPayload {
   token: String
   message: String
   user: User
+  _id: String
   status: Int
 }
 
