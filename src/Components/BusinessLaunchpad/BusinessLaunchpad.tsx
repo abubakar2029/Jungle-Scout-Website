@@ -118,8 +118,11 @@ function BusinessLaunchpad(props: any) {
       },
     },
   ];
+  let [activeCard, setActiveCard] = useState<number>(0);
+  useEffect(() => {
+    console.log("active card", activeCard);
+  }, [activeCard]);
 
-  let [activeCard, setActiveCard] = useState<string>(Cards.START_SELLING);
   console.log("Active ", activeCard);
   const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
   const handleResize = () => {
@@ -164,10 +167,10 @@ function BusinessLaunchpad(props: any) {
           {businessLaunchpadCards.map((cardData, index) => (
             <div
               className={`px-8 pt-10 pb-8 h-full cursor-pointer  hover:bg-gray-50 ${
-                activeCard === cardData.cardType ? "bg-white" : "bg-gray-100"
+                activeCard === index ? "bg-white" : "bg-gray-100"
               }`}
               key={index}
-              onClick={() => setActiveCard(cardData.cardType)}
+              onClick={() => setActiveCard(index)}
             >
               {/* CARD */}
               <figure className="mb-6">
@@ -180,7 +183,7 @@ function BusinessLaunchpad(props: any) {
               {/* ARROW-BUTTON */}
               <div
                 className={`mt-auto w-10 h-10 transition-all bg-neutral-100 p-1 rounded-[50%] flex justify-center items-center duration-150 ${
-                  activeCard === cardData.cardType ? "rotate-90" : "rotate-0"
+                  activeCard === index ? "rotate-90" : "rotate-0"
                 }`}
               >
                 <i className="material-icons">arrow_forward</i>
@@ -188,7 +191,7 @@ function BusinessLaunchpad(props: any) {
             </div>
           ))}
         </section>
-        <SelectedCard CardContent={businessLaunchpadCards[0].CardContent} />
+        <SelectedCard CardContent={businessLaunchpadCards[activeCard].CardContent} />
       </div>
     </section>
   );
